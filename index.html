@@ -1,3 +1,4 @@
+> ChatGPT4 | Midjourney:
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -24,13 +25,14 @@
             font-family: sans-serif;
             margin: 0;
             padding: 0;
-            background-color: var(--background-color);
+            /* Градиент на весь сайт */
+            background: linear-gradient(to bottom, blue, red, green, yellow);
             color: var(--text-color);
         }
 
         /* Header Styles */
         header {
-            background-color: var(--primary-color);
+            background: linear-gradient(to bottom, blue, red, green, yellow); /* Градиент в шапке */
             color: var(--menu-text-color);
             padding: 10px;
             display: flex;
@@ -69,13 +71,17 @@
             right: 0;
             width: 250px;
             height: 100%;
-            background-color: var(--menu-background);
+            background-color: black; /* Черный цвет бургер-меню */
             color: var(--menu-text-color);
             padding: 20px;
             box-shadow: -5px 0px 10px rgba(0, 0, 0, 0.5);
             z-index: 1;
             transform: translateX(100%);
             transition: transform 0.3s ease;
+            display: flex; /* Добавлено для flexbox */
+
+> ChatGPT4 | Midjourney:
+            flex-direction: column; /* Добавлено для flexbox */
         }
 
         .menu.active {
@@ -86,6 +92,7 @@
             list-style: none;
             padding: 0;
             margin: 0;
+            flex-grow: 1; /* Добавлено, чтобы список занимал все доступное пространство */
         }
 
         .menu li {
@@ -175,6 +182,14 @@
         section:not(#about) {
             display: none;
         }
+
+        /* Logo in Menu */
+        .menu .logo {
+            width: 50px; /* Примерный размер, можно изменить */
+            height: auto;
+            margin-top: auto; /* Прижимаем к низу */
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 <body>
@@ -193,13 +208,19 @@
             <li><a href="#" data-section="team">Команда</a></li>
             <li><a href="#" data-section="contact">Контакты</a></li>
             <li><a href="#" data-section="donate">Поддержка разработчика</a></li>
+            <li><a href="#" data-section="login">Войти</a></li>  <!-- Добавлена ссылка "Войти" -->
+            <li><a href="#" data-section="register">Зарегистрироваться</a></li>  <!-- Добавлена ссылка "Зарегистрироваться" -->
         </ul>
+        <img src="https://i.postimg.cc/9MSyzmf7/IMG-20250412-114846-882.png" alt="Логотип" class="logo"> <!-- Логотип внизу меню -->
     </nav>
 
     <div class="overlay"></div>
 
     <main>
-        <section id="about">
+        <secti
+
+> ChatGPT4 | Midjourney:
+on id="about">
             <h2>О нас</h2>
             <p>InvaCoin - это криптовалюта, созданная с душой и сердцем, чтобы поддерживать благотворительные организации, занимающиеся помощью животным. Мы верим, что каждый питомец заслуживает любящий дом и достойный уход. Наша цель - создать устойчивую финансовую систему, которая позволит оказывать помощь нуждающимся животным по всему миру, от крошечных котят до величественных лошадей.</p>
             <p>Мы используем блокчейн Ethereum для обеспечения прозрачности и безопасности всех транзакций. Каждый InvaCoin - это вклад в лучшее будущее для животных, которые не могут говорить за себя.</p>
@@ -239,7 +260,9 @@
             <h2>Команда</h2>
             <p>Команда InvaCoin состоит из опытных разработчиков, маркетологов и экспертов в области благотворительности, объединенных общей целью - помочь животным. Мы посвящены нашему делу и постоянно работаем над улучшением InvaCoin.</p>
             <p>Мы верим в прозрачность и открытость, поэтому будем регулярно делиться информацией о нашей деятельности и планах на будущее.</p>
-        </section>
+
+> ChatGPT4 | Midjourney:
+</section>
 
         <section id="contact">
             <h2>Контакты</h2>
@@ -257,8 +280,32 @@
             <p>Любая сумма очень важна в процессе разработки токена.</p>
             <p>*вы не обязаны делать денежные переводы владельцу валюты.</p>
             <p>все переводы осуществляется добровольно</p>
-<p>возврата денежных переводов не существует</p>
+            <p>возврата денежных переводов не существует</p>
             <p>все переводы полностью пойдут в развитие IVC токена</p>
+        </section>
+
+        <!-- Секции для авторизации и регистрации -->
+        <section id="login">
+            <h2>Войти</h2>
+            <form>
+                <label for="login-email">Email:</label><br>
+                <input type="email" id="login-email" name="login-email"><br><br>
+                <label for="login-password">Пароль:</label><br>
+                <input type="password" id="login-password" name="login-password"><br><br>
+                <input type="submit" value="Войти">
+            </form>
+        </section>
+
+        <section id="register">
+            <h2>Зарегистрироваться</h2>
+            <button>Зарегистрироваться через ВК</button><br><br>
+            <label for="register-email">Email:</label><br>
+            <input type="email" id="register-email" name="register-email"><br><br>
+            <label for="register-phone">Номер телефона:</label><br>
+            <input type="tel" id="register-phone" name="register-phone"><br><br>
+            <label for="register-password">Пароль:</label><br>
+            <input type="password" id="register-password" name="register-password"><br><br>
+            <input type="submit" value="Зарегистрироваться">
         </section>
     </main>
 
