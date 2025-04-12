@@ -10,11 +10,13 @@
     <style>
         /* CSS Variables */
         :root {
-            --primary-color: #29abe2;
-            --secondary-color: #1e8bc3;
+            --blue: #3498db;
+            --red: #e74c3c;
+            --green: #2ecc71;
+            --yellow: #f1c40f;
             --text-color: #444;
-            --background-color: #f0f8ff; /* Более приятный фон */
-            --menu-background: rgba(41, 171, 226, 0.9);
+            --background-color: #ecf0f1; /* Светло-серый фон */
+            --menu-background: rgba(0, 0, 0, 0.8); /* Темный полупрозрачный фон для меню */
             --menu-text-color: white;
             --overlay-background: rgba(0, 0, 0, 0.6);
             --section-background: rgba(255, 255, 255, 0.9);
@@ -28,20 +30,35 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: var(--background-color);
+            background: linear-gradient(45deg, var(--blue), var(--red), var(--green), var(--yellow));
+            background-size: 400% 400%;
+            animation: gradientAnimation 15s ease infinite; /* Анимация градиента */
             color: var(--text-color);
             line-height: 1.6;
+            overflow-x: hidden; /* Предотвращаем горизонтальную прокрутку */
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
         }
 
         /* Header Styles */
         header {
-            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            background: rgba(255, 255, 255, 0.1); /* Полупрозрачный фон для header */
             color: var(--menu-text-color);
             padding: 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: var(--box-shadow);
+            box-shadow: var(--box-shadow);            backdrop-filter: blur(5px); /* Эффект размытия фона */
         }
 
         header h1 {
@@ -68,17 +85,19 @@
         /* Menu Styles */
         .menu {
             position: fixed;
-            top: 0;            right: 0;
+            top: 0;
+            right: 0;
             width: 300px;
             height: 100%;
-            background-color: var(--menu-background);
+            background: var(--menu-background);
             color: var(--menu-text-color);
             padding: 30px;
             box-shadow: -5px 0px 10px rgba(0, 0, 0, 0.3);
-            z-index: 1000; /* Увеличиваем z-index */
+            z-index: 1000;
             transform: translateX(100%);
             transition: transform 0.3s ease;
             overflow-y: auto;
+            backdrop-filter: blur(5px); /* Эффект размытия фона */
         }
 
         .menu.active {
@@ -126,7 +145,7 @@
             width: 100%;
             height: 100%;
             background-color: var(--overlay-background);
-            z-index: 999; /* Увеличиваем z-index и делаем меньше чем у меню */
+            z-index: 999;
             display: none;
         }
 
@@ -135,52 +154,51 @@
         }
 
         /* Section Styles */
-        section {
-            background-color: var(--section-background);
+        section {            background-color: var(--section-background);
             padding: 30px;
             margin-bottom: 20px;
-            border: 1px solid var(--border-color);
-            border-radius: 5px;
+            border-radius: 10px; /* Увеличиваем скругление углов */
             box-shadow: var(--box-shadow);
+            backdrop-filter: blur(3px); /* Добавляем эффект размытия */
         }
 
         section h2 {
-            font-size: 2em;
+            font-size: 2.2em; /* Увеличиваем размер заголовков */
             margin-bottom: 20px;
-            color: var(--primary-color);
+            color: var(--blue); /* Делаем заголовки синими */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Добавляем тень к заголовкам */
         }
 
         /* Footer Styles */
         footer {
-            background-color: var(--section-background);
+            background: rgba(255, 255, 255, 0.1); /* Полупрозрачный фон для footer */
             color: var(--footer-color);
             text-align: center;
-            border-top: 1px solid var(--border-color);
             padding: 20px 0;
+            backdrop-filter: blur(5px); /* Эффект размытия фона */
         }
+
         /* Link Styles */
         a {
-            color: var(--primary-color);
+            color: var(--blue); /* Делаем ссылки синими */
             text-decoration: none;
             transition: color 0.3s ease;
         }
 
         a:hover {
-            color: var(--secondary-color);
+            color: var(--red); /* При наведении делаем ссылки красными */
             text-decoration: underline;
         }
 
         /* Contact Link Styles */
         #contact a {
-            color: var(--secondary-color);
-            text-decoration: underline;
+            color: var(--yellow); /* Делаем контактные ссылки желтыми */
         }
 
         /* Roadmap Styles */
         #roadmap ol {
             list-style-type: decimal;
-            padding-left: 20px;
-        }
+            padding-left: 20px;}
 
         #roadmap li {
             margin-bottom: 10px;
@@ -236,6 +254,7 @@
             <li><a href="#charity" data-section="charity"><i class="fas fa-hand-holding-heart"></i>Благотворительность</a></li>
             <li><a href="#roadmap" data-section="roadmap"><i class="fas fa-map"></i>Дорожная карта</a></li>
             <li><a href="#team" data-section="team"><i class="fas fa-users"></i>Команда</a></li>
+            <li><a href="#requisites" data-section="requisites"><i class="fas fa-wallet"></i>Реквизиты</a></li>
             <li><a href="#contact" data-section="contact"><i class="fas fa-envelope"></i>Контакты</a></li>
         </ul>
     </nav>
@@ -245,7 +264,7 @@
     <main>
         <section id="about">
             <h2>О нас</h2>
-            <p>InvaCoin - это криптовалюта, созданная с душой и сердцем, чтобы поддерживать благотворительные организации, занимающиеся помощью животным. Мы верим, что каждый питомец заслуживает любящий дом и достойный уход. Наша цель - создать устойчивую финансовую систему, которая позволит оказывать помощь нуждающимся животным по всему миру, от крошечных котят до величественных лошадей.</p>
+            <p>InvaCoin - это криптовалюта, созданная с душой и сердцем, чтобы поддерживать благотворительные организации, занимающиеся помощью животным. Мы верим, что каждый питомец заслуживает любящий дом и достойный уход. Наша цель - создать устойчивую финансовую систему, которая позволит оказывать помощь нуждающимся животным по всему миру, от крошечных котят до величественных лошадей. InvaCoin стремится к прозрачности и безопасности, используя блокчейн Ethereum для записи всех транзакций.</p>
         </section>
 
         <section id="features">
@@ -260,12 +279,11 @@
 
         <section id="charity">
             <h2>Благотворительность</h2>
-            <p>Мы сотрудничаем с различными фондами, занимающимися помощью бездомным животным по всему миру. Наша цель - создать широкую сеть партнеров, чтобы обеспечить максимальную поддержку нуждающимся животным, независимо от их местонахождения.</p>
+            <p>Мы сотрудничаем с различными фондами, занимающимися помощью бездомным животным по всему миру. Наша цель - создать широкую сеть партнеров, чтобы обеспечить максимальную поддержку нуждающимся животным, независимо от их местонахождения. Мы тщательно отбираем наши партнерские организации, чтобы убедиться, что они эффективно используют средства и оказывают реальную помощь животным.</p>
         </section>
 
         <section id="roadmap">
-            <h2>Дорожная карта</h2>
-            <ol>
+            <h2>Дорожная карта</h2><ol>
                 <li><strong>Этап 1:</strong> Запуск токена InvaCoin и создание базовой инфраструктуры.</li>
                 <li><strong>Этап 2:</strong> Листинг на децентрализованных биржах и расширение сообщества.</li>
                 <li><strong>Этап 3:</strong> Привлечение партнеров из сферы благотворительности и запуск партнерской программы.</li>
@@ -277,6 +295,12 @@
         <section id="team">
             <h2>Команда</h2>
             <p>Команда InvaCoin состоит из опытных разработчиков, маркетологов и экспертов в области благотворительности, объединенных общей целью - помочь животным. Мы посвящены нашему делу и постоянно работаем над улучшением InvaCoin.</p>
+        </section>
+
+        <section id="requisites">
+            <h2>Реквизиты</h2>
+            <p>Криптокошельки фондов: (скоро)</p>
+            <p>Кошелек владельца: (скоро)</p>
         </section>
 
         <section id="contact">
