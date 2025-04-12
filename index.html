@@ -12,9 +12,23 @@
             font-family: sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f0f8ff; /* Очень светлый синий фон */
-            color: #444; /* Темно-серый для лучшей читаемости */
+            background: linear-gradient(135deg, #e0f2f1, #f0f4c3, #f3e5f5); /* Пастельный градиентный фон */
+            background-size: 300% 300%;
+            animation: gradientAnimation 15s ease infinite; /* Анимированный градиент */
+            color: #444;
             line-height: 1.6;
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
         }
 
         .container {
@@ -24,10 +38,10 @@
         }
 
         h2 {
-            color: #2e7d32; /* Светлый зеленый для заголовков */
+            color: #2e7d32;
             margin-top: 20px;
             margin-bottom: 5px;
-            border-bottom: 1px solid #81c784; /* Более светлая зеленая граница */
+            border-bottom: 1px solid #81c784;
             padding-bottom: 5px;
         }
 
@@ -35,23 +49,46 @@
             padding-left: 20px;
         }
 
-        /* Стили для шапки */
+        /* Стили для шапки с анимацией */
         header {
             padding: 50px 0;
-            background-color: #ffcdd2; /* Светлый красный для шапки */
-            color: #6a1b9a; /*  Темный фиолетовый текст на красном фоне*/
             text-align: center;
+            position: relative;
+            overflow: hidden; /* Чтобы градиент не выходил за рамки */
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, #f44336, #9c27b0, #2196f3, #4caf50, #f44336); /* Красный, фиолетовый, синий, зеленый, красный */
+            background-size: 500% 100%;
+            animation: headerAnimation 10s linear infinite;
+            z-index: -1; /* Позади текста */
+        }
+
+        @keyframes headerAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            100% {
+                background-position: 100% 50%;
+            }
         }
 
         header h1 {
-            margin: 0;
-            font-size: 2.5em;
-            color: #c62828; /* Темно-красный для заголовка шапки */
+            margin: 0;            font-size: 2.5em;
+            color: white; /* Белый текст для контраста */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Тень для лучшей читаемости */
         }
 
         header p {
             font-size: 1.2em;
-            color: #6a1b9a; /* Темный фиолетовый для параграфа шапки */
+            color: white;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
         }
 
         nav ul {
@@ -74,7 +111,7 @@
 
         /* Стили для основных разделов */
         section {
-            background-color: #fff;
+            background-color: rgba(255, 255, 255, 0.8); /* Белый с небольшой прозрачностью */
             padding: 15px;
             margin-bottom: 10px;
             border: 1px solid #ddd;
@@ -84,15 +121,16 @@
 
         /* Стили для подвала */
         footer {
-            background-color: #fff;
-            color: #777;             text-align: center;
+            background-color: rgba(255, 255, 255, 0.8);
+            color: #777;
+            text-align: center;
             border-top: 1px solid #ddd;
             padding: 15px 0;
         }
 
         /* Стили для ссылок */
         a {
-            color: #1565c0; /* Более темный синий для ссылок */
+            color: #1565c0;
             text-decoration: none;
         }
 
@@ -102,7 +140,7 @@
 
         /* Стили для ссылок в контактах */
         #contact a {
-            color: #0d47a1; /* Еще более темный синий для контактов */
+            color: #0d47a1;
             text-decoration: underline;
         }
 
@@ -134,10 +172,6 @@
         <h1>InvaCoin</h1>
         <p>Криптовалюта для помощи животным</p>
     </header>
-
-    <main>
-        <section id="about">
-            <h2>О нас</h2>
             <p>InvaCoin - это криптовалюта, созданная для поддержки благотворительных организаций, занимающихся помощью животным. Наша цель - создать устойчивую финансовую систему, которая позволит оказывать помощь нуждающимся животным по всему миру.</p>
         </section>
 
@@ -185,3 +219,6 @@
 
 </body>
 </html>
+    <main>
+        <section id="about">
+            <h2>О нас</h2>
