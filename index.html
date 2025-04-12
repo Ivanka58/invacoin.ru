@@ -304,5 +304,53 @@
     <footer>
         &copy; 2024 InvaCoin. Все права защищены.
     </footer>
+</script>
+    document.addEventListener('DOMContentLoaded', function() {
+  const hamburgerMenu = document.querySelector('.hamburger-menu');
+  const menu = document.querySelector('.menu');
+  const overlay = document.querySelector('.overlay');
+  const sections = document.querySelectorAll('section');
+
+  // Открываем/закрываем меню
+  hamburgerMenu.addEventListener('click', function() {
+    menu.classList.toggle('active');
+    overlay.classList.toggle('active');
+  });
+
+  overlay.addEventListener('click', function() {
+    menu.classList.remove('active');
+    overlay.classList.remove('active');
+  });
+
+  // Переключаем секции
+  menu.addEventListener('click', function(event) {
+    if (event.target.tagName === 'A') {
+      event.preventDefault();
+      const sectionId = event.target.dataset.section;
+
+      // Скрываем все секции
+      sections.forEach(function(section) {
+        section.style.display = 'none';
+      });
+
+      // Показываем нужную секцию
+      const targetSection = document.getElementById(sectionId);
+      if (targetSection) {
+        targetSection.style.display = 'block';
+      }
+
+      // Закрываем меню
+      menu.classList.remove('active');
+      overlay.classList.remove('active');
+    }
+  });
+
+  // Показываем первую секцию ("О нас") при загрузке страницы
+  if (sections.length > 0) {
+    sections[0].style.display = 'block';
+  }
+});
+</script>
+
 </body>
 </html>
