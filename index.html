@@ -7,24 +7,35 @@
     <style>
         /* Общие стили */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #f9f9f9;
             color: #333;
+            line-height: 1.6;
         }
 
         /* Стили для заголовка */
         header {
-            background-color: #333;
+            background-color: #343a40; /* Темно-серый цвет */
             color: #fff;
-            padding: 1em 0;
+            padding: 2em 0;
             text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 0.5em;
+        }
+
+        header p {
+            font-size: 1.2em;
         }
 
         /* Стили для навигации */
         nav {
-            background-color: #444;
+            background-color: #555;
             color: #fff;
             padding: 0.5em 0;
             text-align: center;
@@ -35,51 +46,80 @@
             text-decoration: none;
             padding: 0.5em 1em;
             display: inline-block;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ddd;
         }
 
         /* Стили для кнопок */
         button {
-            background-color: #007bff; /* Яркий синий цвет */
+            background-color: #28a745; /* Зеленый цвет */
             color: white;
             border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Добавляем тень */
-            transition: background-color 0.3s ease; /* Добавляем анимацию при наведении */
+            padding: 12px 24px;
+            border-radius: 8px;
+            box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
             cursor: pointer;
+            font-size: 1.1em;
         }
 
         button:hover {
-            background-color: #0056b3; /* Более темный синий при наведении */
+            background-color: #218838; /* Более темный зеленый */
+            transform: translateY(-2px);
         }
 
-        /* Стили для блока новостей */
+        /* Стили для секций */
         section {
-            padding: 20px;
+            padding: 30px;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            border-radius: 8px;
         }
 
         section h2 {
-            font-size: 1.5em;
-            margin-bottom: 10px;
+            font-size: 2em;
+            margin-bottom: 15px;
+            color: #333;
         }
 
         article {
-            margin-bottom: 20px;
-            border-bottom: 1px solid #ccc;
-            padding-bottom: 10px;
+            margin-bottom: 25px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
         }
 
         article h3 {
-            font-size: 1.2em;
-            margin-bottom: 5px;
+            font-size: 1.4em;
+            margin-bottom: 8px;
+            color: #444;
+        }
+
+        article p {
+            color: #666;
         }
 
         /* Стили для подвала */
         footer {
             text-align: center;
-            padding: 1em 0;
-            background-color: #333;
+            padding: 2em 0;
+            background-color: #343a40;
             color: #fff;
+        }
+
+        /* Адаптивный дизайн */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5em;
+            }
+
+            nav a {
+                display: block;
+                padding: 0.8em;
+            }
         }
     </style>
 </head>
