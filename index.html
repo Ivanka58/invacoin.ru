@@ -304,57 +304,5 @@
     <footer>
         &copy; 2024 InvaCoin. Все права защищены.
     </footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-    const hamburgerMenu = document.querySelector('.hamburger-menu');
-    const menu = document.querySelector('.menu');
-    const overlay = document.querySelector('.overlay');
-    const menuLinks = document.querySelectorAll('.menu a[data-section]'); // Выбираем только ссылки с data-section
-    const sections = document.querySelectorAll('section');
-
-    // Функция для скрытия всех секций
-    function hideAllSections() {
-        sections.forEach(section => {
-            section.style.display = 'none';
-        });
-    }
-
-    // Функция для показа выбранной секции
-    function showSection(sectionId) {
-        const targetSection = document.getElementById(sectionId);
-        if (targetSection) {
-            targetSection.style.display = 'block';
-        }
-    }
-
-    hamburgerMenu.addEventListener('click', () => {
-        menu.classList.toggle('active');
-        overlay.classList.toggle('active');
-    });
-
-    overlay.addEventListener('click', () => {
-        menu.classList.remove('active');
-        overlay.classList.remove('active');
-    });
-
-    menuLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const sectionId = link.dataset.section;
-
-            hideAllSections(); // Скрываем все секции
-            showSection(sectionId); // Показываем выбранную секцию
-
-            menu.classList.remove('active');
-            overlay.classList.remove('active');
-        });
-    });
-
-    // Показываем секцию "О нас" по умолчанию
-    showSection('about');
-})
-    </script>
-
 </body>
 </html>
