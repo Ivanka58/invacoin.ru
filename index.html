@@ -12,7 +12,7 @@
             font-family: sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #e0f7fa, #fff9c4, #f3e5f5); /* Более яркие пастельные цвета */
+            background: linear-gradient(135deg, #e0f7fa, #fff9c4, #f3e5f5);
             background-size: 300% 300%;
             animation: gradientAnimation 15s ease infinite;
             color: #444;
@@ -38,10 +38,10 @@
         }
 
         h2 {
-            color: #43a047; /* Яркий зеленый для заголовков */
+            color: #43a047;
             margin-top: 20px;
             margin-bottom: 5px;
-            border-bottom: 1px solid #66bb6a; /* Более яркая зеленая граница */
+            border-bottom: 1px solid #66bb6a;
             padding-bottom: 5px;
         }
 
@@ -51,10 +51,13 @@
 
         /* Стили для шапки с анимацией */
         header {
-            padding: 50px 0;
+            padding: 20px; /* Уменьшил высоту шапки */
             text-align: center;
             position: relative;
             overflow: hidden;
+            display: flex; /* Добавил flexbox для выравнивания */
+            justify-content: space-between; /* Размещает элементы по краям */
+            align-items: center; /* Выравнивает элементы по вертикали */
         }
 
         header::before {
@@ -64,7 +67,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, #e91e63, #673ab7, #03a9f4, #8bc34a, #e91e63); /* Более "веселые" цвета */
+            background: linear-gradient(90deg, #e91e63, #673ab7, #03a9f4, #8bc34a, #e91e63);
             background-size: 500% 100%;
             animation: headerAnimation 10s linear infinite;
             z-index: -1;
@@ -74,60 +77,79 @@
             0% {
                 background-position: 0% 50%;
             }
-            100% {
-                background-position: 100% 50%;
+            100% {                background-position: 100% 50%;
             }
         }
 
         header h1 {
             margin: 0;
-            font-size: 2.5em;            color: white;
+            font-size: 2em; /* Уменьшил размер заголовка */
+            color: white;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
 
-        header p {
-            font-size: 1.2em;
+        /* Стили для кнопки "гамбургер-меню" */
+        .hamburger-menu {
+            display: block;
+            cursor: pointer;
+            padding: 10px;
             color: white;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            font-size: 1.5em;
+            z-index: 2; /* Чтобы был над шапкой */
         }
 
-       /* Стили для навигации в начале страницы */
-       .top-navigation {
-            background-color: rgba(255, 255, 255, 0.7); /* Полупрозрачный фон */
-            padding: 10px 0;
-            text-align: center;
-            margin-bottom: 20px;
+        /* Стили для списка страниц */
+        .menu {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 250px;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8); /* Темный фон для меню */
+            color: white;
+            padding: 20px;
+            box-shadow: -5px 0px 10px rgba(0, 0, 0, 0.5);
+            z-index: 1;
+            transform: translateX(100%); /* Скрываем меню за пределами экрана */
+            transition: transform 0.3s ease;
         }
 
-        .top-navigation a {
-            color: #00796b;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-            border-bottom: 2px solid transparent; /* Подчеркивание при наведении */
-            transition: border-bottom 0.3s ease;
+        .menu.active {
+            transform: translateX(0); /* Показываем меню */
         }
 
-        .top-navigation a:hover {
-            border-bottom: 2px solid #00796b; /* Подчеркивание при наведении */
-        }
-
-        nav ul {
+        .menu ul {
             list-style: none;
             padding: 0;
             margin: 0;
-            display: flex;
-            justify-content: center;
         }
 
-        nav li {
-            margin: 0 15px;
+        .menu li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Светлая граница между элементами */
         }
 
-        nav a {
-            color: #fff;
+        .menu a {
+            color: white;
             text-decoration: none;
-            font-weight: bold;
+            display: block;
+            padding: 5px 0;
+        }
+
+        /* Скрываем основной контент, пока открыто меню (необязательно) */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+            display: none; /* Скрыт по умолчанию */
+        }
+
+        .overlay.active {
+            display: block; /* Показываем затемнение */
         }
 
         /* Стили для основных разделов */
@@ -141,8 +163,7 @@
         }
 
         /* Стили для подвала */
-        footer {
-            background-color: rgba(255, 255, 255, 0.8);
+        footer {            background-color: rgba(255, 255, 255, 0.8);
             color: #777;
             text-align: center;
             border-top: 1px solid #ddd;
@@ -172,45 +193,45 @@
 
         /* Адаптивность */
         @media (max-width: 600px) {
-            nav ul {
-                flex-direction: column;                align-items: center;
+            .hamburger-menu {
+                font-size: 1.2em;
             }
 
-            nav li {
-                margin: 10px 0;
+            header h1 {
+                font-size: 1.5em;
             }
 
-            .container {
-                padding: 10px;
-            }
-
-             .top-navigation {
-                flex-direction: column; /* Расположение ссылок в столбик на маленьких экранах */
-                align-items: center;
-            }
-
-            .top-navigation a {
-                margin: 10px 0; /* Увеличенный отступ для лучшей читаемости */
+            .menu {
+                width: 80%; /* На маленьких экранах меню занимает большую часть ширины */
             }
         }
+
+        /* Скрываем все разделы, кроме "О нас" по умолчанию */
+        #features, #charity, #roadmap, #team, #contact {
+            display: none;
+        }
     </style>
+
 </head>
 <body>
 
     <header>
         <h1>InvaCoin</h1>
-        <p>Криптовалюта для помощи животным - Вместе мы можем изменить мир!</p>
+        <div class="hamburger-menu">&#9776;</div>
     </header>
 
-     <!-- Навигация в начале страницы -->
-    <div class="top-navigation">
-        <a href="#about">О нас</a>
-        <a href="#features">Особенности</a>
-        <a href="#charity">Благотворительность</a>
-        <a href="#roadmap">Дорожная карта</a>
-        <a href="#team">Команда</a>
-        <a href="#contact">Контакты</a>
+    <div class="menu">
+        <ul>
+            <li><a href="#" data-section="about">О нас</a></li>
+            <li><a href="#" data-section="features">Особенности</a></li>
+            <li><a href="#" data-section="charity">Благотворительность</a></li>
+            <li><a href="#" data-section="roadmap">Дорожная карта</a></li>
+            <li><a href="#" data-section="team">Команда</a></li>
+            <li><a href="#" data-section="contact">Контакты</a></li>
+        </ul>
     </div>
+
+    <div class="overlay"></div> <!-- Затемнение экрана -->
 
     <main>
         <section id="about">
@@ -226,7 +247,6 @@
                 <li><b>Прозрачность:</b> Все транзакции записываются в блокчейн Ethereum, что обеспечивает полную прозрачность и невозможность подделки.</li>
                 <li><b>Децентрализация:</b> InvaCoin - это децентрализованная криптовалюта, не контролируемая ни одним органом, что гарантирует ее независимость и устойчивость.</li>
                 <li><b>Сообщество:</b> Активное и вовлеченное сообщество, которое поддерживает развитие проекта, участвует в принятии решений и помогает нам делать мир лучше.</li>
-                <li><b>Бесплатные переводы:</b> Вы сможете переводить InvaCoin в даже в разные страны абсолютно без комиссии.</li>
             </ul>
             <p>Мы постоянно работаем над улучшением InvaCoin и добавлением новых функций, чтобы сделать его еще более полезным и удобным для всех участников.</p>
         </section>
@@ -268,6 +288,40 @@
     <footer>
         &copy; 2025 InvaCoin. Все права защищены.
     </footer>
+
+    <script>
+        const hamburgerMenu = document.querySelector('.hamburger-menu');
+        const menu = document.querySelector('.menu');
+        const overlay = document.querySelector('.overlay');
+        const menuLinks = document.querySelectorAll('.menu a');
+        const sections = document.querySelectorAll('section');
+
+        hamburgerMenu.addEventListener('click', () => {
+            menu.classList.toggle('active');
+            overlay.classList.toggle('active');
+        });
+
+        overlay.addEventListener('click', () => {
+            menu.classList.remove('active');
+            overlay.classList.remove('active');
+        });
+
+        menuLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault(); // Предотвращаем переход по ссылке
+                const sectionId = link.dataset.section;
+
+                // Скрываем все разделы
+                sections.forEach(section => section.style.display = 'none');
+
+                // Показываем выбранный раздел
+                document.getElementById(sectionId).style.display = 'block';
+
+                menu.classList.remove('active'); // Закрываем меню
+                overlay.classList.remove('active'); // Убираем затемнение
+            });
+        });
+    </script>
 
 </body>
 </html>
