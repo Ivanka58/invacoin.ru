@@ -307,36 +307,44 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const hamburgerMenu = document.querySelector('.hamburger-menu');
-            const menu = document.querySelector('.menu');
-            const overlay = document.querySelector('.overlay');
-            const menuLinks = document.querySelectorAll('.menu a');
-            const sections = document.querySelectorAll('section');
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
+    const menu = document.querySelector('.menu');
+    const overlay = document.querySelector('.overlay');
+    const menuLinks = document.querySelectorAll('.menu a');
+    const sections = document.querySelectorAll('section');
 
-            hamburgerMenu.addEventListener('click', () => {
-                menu.classList.toggle('active');
-                overlay.classList.toggle('active');
+    hamburgerMenu.addEventListener('click', () => {
+        menu.classList.toggle('active');
+        overlay.classList.toggle('active');
+    });
+
+    overlay.addEventListener('click', () => {
+        menu.classList.remove('active');
+        overlay.classList.remove('active');
+    });
+
+    menuLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const sectionId = link.dataset.section;
+
+            // Скрываем все разделы
+            sections.forEach(section => {
+                section.style.display = 'none';
             });
 
-            overlay.addEventListener('click', () => {
-                menu.classList.remove('active');
-                overlay.classList.remove('active');
-            });
+            // Показываем выбранный раздел (если он существует)
+            const targetSection = document.getElementById(sectionId);
+            if (targetSection) {
+                targetSection.style.display = 'block';
+            }
 
-            menuLinks.forEach(link => {
-                link.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const sectionId = link.dataset.section;
-
-                    sections.forEach(section => section.style.display = 'none');
-
-                    document.getElementById(sectionId).style.display = 'block';
-
-                    menu.classList.remove('active');
-                    overlay.classList.remove('active');
-                });
-            });
+            menu.classList.remove('active');
+            overlay.classList.remove('active');
         });
+    });
+});
+
     </script>
 
 </body>
