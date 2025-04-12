@@ -3,123 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>InvaCoin - Криптовалюта для помощи животным</title>
     <style>
-        /* Общие стили */
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f9f9f9;
+            background-color: #f4f4f4;
             color: #333;
-            line-height: 1.6;
         }
-
-        /* Стили для заголовка */
         header {
-            background-color: #343a40; /* Темно-серый цвет */
+            background-color: #333;
             color: #fff;
-            padding: 2em 0;
+            padding: 1em 0;
             text-align: center;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
-
-        header h1 {
-            font-size: 3em;
-            margin-bottom: 0.5em;
-        }
-
-        header p {
-            font-size: 1.2em;
-        }
-
-        /* Стили для навигации */
         nav {
-            background-color: #555;
+            background-color: #444;
             color: #fff;
             padding: 0.5em 0;
             text-align: center;
         }
-
         nav a {
             color: #fff;
             text-decoration: none;
             padding: 0.5em 1em;
-            display: inline-block;
-            transition: color 0.3s ease;
         }
-
-        nav a:hover {
-            color: #ddd;
-        }
-
-        /* Стили для кнопок */
-        button {
-            background-color: #28a745; /* Зеленый цвет */
-            color: white;
-            border: none;
-            padding: 12px 24px;
-            border-radius: 8px;
-            box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
-            transition: all 0.3s ease;
-            cursor: pointer;
-            font-size: 1.1em;
-        }
-
-        button:hover {
-            background-color: #218838; /* Более темный зеленый */
-            transform: translateY(-2px);
-        }
-
-        /* Стили для секций */
         section {
-            padding: 30px;
-            background-color: white;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-            border-radius: 8px;
+            padding: 2em;
+            margin: 1em;
+            background-color: #fff;
+            border-radius: 5px;
         }
-
-        section h2 {
-            font-size: 2em;
-            margin-bottom: 15px;
-            color: #333;
-        }
-
-        article {
-            margin-bottom: 25px;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 15px;
-        }
-
-        article h3 {
-            font-size: 1.4em;
-            margin-bottom: 8px;
-            color: #444;
-        }
-
-        article p {
-            color: #666;
-        }
-
-        /* Стили для подвала */
         footer {
-            text-align: center;
-            padding: 2em 0;
-            background-color: #343a40;
+            background-color: #333;
             color: #fff;
-        }
-
-        /* Адаптивный дизайн */
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2.5em;
-            }
-
-            nav a {
-                display: block;
-                padding: 0.8em;
-            }
+            text-align: center;
+            padding: 1em 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
         }
     </style>
 </head>
@@ -131,31 +55,59 @@
     </header>
 
     <nav>
-        <a href="#">Главная</a>
-        <a href="#">О проекте</a>
-        <a href="#">Как помочь</a>
-        <a href="#">Новости</a>
-        <a href="#">Контакты</a>
+        <a href="#about">О нас</a>
+        <a href="#features">Особенности</a>
+        <a href="#charity">Благотворительность</a>
+        <a href="#roadmap">Дорожная карта</a>
+        <a href="#team">Команда</a>
+        <a href="#contact">Контакты</a>
     </nav>
 
-    <section>
-        <h2>Новости</h2>
-        <article>
-            <h3>InvaCoin спонсировал приют для животных</h3>
-            <p>Мы рады сообщить, что InvaCoin спонсировал местный приют для животных. Благодаря вашей поддержке мы смогли помочь им приобрести необходимое оборудование и корм.</p>
-            <a href="#">Подробнее</a>
-        </article>
-        <article>
-            <h3>Новое партнерство с ветеринарной клиникой</h3>
-            <p>InvaCoin заключил партнерство с ведущей ветеринарной клиникой. Теперь владельцы животных могут использовать InvaCoin для оплаты услуг ветеринара.</p>
-            <a href="#">Подробнее</a>
-        </article>
+    <section id="about">
+        <h2>О нас</h2>
+        <p>InvaCoin - это криптовалюта, созданная для поддержки благотворительных организаций, занимающихся помощью животным. Наша цель - создать устойчивую финансовую систему, которая позволит оказывать помощь нуждающимся животным по всему миру.</p>
     </section>
 
-    <button>Пожертвовать InvaCoin</button>
+    <section id="features">
+        <h2>Особенности InvaCoin</h2>
+        <ul>
+            <li>Поддержка благотворительности: Часть каждой транзакции направляется в благотворительный фонд.</li>
+            <li>Прозрачность: Все транзакции записываются в блокчейн Ethereum.</li>
+            <li>Децентрализация: InvaCoin - это децентрализованная криптовалюта, не контролируемая ни одним органом.</li>
+            <li>Сообщество: Активное сообщество, которое поддерживает развитие проекта.</li>
+        </ul>
+    </section>
+
+    <section id="charity">
+        <h2>Благотворительность</h2>
+        <p>Мы сотрудничаем с 9 различными фондами, занимающимися помощью бездомным животным по всему миру.  Наша цель - создать широкую сеть партнеров, чтобы обеспечить максимальную поддержку нуждающимся животным.</p>
+        <p>В ближайшее время мы опубликуем список всех наших партнеров с указанием их контактных данных и адресов криптокошельков для пожертвований.</p>
+    </section>
+
+    <section id="roadmap">
+        <h2>Дорожная карта</h2>
+        <ol>
+            <li>Этап 1: Запуск токена InvaCoin.</li>
+            <li>Этап 2: Листинг на децентрализованных биржах.</li>
+            <li>Этап 3: Привлечение партнеров из сферы благотворительности.</li>
+            <li>Этап 4: Разработка мобильного приложения.</li>
+        </ol>
+    </section>
+
+    <section id="team">
+        <h2>Команда</h2>
+        <p>Команда InvaCoin состоит из опытных разработчиков, маркетологов и экспертов в области благотворительности.</p>
+    </section>
+
+    <section id="contact">
+        <h2>Контакты</h2>
+        <p>Email: info@invacoin.com</p>
+        <p>Twitter: @InvaCoin</p>
+        <p>Telegram: t.me/invacoin</p>
+    </section>
 
     <footer>
-        <p>Защищено © 2025</p>
+        &copy; 2023 InvaCoin. Все права защищены.
     </footer>
 
 </body>
