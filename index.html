@@ -4,24 +4,135 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>InvaCoin - Криптовалюта для помощи животным</title>
-    <link rel="stylesheet" href="style.css">
     <meta name="description" content="InvaCoin - криптовалюта для поддержки благотворительных организаций, занимающихся помощью животным.">
     <meta name="keywords" content="InvaCoin, криптовалюта, благотворительность, животные, Ethereum">
     <!-- Добавьте другие мета-теги, необходимые для SEO и социальных сетей -->
+    <style>
+        /* Общие стили */
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #00796b; /* Темно-зеленый цвет заголовков */
+            margin-top: 20px;
+            margin-bottom: 5px; /* Уменьшаем отступ под заголовком */
+            border-bottom: 1px solid #ddd; /* Менее выраженная граница */
+            padding-bottom: 5px;
+        }
+
+        ul, ol {
+            padding-left: 20px;
+        }
+
+        /* Стили для шапки */
+        header {
+            padding: 50px 0;
+            background-color: #e0f2f1; /* светло-зеленый цвет как на скриншотах*/
+            color: #333; /* темный цвет текста */
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            color: #00796b; /* темно-зеленый цвет заголовка */
+        }
+
+        header p {
+            font-size: 1.2em;
+            color: #333;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center; /* Центрирование ссылок */
+        }
+
+        nav li {
+            margin: 0 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Стили для основных разделов */
+        section {
+            background-color: white;
+            padding: 15px;
+            margin-bottom: 10px; /* Уменьшаем отступ между секциями */
+            border: 1px solid #ddd; /* Добавляем тонкую границу */
+            border-radius: 0; /* Убираем скругление углов */
+            box-shadow: none; /* Убираем тень от секций */
+        }         /* Стили для подвала */
+        footer {
+            background-color: #fff; /* белый фон подвала */
+            color: #777; /* серый цвет текста подвала */
+            text-align: center;
+            border-top: 1px solid #ddd; /* Добавляем верхнюю границу */
+            padding: 15px 0;
+        }
+
+        /* Стили для ссылок */
+        a {
+            color: #1e88e5;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Стили для ссылок в контактах */
+        #contact a {
+            color: #00796b;
+            text-decoration: underline; /* Подчеркивание ссылок */
+        }
+
+        /* Стили для дорожной карты */
+        #roadmap ol {
+            list-style-type: decimal; /* Нумерованный список */
+        }
+
+        /* Адаптивность */
+        @media (max-width: 600px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav li {
+                margin: 10px 0;
+            }
+
+            .container {
+                padding: 10px;
+            }
+        }
+    </style>
 </head>
 <body>
 
     <header>
-        <nav>
-            <ul>
-                <li><a href="#about">О нас</a></li>
-                <li><a href="#features">Особенности</a></li>
-                <li><a href="#charity">Благотворительность</a></li>
-                <li><a href="#roadmap">Дорожная карта</a></li>
-                <li><a href="#team">Команда</a></li>
-                <li><a href="#contact">Контакты</a></li>
-            </ul>
-        </nav>
+        <h1>InvaCoin</h1>
+        <p>Криптовалюта для помощи животным</p>
     </header>
 
     <main>
