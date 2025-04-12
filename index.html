@@ -195,10 +195,7 @@
             color: var(--yellow); /* Делаем контактные ссылки желтыми */
         }
 
-        /* Roadmap Styles */
-        #roadmap ol {
-            list-style-type: decimal;
-            padding-left: 20px;}
+        /* Roadmap Styles */}
 
         #roadmap li {
             margin-bottom: 10px;
@@ -238,6 +235,11 @@
         section:not(#about) {
             display: none;
         }
+
+        /* Скрываем секцию поддержки разработчика по умолчанию */
+        #support {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -256,8 +258,7 @@
             <li><a href="#team" data-section="team"><i class="fas fa-users"></i>Команда</a></li>
             <li><a href="#requisites" data-section="requisites"><i class="fas fa-wallet"></i>Реквизиты</a></li>
             <li><a href="#contact" data-section="contact"><i class="fas fa-envelope"></i>Контакты</a></li>
-            <li><a href="#Developer support" data-section="developer support "><i class="fas fa-envelope"></i>Поддержка разработчика</a></li>
-        </ul>
+            <li><a href="#support" data-section="support"><i class="fas fa-code"></i>Поддержка разработчика</a></li>
         </ul>
     </nav>
 
@@ -276,8 +277,233 @@
                 <li><strong>Прозрачность:</strong> Все транзакции записываются в блокчейн Ethereum, что обеспечивает полную прозрачность и невозможность подделки.</li>
                 <li><strong>Децентрализация:</strong> InvaCoin - это децентрализованная криптовалюта, не контролируемая ни одним органом, что гарантирует ее независимость и устойчивость.</li>
                 <li><strong>Сообщество:</strong> Активное и вовлеченное сообщество, которое поддерживает развитие проекта, участвует в принятии решений и помогает нам делать мир лучше.</li>
-                <li><strong>Бесплатные переводы:</strong> Вы можете переводить любое количество валюты даже в разные страны без комиссии</li>
             </ul>
+        </section>
+
+        <section id="charity">
+            <h2>Благотворительность</h2>
+            <p>Мы сотрудничаем с различными фондами, занимающимися помощью бездомным животным по всему миру. Наша цель - создать широкую сеть партнеров, чтобы обеспечить максимальную поддержку нуждающимся животным, независимо от их местонахождения\            backdrop-filter: blur(5px); /* Эффект размытия фона */
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Hamburger Menu Styles */
+        .hamburger-menu {
+            display: block;
+            cursor: pointer;
+            padding: 10px;
+            color: var(--menu-text-color);
+            font-size: 2em;
+            z-index: 2;
+            transition: color 0.3s ease;
+        }
+
+        .hamburger-menu:hover {
+            color: #fff;
+        }
+
+        /* Menu Styles */
+        .menu {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 100%;
+            background: var(--menu-background);
+            color: var(--menu-text-color);
+            padding: 30px;
+            box-shadow: -5px 0px 10px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+            overflow-y: auto;
+            backdrop-filter: blur(5px); /* Эффект размытия фона */
+        }
+
+        .menu.active {
+            transform: translateX(0);
+        }
+
+        .menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu li {
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .menu a {
+            color: var(--menu-text-color);
+            text-decoration: none;
+            display: block;
+            padding: 10px 0;
+            font-size: 1.2em;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+
+        .menu a:hover {
+            color: #fff;
+        }
+
+        .menu a i {
+            margin-right: 10px;
+            font-size: 1.3em;
+            width: 20px;
+            text-align: center;
+        }
+
+        /* Overlay Styles */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--overlay-background);
+            z-index: 999;
+            display: none;
+        }
+
+        .overlay.active {
+            display: block;
+        }
+
+        /* Section Styles */
+        section {
+            background-color: var(--section-background);
+            padding: 30px;
+            margin-bottom: 20px;
+            border-radius: 10px; /* Увеличиваем скругление углов */
+            box-shadow: var(--box-shadow);
+            backdrop-filter: blur(3px); /* Добавляем эффект размытия */
+        }
+
+        section h2 {
+            font-size: 2.2em; /* Увеличиваем размер заголовков */
+            margin-bottom: 20px;
+            color: var(--blue); /* Делаем заголовки синими */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Добавляем тень к заголовкам */
+        }
+
+        /* Footer Styles */
+        footer {
+            background: rgba(255, 255, 255, 0.1); /* Полупрозрачный фон для footer */
+            color: var(--footer-color);
+            text-align: center;
+            padding: 20px 0;
+            backdrop-filter: blur(5px); /* Эффект размытия фона */
+        }
+
+        /* Link Styles */
+        a {
+            color: var(--blue); /* Делаем ссылки синими */
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--red); /* При наведении делаем ссылки красными */
+            text-decoration: underline;
+        }
+
+        /* Contact Link Styles */
+        #contact a {
+            color: var(--yellow); /* Делаем контактные ссылки желтыми */
+        }
+
+        /* Roadmap Styles */
+        #roadmap ol {
+            list-style-type: decimal;
+            padding-left: 20px;
+        }#roadmap li {
+            margin-bottom: 10px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            header h1 {
+                font-size: 2em;
+                margin-bottom: 10px;
+            }
+
+            .hamburger-menu {
+                font-size: 2em;
+            }
+
+            .menu {
+                width: 90%;
+                padding: 20px;
+            }
+
+            .menu a {
+                font-size: 1.1em;
+            }
+
+            section {
+                padding: 20px;
+            }
+        }
+
+        /* Hide Sections by Default */
+        section:not(#about) {
+            display: none;
+        }
+
+        /* Скрываем секцию поддержки разработчика по умолчанию */
+        #support {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>InvaCoin</h1>
+        <div class="hamburger-menu">&#9776;</div>
+    </header>
+
+    <nav class="menu">
+        <ul>
+            <li><a href="#about" data-section="about"><i class="fas fa-info-circle"></i>О нас</a></li>
+            <li><a href="#features" data-section="features"><i class="fas fa-star"></i>Особенности</a></li>
+            <li><a href="#charity" data-section="charity"><i class="fas fa-hand-holding-heart"></i>Благотворительность</a></li>
+            <li><a href="#roadmap" data-section="roadmap"><i class="fas fa-map"></i>Дорожная карта</a></li>
+            <li><a href="#team" data-section="team"><i class="fas fa-users"></i>Команда</a></li>
+            <li><a href="#requisites" data-section="requisites"><i class="fas fa-wallet"></i>Реквизиты</a></li>
+            <li><a href="#contact" data-section="contact"><i class="fas fa-envelope"></i>Контакты</a></li>
+            <li><a href="#support" data-section="support"><i class="fas fa-code"></i>Поддержка разработчика</a></li>
+        </ul>
+    </nav>
+
+    <div class="overlay"></div>
+
+    <main>
+        <section id="about">
+            <h2>О нас</h2>
+            <p>InvaCoin - это криптовалюта, созданная с душой и сердцем, чтобы поддерживать благотворительные организации, занимающиеся помощью животным. Мы верим, что каждый питомец заслуживает любящий дом и достойный уход. Наша цель - создать устойчивую финансовую систему, которая позволит оказывать помощь нуждающимся животным по всему миру, от крошечных котят до величественных лошадей. InvaCoin стремится к прозрачности и безопасности, используя блокчейн Ethereum для записи всех транзакций.</p>
+        </section>
+
+        <section id="features">
+            <h2>Особенности InvaCoin</h2>
+            <ul>
+                <li><strong>Поддержка благотворительности:</strong> Часть каждой транзакции направляется в благотворительный фонд, проверенный и отобранный нашим сообществом.</li>
+                <li><strong>Прозрачность:</strong> Все транзакции записываются в блокчейн Ethereum, что обеспечивает полную прозрачность и невозможность подделки.</li>
+                <li><strong>Децентрализация:</strong> InvaCoin - это децентрализованная криптовалюта, не контролируемая ни одним органом, что гарантирует ее независимость и устойчивость.</li>
+                <li><strong>Сообщество:</strong> Активное и вовлеченное сообщество, которое поддерживает развитие проекта, участвует в принятии решений и помогает нам делать мир лучше.</li>
             </ul>
         </section>
 
@@ -287,7 +513,8 @@
         </section>
 
         <section id="roadmap">
-            <h2>Дорожная карта</h2><ol>
+            <h2>Дорожная карта</h2>
+            <ol>
                 <li><strong>Этап 1:</strong> Запуск токена InvaCoin и создание базовой инфраструктуры.</li>
                 <li><strong>Этап 2:</strong> Листинг на децентрализованных биржах и расширение сообщества.</li>
                 <li><strong>Этап 3:</strong> Привлечение партнеров из сферы благотворительности и запуск партнерской программы.</li>
@@ -314,14 +541,15 @@
             <p>Telegram: <a href="https://t.me/invacoin_official">t.me/invacoin_official</a></p>
             <p>Twitter: <a href="https://twitter.com/InvaCoinOfficial">@InvaCoinOfficial</a></p>
         </section>
-        <section id="Developer support">
+
+        <section id="support">
             <h2>Поддержка разработчика</h2>
             <p>Если вы вдруг захотели поддержать разработчика валюты, вы можете перевести для него любую сумму</p>
             <p>Номер телефона: (скоро)</p>
-            <p>Криптокошелек: (скоро)
+            <p>Криптокошелек: (скоро)</p>
             <p>Любая сумма очень важна в процессе разработки токена</p>
             <p>*вы не обязаны делать денежные переводы владельцу валюты.</p>
-            <p>все переводы осуществляется добровольнл</p>
+            <p>все переводы осуществляется добровольно</p>
             <p>возврата денежных переводов не существует</p>
             <p>все переводы полностью пойдут в развитие IVC токена</p>
         </section>
@@ -342,14 +570,19 @@
             // Функция для показа выбранной секции
             function showSection(sectionId) {
                 sections.forEach(section => section.style.display = 'none');
-                document.getElementById(sectionId).style.display = 'block';
+                const sectionToShow = document.getElementById(sectionId);
+                if (sectionToShow) {
+                    sectionToShow.style.display = 'block';
+                } else {
+                    // Если секция не найдена, показываем "О нас"
+                    document.getElementById('about').style.display = 'block';
+                }
             }
 
             // Обработчик клика на пункты меню
             menuLinks.forEach(link => {
                 link.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const sectionId = link.dataset.section;
+                    e.preventDefault();тщателconst sectionId = link.dataset.section;
                     showSection(sectionId);
                     menu.classList.remove('active');
                     overlay.classList.remove('active');
@@ -374,4 +607,7 @@
     </script>
 
 </body>
-</html>
+</html>тщател
+        #roadmap ol {
+            list-style-type: decimal;
+            padding-left: 20px;
