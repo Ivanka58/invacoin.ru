@@ -13,6 +13,7 @@
             background-color: #f9f9f9; /* Светло-серый фон */
             color: #333;
             line-height: 1.6; /* Улучшенная читаемость текста */
+            overflow-x: hidden; /* Предотвращение горизонтальной прокрутки */
         }
 
         /* Шапка сайта */
@@ -22,16 +23,28 @@
             padding: 40px 20px;
             text-align: center;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Тень для глубины */
+            position: relative; /* Для позиционирования анимации */
+            overflow: hidden; /* Обрезка выходящих за границы элементов */
         }
 
         header h1 {
             font-size: 2.5em; /* Большой заголовок */
             margin-bottom: 10px;
+            animation: slideInDown 1s ease-out; /* Анимация появления сверху */
         }
 
         header p {
             font-size: 1.2em; /* Подзаголовок */
             font-style: italic;
+            animation: fadeIn 1.5s ease-out; /* Анимация плавного появления */
+        }
+
+        /* Анимация частиц в шапке */
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.7;
+            animation: float 4s linear infinite;
         }
 
         /* Навигация */
@@ -41,6 +54,9 @@
             padding: 15px;
             text-align: center;
             border-bottom: 2px solid #4CAF50; /* Линия под навигацией */
+            position: sticky; /* Фиксированная навигация */
+            top: 0;
+            z-index: 100; /* Обеспечение видимости поверх других элементов */
         }
 
         nav a {
@@ -48,16 +64,18 @@
             text-decoration: none;
             padding: 10px 20px;
             display: inline-block;
-            transition: background-color 0.3s ease; /* Плавный переход цвета */
+            transition: background-color 0.3s ease, transform 0.3s ease; /* Плавный переход цвета и масштаба */
         }
 
         nav a:hover {
             background-color: #4CAF50; /* Зеленый цвет при наведении */
+            transform: scale(1.1); /* Увеличение при наведении */
         }
 
         /* Основной контент */
         main {
             padding: 40px 20px;
+            animation: fadeIn 1s ease-out; /* Анимация плавного появления */
         }
 
         section {
@@ -66,14 +84,26 @@
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень для секций */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Плавный переход масштаба и тени */
+        }
+
+        section:hover {
+            transform: translateY(-5px); /* Поднятие секции при наведении */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Усиленная тень при наведении */
         }
 
         section h2 {
             color: #4CAF50; /* Зеленый цвет для заголовков секций */
-            font-size: 2em;
+            font-size: 2.2em;
             margin-bottom: 20px;
             border-bottom: 2px solid #4CAF50; /* Линия под заголовком */
             padding-bottom: 10px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Тень для текста */
+        }
+
+        section p {
+            font-size: 1.1em;
+            line-height: 1.7; /* Улучшенная читаемость текста */
         }
 
         /* Изображения */
@@ -91,11 +121,11 @@
 
         /* Списки */
         ul, ol {
-            padding-left: 20px;
+            padding-left: 30px;
         }
 
         li {
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
 
         /* Футер */
@@ -105,13 +135,11 @@
             text-align: center;
             padding: 20px;
             font-size: 0.9em;
+            position: relative; /* Для позиционирования анимации */
+            overflow: hidden; /* Обрезка выходящих за границы элементов */
         }
 
         /* Анимации */
-        .fade-in {
-            animation: fadeIn 1s ease-in-out;
-        }
-
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -123,17 +151,89 @@
             }
         }
 
+        @keyframes slideInDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        /* Секция "Особенности" */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            align-items: start;
+        }
+
+        .feature {
+            background-color: #f0f0f0;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .feature h3 {
+            color: #4CAF50;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .feature p {
+            font-size: 1.1em;
+        }
     </style>
 </head>
 <body>
     <header>
         <h1 class="fade-in">InvaCoin: Криптовалюта для спасения животных</h1>
-        <p class="fade-in">Поддержите важные проекты по защите животных с помощью децентрализованных технологий.</p>
+        <p class="fade-in">
+Поддержите важные проекты по защите животных с помощью децентрализованных технологий.</p>
+        <!-- Генерация случайных частиц -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const header = document.querySelector('header');
+                for (let i = 0; i < 50; i++) {
+                    const particle = document.createElement('span');
+                    particle.classList.add('particle');
+                    particle.style.width = `${Math.random() * 10 + 5}px`;
+                    particle.style.height = particle.style.width;
+                    particle.style.left = `${Math.random() * 100}%`;
+                    particle.style.top = `${Math.random() * 100}%`;
+                    particle.style.backgroundColor = `rgba(255, 255, 255, ${Math.random() * 0.5 + 0.3})`;
+                    particle.style.animationDelay = `${Math.random() * 2}s`;
+                    header.appendChild(particle);
+                }
+            });
+        </script>
     </header>
 
     <nav>
         <a href="#about">О InvaCoin</a>
         <a href="#how-it-works">Как это работает</a>
+        <a href="#features">Особенности</a>
         <a href="#roadmap">Дорожная карта</a>
         <a href="#team">Команда</a>
         <a href="#buy">Как купить</a>
@@ -141,62 +241,88 @@
     </nav>
 
     <main>
-        <section id="about" class="fade-in">
+        <section id="about">
             <h2>Что такое InvaCoin (IVC)?</h2>
-            <p>InvaCoin (IVC) – это криптовалюта, созданная для поддержки благотворительных организаций и проектов, занимающихся помощью животным. Наша цель – объединить усилия криптосообщества и любителей животных для решения важных проблем.</p>
+            <p>InvaCoin (IVC) – это криптовалюта, созданная с искренней целью поддержки благотворительных организаций и проектов, которые ежедневно и неустанно заботятся о наших меньших братьях – животных. Мы верим, что объединив усилия криптосообщества и всех неравнодушных людей, мы сможем внести значительный вклад в решение насущных проблем, с которыми сталкиваются животные по всему миру. Это включает в себя борьбу с бездомностью, предотвращение жестокого обращения, сохранение редких и исчезающих видов, а также обеспечение доступной и качественной ветеринарной помощью для тех, кто в ней нуждается. </p>
+            <p>Наша миссия заключается в том, чтобы создать прозрачный и эффективный механизм для сбора и распределения средств, гарантируя, что каждое ваше пожертвование достигнет своей цели и принесет реальную пользу. Мы стремимся к тому, чтобы каждый участник нашего сообщества чувствовал свою причастность к благородному делу и видел результаты своей поддержки.</p>
             <img src="placeholder.jpg" alt="Трогательное фото животного">
         </section>
 
-        <section id="how-it-works" class="fade-in">
+        <section id="how-it-works">
             <h2>Как InvaCoin помогает животным?</h2>
+            <p>InvaCoin предоставляет разнообразные способы поддержки животных, позволяя каждому участнику внести свой вклад в общее дело:</p>
             <ul>
-                <li>Пожертвования напрямую благотворительным организациям.</li>
-                <li>Финансирование проектов (строительство приютов, корм, медикаменты).</li>
-                <li>Полная прозрачность транзакций.</li>
-                <li>Участие сообщества в принятии решений.</li>
+                <li><strong>Прямые пожертвования:</strong> Вы можете отправлять InvaCoin напрямую в проверенные благотворительные организации, специализирующиеся на помощи животным.</li>
+                <li><strong>Финансирование проектов:</strong> Ваши пожертвования направляются на финансирование конкретных и значимых проектов, таких как строительство новых приютов, закупка жизненно важного корма и медикаментов, а также организация программ стерилизации и вакцинации.</li>
+                <li><strong>Абсолютная прозрачность:</strong> Все транзакции, осуществляемые с использованием InvaCoin, записываются в блокчейн Ethereum, что гарантирует полную прозрачность и исключает возможность мошенничества. Вы всегда можете отследить путь своего пожертвования и убедиться в его целевом использовании.</li>
+                <li><strong>Активное сообщество:</strong> Присоединяйтесь к нашему динамичному сообществу, где вы сможете принимать участие в обсуждениях и голосованиях, определяя, какие проекты получат нашу поддержку в первую очередь.</li>
             </ul>
+</section>
+
+        <section id="features">
+            <h2>Особенности InvaCoin</h2>
+            <div class="features">
+                <div class="feature">
+                    <h3>Поддержка благотворительности</h3>
+                    <p>Часть каждой транзакции (±5%) направляется в благотворительный фонд, проверенный и отобранный нашим сообществом.</p>
+                </div>
+                <div class="feature">
+                    <h3>Прозрачность</h3>
+                    <p>Все транзакции записываются в блокчейн Ethereum, что обеспечивает полную прозрачность и невозможность подделки.</p>
+                </div>
+                <div class="feature">
+                    <h3>Децентрализация</h3>
+                    <p>InvaCoin - это децентрализованная криптовалюта, не контролируемая ни одним органом, что гарантирует ее независимость и устойчивость.</p>
+                </div>
+                <div class="feature">
+                    <h3>Бесплатные переводы</h3>
+                    <p>Вы можете переводить InvaCoin даже в разные страны абсолютно без комиссии!</p>
+                </div>
+            </div>
         </section>
 
-        <section id="roadmap" class="fade-in">
+        <section id="roadmap">
             <h2>Дорожная карта</h2>
+            <p>Мы стремимся к постоянному развитию и совершенствованию InvaCoin, чтобы максимально эффективно помогать животным. Наша дорожная карта включает в себя следующие этапы:</p>
             <ul>
-                <li><strong>1 2025:</strong> Запуск InvaCoin и создание базовой инфраструктуры.</li>
-                <li><strong>2 2025:</strong> Листинг на Uniswap и расширение сообщества.</li>
-                <li><strong>3 2025:</strong> Привлечение партнеров из сферы благотворительности.</li>
-                <li><strong>4 2025:</strong> Разработка MVP мобильного приложения.</li>
-                <li><strong>5 2025:</strong> Создание платформы для пожертвований.</li>
+                <li><strong>Q2 2024:</strong> Запуск InvaCoin и создание базовой инфраструктуры (развертывание смарт-контракта, создание веб-сайта, аккаунты в социальных сетях).</li>
+                <li><strong>Q3 2024:</strong> Листинг на Uniswap и расширение сообщества (листинг на Uniswap, маркетинговая кампания, привлечение первых 1000 подписчиков).</li>
+                <li><strong>Q4 2024:</strong> Привлечение партнеров из сферы благотворительности (партнерство с 2-3 организациями, запуск партнерской программы).</li>
+                <li><strong>Q1 2025:</strong> Разработка MVP мобильного приложения (базовая версия приложения для iOS и Android).</li>
+                <li><strong>Q2 2025:</strong> Создание платформы для пожертвований (веб-платформа для приема пожертвований, привлечение первых проектов).</li>
             </ul>
         </section>
 
-        <section id="team" class="fade-in">
+        <section id="team">
             <h2>Команда</h2>
-            <p>Мы – команда энтузиастов, объединенных любовью к животным и верой в силу криптовалют.</p>
+            <p>Наша команда состоит из преданных своему делу профессионалов, объединенных общей целью – помогать животным. Мы обладаем опытом в различных областях, включая разработку, маркетинг, финансы и благотворительность, что позволяет нам эффективно реализовывать наш проект.</p>
             <!-- Добавьте информацию о членах команды -->
         </section>
 
-        <section id="buy" class="fade-in">
+        <section id="buy">
             <h2>Как купить InvaCoin</h2>
+            <p>Приобрести InvaCoin можно на децентрализованной бирже Uniswap. Для этого вам потребуется:</p>
             <ol>
-                <li>Установите Metamask.</li>
-                <li>Приобретите ETH.</li>
-                <li>Переведите ETH на Metamask.</li>
-                <li>Перейдите на Uniswap.</li>
-                <li>Найдите InvaCoin (адрес смарт-контракта: <strong>(скоро)</strong>).</li>
-                <li>Обменяйте ETH на InvaCoin.</li>
+                <li>Установить кошелек Metamask (или другой кошелек, поддерживающий ERC-20 токены).</li>
+                <li>Приобрести ETH (Ethereum) на криптовалютной бирже.</li>
+                <li>Перевести ETH на свой кошелек Metamask.</li>
+                <li>Перейти на сайт Uniswap и подключить свой кошелек.</li>
+                <li>Найти InvaCoin по адресу смарт-контракта: <strong>(скоро)</strong></strong>.</li>
+                <li>Обменять ETH на InvaCoin.</li>
             </ol>
         </section>
 
-        <section id="support" class="fade-in">
+        <section id="support">
             <h2>Поддержать проект</h2>
-            <p>Помогите нам спасти больше жизней!</p>
+            <p>Вместе мы можем сделать мир лучше для животных! Поддержите InvaCoin и внесите свой вклад в благородное дело:</p>
             <ul>
-                <li>Купите InvaCoin.</li>
-                <li>Пожертвуйте InvaCoin (адреса кошельков: <strong>(скоро)</strong>).</li>
-                <li>Расскажите о InvaCoin друзьям.</li>
-                <li>Присоединяйтесь к нам: </li>
-                    <a href="#">Twitter: (скоро)</a>
-                    <a href="#">Telegram: https://t.me/InvaCoin_official</a>
-                    <a href="#">Mail: invacoin0official@gmail.com</a>
+                <li>Купите InvaCoin и станьте частью нашего сообщества.</li>
+                <li>Пожертвуйте InvaCoin напрямую проверенным благотворительным организациям (адреса кошельков: <strong>ЗДЕСЬ БУДУТ АДРЕСА
+КОШЕЛЬКОВ</strong>).</li>
+                <li>Расскажите о InvaCoin своим друзьям и знакомым, чтобы привлечь больше внимания к нашей миссии.</li>
+                <li>Присоединяйтесь к нашим сообществам в социальных сетях, чтобы быть в курсе всех новостей и участвовать в обсуждениях:
+                    <a href="#">Twitter: (скоро)</a> | <a href="#">Telegram: @invacoin_official</a>
+                </li>
             </ul>
         </section>
     </main>
