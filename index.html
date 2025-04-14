@@ -24,13 +24,19 @@
             background: linear-gradient(to bottom, #e0f7fa, #b2ebf2);
             background-attachment: fixed;
             scroll-behavior: smooth;
+            transition: background-color 0.3s, color 0.3s; /* Transition for dark mode */
+        }
+
+        body.dark-mode {
+            background: #333;
+            color: #eee;
         }
 
         /* Шапка сайта */
         header {
             background: linear-gradient(to right, #4CAF50, #8BC34A);
             color: #fff;
-            padding: 30px 20px; /* Уменьшена высота шапки */
+            padding: 25px 20px;
             text-align: center;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             position: relative;
@@ -40,14 +46,14 @@
         }
 
         header h1 {
-            font-size: 2em; /* Уменьшен размер заголовка */
+            font-size: 1.8em;
             margin-bottom: 5px;
             animation: slideInDown 1s ease-out;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         header p {
-            font-size: 1em; /* Уменьшен размер подзаголовка */
+            font-size: 0.9em;
             font-style: italic;
             animation: fadeIn 1.5s ease-out;
             color: #e0f7fa;
@@ -63,10 +69,10 @@
 
         /* Навигация */
         nav {
+
             background-color: #fff;
             color: #333;
-
-            padding: 15px; /* Уменьшена высота навигации */
+            padding: 12px;
             text-align: center;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             position: sticky;
@@ -74,15 +80,20 @@
             z-index: 100;
         }
 
+        nav.dark-mode {
+            background-color: #444;
+            color: #eee;
+        }
+
         nav a {
             color: #333;
             text-decoration: none;
-            padding: 10px 20px; /* Уменьшены отступы в навигации */
+            padding: 8px 15px;
             display: inline-block;
             transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
             font-weight: 600;
             border-radius: 8px;
-            font-size: 0.9em; /* Уменьшен размер шрифта в навигации */
+            font-size: 0.8em;
         }
 
         nav a:hover {
@@ -91,19 +102,28 @@
             transform: scale(1.1);
         }
 
+        nav a.dark-mode {
+            color: #eee;
+        }
+
         /* Основной контент */
         main {
-            padding: 50px 20px;
+            padding: 40px 20px;
             animation: fadeIn 1s ease-out;
         }
 
         section {
-            margin-bottom: 50px;
+            margin-bottom: 40px;
             background-color: #fff;
-            padding: 40px;
+            padding: 30px;
             border-radius: 15px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        section.dark-mode {
+            background-color: #444;
+            color: #eee;
         }
 
         section:hover {
@@ -113,17 +133,26 @@
 
         section h2 {
             color: #4CAF50;
-            font-size: 2.8em;
-            margin-bottom: 25px;
+            font-size: 2.5em;
+            margin-bottom: 20px;
             border-bottom: 3px solid #4CAF50;
-            padding-bottom: 12px;
+            padding-bottom: 10px;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
         }
 
         section p {
-            font-size: 1.2em;
-            line-height: 1.8;
+            font-size: 1.1em;
+            line-height: 1.6;
             animation: slideInLeft 1s ease-out;
+        }
+
+        section.dark-mode h2 {
+            color: #8BC34A;
+            border-bottom: 3px solid #8BC34A;
+        }
+
+        section.dark-mode p {
+            color: #ddd;
         }
 
         /* Изображения */
@@ -146,9 +175,9 @@
         }
 
         li {
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             animation: zoomIn 1s ease-out;
-            font-size: 1.1em;
+            font-size: 1em;
         }
 
         /* Футер */
@@ -156,10 +185,15 @@
             background-color: #333;
             color: #fff;
             text-align: center;
-            padding: 30px;
-            font-size: 1em;
+            padding: 25px;
+            font-size: 0.9em;
             position: relative;
             overflow: hidden;
+        }
+
+        footer.dark-mode {
+            background-color: #222;
+            color: #ccc;
         }
 
         /* Анимации */
@@ -206,7 +240,7 @@
                 transform: scale(1);
             }
 
-            100% {
+100% {
                 transform: scale(1.1);
             }
         }
@@ -230,9 +264,7 @@
             }
 
             to {
-                transform: trans
-
-lateX(0);
+                transform: translateX(0);
                 opacity: 1;
             }
         }
@@ -240,39 +272,48 @@ lateX(0);
         /* Секция "Особенности" */
         .features {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
             align-items: start;
         }
 
         .feature {
             background-color: #fff;
-            padding: 30px;
-            border-radius: 15px;
+            padding: 25px;
+            border-radius: 12px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             word-wrap: break-word;
         }
 
         .feature:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .feature.dark-mode {
+            background-color: #444;
+            color: #eee;
         }
 
         .feature i {
             color: #4CAF50;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             display: block;
         }
 
         .feature h3 {
             color: #4CAF50;
-            font-size: 1.8em;
-            margin-bottom: 15px;
+            font-size: 1.6em;
+            margin-bottom: 12px;
         }
 
         .feature p {
-            font-size: 1.2em;
+            font-size: 1.1em;
+        }
+
+        .feature.dark-mode h3 {
+            color: #8BC34A;
         }
 
         .feature:hover {
@@ -284,7 +325,7 @@ lateX(0);
         .roadmap-timeline {
             position: relative;
             padding: 20px 0;
-            max-width: 800px;
+            max-width: 700px;
             margin: 0 auto;
         }
 
@@ -299,8 +340,12 @@ lateX(0);
             transform: translateX(-50%);
         }
 
+        .roadmap-timeline.dark-mode::before {
+            background: #8BC34A;
+        }
+
         .timeline-item {
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             position: relative;
         }
 
@@ -310,20 +355,31 @@ lateX(0);
 
         .timeline-content {
             width: 45%;
-            padding: 20px;
+            padding: 18px;
             background: #f0f0f0;
             border-radius: 10px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            min-height: 150px;
+            min-height: 130px;
+        }
+
+        .timeline-content.dark-mode {
+            background: #555;
+            color: #eee;
         }
 
         .timeline-content h3 {
             margin-top: 0;
             color: #4CAF50;
+            font-size: 1.4em;
+        }
+
+        .timeline-content.dark-mode h3 {
+            color: #8BC34A;
         }
 
         .timeline-content p {
             margin-bottom: 0;
+            font-size: 1em;
         }
 
         .timeline-item:nth-child(odd) .timeline-content {
@@ -340,8 +396,8 @@ lateX(0);
             position: absolute;
             top: 50%;
             left: 50%;
-            width: 20px;
-            height: 20px;
+            width: 16px;
+            height: 16px;
             background: white;
             border: 4px solid #4CAF50;
             border-radius: 50%;
@@ -349,10 +405,356 @@ lateX(0);
             z-index: 1;
         }
 
-        /* Исправление для кривой линии */
-        @media (max-width: 768px) {
+        .timeline-item.dark-mode::after {
+            background: #333;
+            border: 4px solid #8BC34A;
+        \
+
+            background-color: #fff;
+            color: #333;
+            padding: 12px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav.dark-mode {
+            background-color: #444;
+            color: #eee;
+        }
+
+        nav a {
+            color: #333;
+            text-decoration: none;
+            padding: 8px 15px;
+            display: inline-block;
+            transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
+            font-weight: 600;
+            border-radius: 8px;
+            font-size: 0.8em;
+        }
+
+        nav a:hover {
+            background-color: #4CAF50;
+            color: #fff;
+            transform: scale(1.1);
+        }
+
+        nav a.dark-mode {
+            color: #eee;
+        }
+
+        /* Основной контент */
+        main {
+            padding: 40px 20px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        section {
+            margin-bottom: 40px;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        section.dark-mode {
+            background-color: #444;
+            color: #eee;
+        }
+
+        section:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        section h2 {
+            color: #4CAF50;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #4CAF50;
+            padding-bottom: 10px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        section p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            animation: slideInLeft 1s ease-out;
+        }
+
+        section.dark-mode h2 {
+            color: #8BC34A;
+            border-bottom: 3px solid #8BC34A;
+        }
+
+        section.dark-mode p {
+            color: #ddd;
+        }
+
+        /* Изображения */
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Списки */
+        ul,
+        ol {
+            padding-left: 30px;
+        }
+
+        li {
+            margin-bottom: 12px;
+            animation: zoomIn 1s ease-out;
+            font-size: 1em;
+        }
+
+        /* Футер */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 25px;
+            font-size: 0.9em;
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer.dark-mode {
+            background-color: #222;
+            color: #ccc;
+        }
+
+        /* Анимации */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            100%
+
+{
+                transform: scale(1.1);
+            }
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        /* Секция "Особенности" */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            align-items: start;
+        }
+
+        .feature {
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            word-wrap: break-word;
+        }
+
+        .feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .feature.dark-mode {
+            background-color: #444;
+            color: #eee;
+        }
+
+        .feature i {
+            color: #4CAF50;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .feature h3 {
+            color: #4CAF50;
+            font-size: 1.6em;
+            margin-bottom: 12px;
+        }
+
+        .feature p {
+            font-size: 1.1em;
+        }
+
+        .feature.dark-mode h3 {
+            color: #8BC34A;
+        }
+
+        .feature:hover {
+            background-color: #f9f9f9;
+            cursor: pointer;
+        }
+
+        /* Стили для таймлайна */
+        .roadmap-timeline {
+            position: relative;
+            padding: 20px 0;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .roadmap-timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 4px;
+            background: #4CAF50;
+            transform: translateX(-50%);
+        }
+
+        .roadmap-timeline.dark-mode::before {
+            background: #8BC34A;
+        }
+
+        .timeline-item {
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-content {
+            width: 45%;
+            padding: 18px;
+            background: #f0f0f0;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            min-height: 130px;
+        }
+
+        .timeline-content.dark-mode {
+            background: #555;
+            color: #eee;
+        }
+
+        .timeline-content h3 {
+            margin-top: 0;
+            color: #4CAF50;
+            font-size: 1.4em;
+        }
+
+        .timeline-content.dark-mode h3 {
+            color: #8BC34A;
+        }
+
+        .timeline-content p {
+            margin-bottom: 0;
+            font-size: 1em;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            float: left;
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            float: right;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 16px;
+            height: 16px;
+            background: white;
+            border: 4px solid #4CAF50;
+            border-radius: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            z-index: 1;
+        }
+
+        .timeline-item.dark-mode::after {
+            background: #333;
+            border: 4px solid #8BC34A;
+        }
+
+@media (max-width: 768px) {
             .roadmap-timeline::before {
-                left: 15px; /* Сдвигаем линию к левому краю */
+                left: 15px;
             }
 
             .timeline-item .timeline-content {
@@ -362,44 +764,52 @@ lateX(0);
             }
 
             .timeline-item::after {
-                left: 15px; /* Сдвигаем кружок к левому краю */
+                left: 15px;
             }
         }
 
         /* Стили для формы подписки */
         .subscribe-section {
             background-color: #e0f7fa;
-            padding: 40px;
-            border-radius: 15px;
+            padding: 30px;
+            border-radius: 12px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             text-align: center;
-            margin-top: 50px;
+            margin-top: 40px;
+        }
+
+        .subscribe-section.dark-mode {
+            background-color: #555;
+            color: #eee;
         }
 
         .subscribe-section h2 {
             color: #4CAF50;
-            font-size: 2.5em;
-            margin-bottom: 25px;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .subscribe-section.dark-mode h2 {
+            color: #8BC34A;
         }
 
         .subscribe-section input[type="email"] {
-            padding: 15px;
+            padding: 12px;
             border: 1px solid #ccc;
-            border-radius: 8px;
-            font-size: 1.1em;
+            border-radius: 6px;
+            font-size: 1em;
             width: 70%;
-
-max-width: 400px;
-            margin-right: 10px;
+            max-width: 350px;
+            margin-right: 8px;
         }
 
         .subscribe-section button {
             background-color: #4CAF50;
             color: white;
-            padding: 15px 30px;
+            padding: 12px 25px;
             border: none;
-            border-radius: 8px;
-            font-size: 1.1em;
+            border-radius: 6px;
+            font-size: 1em;
             cursor: pointer;
             transition: background-color 0.3s ease;
             font-weight: 600;
@@ -411,24 +821,34 @@ max-width: 400px;
 
         /* Стили для логотипа */
         .logo {
-            max-width: 120px; /* Еще немного уменьшаем логотип */
+            max-width: 100px;
             height: auto;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.1);
         }
 
         /* Стили для FAQ */
         .faq-section {
-            margin-top: 50px;
+            margin-top: 40px;
             background-color: #f9f9f9;
-            padding: 40px;
-            border-radius: 15px;
+            padding: 30px;
+            border-radius: 12px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
+        .faq-section.dark-mode {
+            background-color: #555;
+            color: #eee;
+        }
+
         .faq-question {
-            font-size: 1.3em;
+            font-size: 1.2em;
             color: #4CAF50;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             cursor: pointer;
             transition: color 0.3s ease;
         }
@@ -437,15 +857,154 @@ max-width: 400px;
             color: #388E3C;
         }
 
+        .faq-question.dark-mode {
+            color: #8BC34A;
+        }
+
         .faq-answer {
-            font-size: 1.1em;
-            line-height: 1.6;
-            margin-bottom: 20px;
-            padding: 15px;
+            font-size: 1em;
+            line-height: 1.5;
+            margin-bottom: 15px;
+            padding: 12px;
             background-color: #fff;
-            border-radius: 8px;
+            border-radius: 6px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             display: none;
+        }
+
+        .faq-answer.dark-mode {
+            background-color: #666;
+            color: #ddd;
+        }
+
+        /* Стили для новостей */
+        .news-section {
+            margin-top: 40px;
+            background-color: #f0f0f0;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .news-section.dark-mode {
+            background-color: #666;
+            color: #eee;
+        }
+
+        .news-item {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .news-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .news-title {
+            font-size: 1.3em;
+            color: #4CAF50;
+            margin-bottom: 5px;
+        }
+
+        .news-title.dark-mode {
+            color: #8BC34A;
+
+}
+
+        .news-date {
+            font-size: 0.9em;
+            color: #777;
+        }
+
+        .news-date.dark-mode {
+            color: #bbb;
+        }
+
+        .news-content {
+            font-size: 1em;
+            line-height: 1.5;
+        }
+
+        /* Стили для переключателя темы */
+        .theme-switcher {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+
+        .theme-switcher:hover {
+            background-color: #f0f0f0;
+        }
+
+        .theme-switcher i {
+            font-size: 1.5em;
+            color: #555;
+            transition: color 0.3s;
+        }
+
+        .theme-switcher.dark-mode {
+            background-color: #333;
+            border-color: #555;
+        }
+
+        .theme-switcher.dark-mode:hover {
+            background-color: #444;
+        }
+
+        .theme-switcher.dark-mode i {
+            color: #ddd;
+        }
+
+        /* Стили для виджетов социальных сетей */
+        .social-widgets {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .social-widget {
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        .social-widget a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #eee;
+            color: #555;
+            text-decoration: none;
+            font-size: 1.5em;
+            line-height: 40px;
+            text-align: center;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .social-widget a:hover {
+            background-color: #ddd;
+            color: #333;
+        }
+
+        /* Стили для ссылки на Whitepaper */
+        .whitepaper-link {
+            display: block;
+            margin-top: 30px;
+            text-align: center;
+            font-size: 1.1em;
         }
     </style>
 </head>
@@ -455,23 +1014,6 @@ max-width: 400px;
         <img src="https://i.postimg.cc/9MSyzmf7/IMG-20250412-114846-882.png" alt="InvaCoin Logo" class="logo">
         <h1 class="fade-in">InvaCoin: Криптовалюта для спасения животных</h1>
         <p class="fade-in">Поддержите важные проекты по защите животных с помощью децентрализованных технологий.</p>
-        <!-- Генерация случайных частиц -->
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                const header = document.querySelector('header');
-                for (let i = 5; i < 20; i++) {
-                    const particle = document.createElement('span');
-                    particle.classList.add('particle');
-                    particle.style.width = `${Math.random() * 10 + 15}px`;
-                    particle.style.height = particle.style.width;
-                    particle.style.left = `${Math.random() * 100}%`;
-                    particle.style.top = `${Math.random() * 100}%`;
-                    particle.style.backgroundColor = `rgba(255, 255, 255, ${Math.random() * 0.5 + 0.3})`;
-                    particle.style.animationDelay = `${Math.random() * 4}s`;
-                    header.appendChild(particle);
-                }
-            });
-        </script>
     </header>
 
     <nav>
@@ -479,6 +1021,7 @@ max-width: 400px;
         <a href="#how-it-works">Как это работает</a>
         <a href="#features">Особенности</a>
         <a href="#roadmap">Дорожная карта</a>
+        <a href="#news">Новости</a>
         <a href="#buy">Как купить</a>
         <a href="#support">Поддержать проект</a>
         <a href="#faq">FAQ</a>
@@ -491,14 +1034,24 @@ max-width: 400px;
                 заботятся о животных. Мы верим, что объединив усилия криптосообщества, мы сможем внести значительный вклад в
                 решение проблем, с которыми сталкиваются животные по всему миру.</p>
 
+            <p><b>Критерии выбора благотворительных организаций:</b> Мы сотрудничаем только с проверенными организациями,
+                которые имеют хорошую репутацию, прозрачную систему отчетности и направляют большую часть средств непосредственно на
+                помощь животным.</p>
+
             <p><b>Наша цель:</b> собрать 1,000,000 IVC к концу 2026 года для финансирования проектов по защите животных.
-                Уже сейчас 5% каждой транзакции InvaCoin направляется в благотворительный фонд.</p>
+                Уже
 
-            <p>Наша миссия заключается в
+сейчас 5% каждой транзакции InvaCoin направляется в благотворительный фонд.</p>
 
-создании прозрачного и эффективного механизма для сбора и распределения средств,
+            <p><i>Пример:</i> Ваше пожертвование в 500 IVC может обеспечить недельный запас корма для 20 бездомных кошек.</p>
+
+            <p>Наша миссия заключается в создании прозрачного и эффективного механизма для сбора и распределения средств,
                 гарантируя, что каждое ваше пожертвование принесет реальную пользу. Мы стремимся к тому, чтобы каждый участник
                 нашего сообщества чувствовал свою причастность к благородному делу и видел результаты своей поддержки.</p>
+
+            <p><b>История успеха:</b> Благодаря пожертвованиям InvaCoin удалось профинансировать программу стерилизации бездомных
+                собак в приюте "Добрый дом". Это позволило снизить количество бездомных животных в регионе и улучшить условия их
+                содержания.</p>
 
             <img src="https://i.postimg.cc/tTrhK4zV/Take-photos-of-cute-and-touching-animals-f19811fe-b4df-4921-afe6.jpg"
                 alt="Милая собака смотрит в камеру. InvaCoin помогает бездомным животным обрести дом.">
@@ -548,16 +1101,16 @@ max-width: 400px;
                 </div>
                 <div class="feature">
                     <i class="fas fa-search-dollar fa-2x"></i>
-                    <h3>Прозрачность</h3>
+                    <h3>Прозрач
+
+ность</h3>
                     <p>Все транзакции записываются в блокчейн Ethereum, что обеспечивает полную прозрачность и невозможность
                         подделки. Вы можете отследить каждую транзакцию и убедиться, что средства используются по назначению.</p>
                 </div>
                 <div class="feature">
                     <i class="fas fa-network-wired fa-2x"></i>
                     <h3>Децентрализация</h3>
-                    <p>InvaCoin - это децентрализованная криптовалюта, не контролируемая ни одним орг
-
-аном, что гарантирует ее
+                    <p>InvaCoin - это децентрализованная криптовалюта, не контролируемая ни одним органом, что гарантирует ее
                         независимость и устойчивость. Это значит, что никто не может заморозить ваши средства или изменить правила
                         игры.</p>
                 </div>
@@ -610,6 +1163,25 @@ max-width: 400px;
             </div>
         </section>
 
+        <section id="news">
+            <h2>Новости</h2>
+            <div class="news-section">
+                <div class="news-item">
+                    <h3 class="news-title">InvaCoin объявляет о партнерстве с приютом "Верный друг"</h3>
+                    <p class="news-date">15 мая 2024</p>
+                    <p class="news-content">Теперь часть средств от каждой транзакции InvaCoin будет направляться на поддержку
+                        приюта "Верный друг", который заботится о бездомных собаках и кошках.</p>
+                </div>
+                <div class="news-item">
+                    <h3 class="news-title">InvaCoin успешно прошел аудит безопасности</h3>
+                    <p class="news-date">10 мая 2024</p>
+
+<p class="news-content">Команда InvaCoin рада сообщить, что проект успешно прошел аудит безопасности,
+                        подтвердив надежность и безопасность платформы.</p>
+                </div>
+            </div>
+        </section>
+
         <section id="buy">
             <h2>Как купить InvaCoin</h2>
             <p>Приобрести InvaCoin можно на децентрализованной бирже Uniswap. Для этого вам потребуется:</p>
@@ -631,32 +1203,42 @@ max-width: 400px;
             <p>Вместе мы можем сделать мир лучше для животных! Поддержите InvaCoin и внесите свой вклад в благородное дело:</p>
             <ul>
                 <li>Купите InvaCoin и станьте частью нашего сообщества.</li>
-                <li>Пожертвуйте InvaCoin напрямую проверенным благотворительны
-
-м организациям (адреса кошельков:
+                <li>Пожертвуйте InvaCoin напрямую проверенным благотворительным организациям (адреса кошельков:
                     <strong>(скоро)</strong>).</li>
                 <li>Расскажите о InvaCoin своим друзьям и знакомым, чтобы привлечь больше внимания к нашей миссии.</li>
                 <li>Присоединяйтесь к нашим сообществам в социальных сетях, чтобы быть в курсе всех новостей и участвовать в
-                    обсуждениях:
-                    <a href="#">Twitter</a>
-                    <a href="#">Telegram</a>
-                </li>
-                <li>
-                    <p><b>Отсканируйте QR-код для пожертвования:</b></p>
-                    <img src="https://via.placeholder.com/150" alt="QR-код для пожертвования"
-                        style="max-width: 150px; margin-top: 10px;">
-                    <img src="https://i.postimg.cc/XNddWWkh/Take-photos-of-cute-and-touching-animals-f19811fe-b4df-4921-afe6-3.png"
-                        alt="InvaCoin помогает всем животным!" style="max-width: 200px; margin-top: 10px;">
-                </li>
+                    обсуждениях:</li>
             </ul>
+
+            <div class="social-widgets">
+                <div class="social-widget">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+                <div class="social-widget">
+                    <a href="#"><i class="fab fa-telegram"></i></a>
+                </div>
+                <div class="social-widget">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+
+            <p><b>Отсканируйте QR-код для пожертвования:</b></p>
+            <img src="https://via.placeholder.com/150" alt="QR-код для пожертвования"
+                style="max-width: 150px; margin-top: 10px;">
+            <img src="https://i.postimg.cc/XNddWWkh/Take-photos-of-cute-and-touching-animals-f19811fe-b4df-4921-afe6-3.png"
+                alt="InvaCoin помогает всем животным!" style="max-width: 200px; margin-top: 10px;">
         </section>
+
+        <a href="#" class="whitepaper-link">Скачать Whitepaper (скоро)</a>
 
         <section class="faq-section" id="faq">
             <h2>Часто задаваемые вопросы</h2>
 
             <div class="faq-question">Что такое InvaCoin?</div>
             <div class="faq-answer">InvaCoin - это криптовалюта, созданная для поддержки благотворительных организаций и
-                проектов, занимающихся защитой животных.</div>
+                проектов, занимающихся
+
+проектами, занимающимися защитой животных.</div>
 
             <div class="faq-question">Как я могу купить InvaCoin?</div>
             <div class="faq-answer">InvaCoin можно приобрести на децентрализованной бирже Uniswap.</div>
@@ -681,7 +1263,43 @@ max-width: 400px;
         <p>© 2025 InvaCoin. Все права защищены.</p>
     </footer>
 
+    <div class="theme-switcher">
+        <i class="fas fa-moon"></i>
+    </div>
+
     <script>
+        // Dark mode toggle
+        const themeSwitcher = document.querySelector('.theme-switcher');
+        const body = document.body;
+        const nav = document.querySelector('nav');
+        const sections = document.querySelectorAll('section');
+        const features = document.querySelectorAll('.feature');
+        const roadmapTimeline = document.querySelector('.roadmap-timeline');
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        const faqAnswers = document.querySelectorAll('.faq-answer');
+        const newsSection = document.querySelector('.news-section');
+
+        themeSwitcher.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            nav.classList.toggle('dark-mode');
+            sections.forEach(section => section.classList.toggle('dark-mode'));
+            features.forEach(feature => feature.classList.toggle('dark-mode'));
+            if (roadmapTimeline) {
+                roadmapTimeline.classList.toggle('dark-mode');
+            }
+            faqQuestions.forEach(question => question.classList.toggle('dark-mode'));
+            faqAnswers.forEach(answer => answer.classList.toggle('dark-mode'));
+            if (newsSection) {
+                newsSection.classList.toggle('dark-mode');
+            }
+
+            if (themeSwitcher.classList.contains('dark-mode')) {
+                themeSwitcher.classList.remove('dark-mode');
+            } else {
+                themeSwitcher.classList.add('dark-mode');
+            }
+        });
+
         document.querySelectorAll('.faq-question').forEach(question => {
             question.addEventListener('click', () => {
                 const answer = question.nextElementSibling;
@@ -709,10 +1327,22 @@ max-width: 400px;
         });
 
         function isValidEmail(email) {
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const emailRegex = /^[^s@]+@[^s@]+.[^s@]+$/;
             return emailRegex.test(email);
         }
     </script>
 </body>
 
 </html>
+
+ 
+});
+
+        function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+    </script>
+</body>
+
+    </html>
