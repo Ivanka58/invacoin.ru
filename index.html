@@ -1,3 +1,4 @@
+ChatGPT4 | Midjourney:
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -24,7 +25,8 @@
             background: linear-gradient(to bottom, #e0f7fa, #b2ebf2);
             background-attachment: fixed;
             scroll-behavior: smooth;
-            transition: background-color 0.3s, color 0.3s; /* Transition for dark mode */
+            transition: background-color 0.3s, color 0.3s;
+            /* Transition for dark mode */
         }
 
         body.dark-mode {
@@ -1101,9 +1103,8 @@
                 </div>
                 <div class="feature">
                     <i class="fas fa-search-dollar fa-2x"></i>
-                    <h3>Прозрач
 
-ность</h3>
+<h3>Прозрачность</h3>
                     <p>Все транзакции записываются в блокчейн Ethereum, что обеспечивает полную прозрачность и невозможность
                         подделки. Вы можете отследить каждую транзакцию и убедиться, что средства используются по назначению.</p>
                 </div>
@@ -1174,9 +1175,8 @@
                 </div>
                 <div class="news-item">
                     <h3 class="news-title">InvaCoin успешно прошел аудит безопасности</h3>
-                    <p class="news-date">10 мая 2024</p>
-
-<p class="news-content">Команда InvaCoin рада сообщить, что проект успешно прошел аудит безопасности,
+                    <p class="news-date">10мая 2024</p>
+                    <p class="news-content">Команда InvaCoin рада сообщить, что проект успешно прошел аудит безопасности,
                         подтвердив надежность и безопасность платформы.</p>
                 </div>
             </div>
@@ -1231,36 +1231,44 @@
 
         <a href="#" class="whitepaper-link">Скачать Whitepaper (скоро)</a>
 
+        <section class="subscribe-section">
+            <h2>Подпишитесь на наши новости</h2>
+            <p>Будьте в курсе последних новостей и обновлений InvaCoin.</p>
+            <input type="email" placeholder="Ваш email">
+            <button>Подписаться</button>
+        </section>
+
         <section class="faq-section" id="faq">
             <h2>Часто задаваемые вопросы</h2>
 
-            <div class="faq-question">Что такое InvaCoin?</div>
-            <div class="faq-answer">InvaCoin - это криптовалюта, созданная для поддержки благотворительных организаций и
-                проектов, занимающихся
+            <
 
-проектами, занимающимися защитой животных.</div>
+Черт, шеф, я опять накосячил! Простите, вот недостающая часть для раздела FAQ и остального контента:            <div class="faq-question">Что такое InvaCoin?</div>
+            <div class="faq-answer">InvaCoin - это криптовалюта, созданная для поддержки благотворительных организаций и
+                проектов, занимающихся защитой животных.</div>
+
+            <div class="faq-question">Как InvaCoin помогает животным?</div>
+            <div class="faq-answer">Часть каждой транзакции направляется в благотворительный фонд, который финансирует различные
+                проекты помощи животным.</div>
 
             <div class="faq-question">Как я могу купить InvaCoin?</div>
-            <div class="faq-answer">InvaCoin можно приобрести на децентрализованной бирже Uniswap.</div>
+            <div class="faq-answer">InvaCoin можно приобрести на децентрализованной бирже Uniswap. Подробная инструкция
+                доступна в разделе "Как купить".</div>
 
             <div class="faq-question">Как я могу поддержать проект?</div>
-            <div class="faq-answer">Вы можете купить InvaCoin, пожертвовать средства напрямую или рассказать о проекте своим
-                друзьям и знакомым.</div>
+            <div class="faq-answer">Вы можете купить InvaCoin, сделать пожертвование напрямую благотворительным организациям или
+                рассказать о проекте своим друзьям и знакомым.</div>
+
+            <div class="faq-question">Как обеспечивается прозрачность транзакций?</div>
+            <div class="faq-answer">Все транзакции записываются в блокчейн Ethereum, что гарантирует полную прозрачность и
+                невозможность подделки.</div>
         </section>
 
-        <section class="subscribe-section">
-            <h2>Подпишитесь на нашу рассылку</h2>
-            <p>Узнавайте первыми о новостях проекта, новых партнерствах и историях спасения животных!</p>
-            <form id="subscriptionForm">
-                <input type="email" id="email" placeholder="Введите ваш email" required>
-                <button type="submit">Подписаться</button>
-            </form>
-            <p id="subscriptionMessage" style="display:none;">Спасибо за подписку!</p>
-        </section>
     </main>
 
     <footer>
-        <p>© 2025 InvaCoin. Все права защищены.</p>
+        <p>&copy; 2024 InvaCoin. Все права защищены.</p>
+        <p>Сделано с любовью к животным ❤️</p>
     </footer>
 
     <div class="theme-switcher">
@@ -1268,81 +1276,51 @@
     </div>
 
     <script>
-        // Dark mode toggle
-        const themeSwitcher = document.querySelector('.theme-switcher');
-        const body = document.body;
-        const nav = document.querySelector('nav');
-        const sections = document.querySelectorAll('section');
-        const features = document.querySelectorAll('.feature');
-        const roadmapTimeline = document.querySelector('.roadmap-timeline');
-        const faqQuestions = document.querySelectorAll('.faq-question');
-        const faqAnswers = document.querySelectorAll('.faq-answer');
-        const newsSection = document.querySelector('.news-section');
-
-        themeSwitcher.addEventListener('click', () => {
-            body.classList.toggle('dark-mode');
-            nav.classList.toggle('dark-mode');
-            sections.forEach(section => section.classList.toggle('dark-mode'));
-            features.forEach(feature => feature.classList.toggle('dark-mode'));
-            if (roadmapTimeline) {
-                roadmapTimeline.classList.toggle('dark-mode');
-            }
-            faqQuestions.forEach(question => question.classList.toggle('dark-mode'));
-            faqAnswers.forEach(answer => answer.classList.toggle('dark-mode'));
-            if (newsSection) {
-                newsSection.classList.toggle('dark-mode');
-            }
-
-            if (themeSwitcher.classList.contains('dark-mode')) {
-                themeSwitcher.classList.remove('dark-mode');
-            } else {
-                themeSwitcher.classList.add('dark-mode');
-            }
-        });
-
+        // FAQ
         document.querySelectorAll('.faq-question').forEach(question => {
             question.addEventListener('click', () => {
                 const answer = question.nextElementSibling;
                 answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
             });
         });
-        document.getElementById('subscriptionForm').addEventListener('submit', function (event) {
-            event.preventDefault();
 
-            const emailInput = document.getElementById('email');
-            const subscriptionMessage = document.getElementById('subscriptionMessage');
-
-            if (!isValidEmail(emailInput.value)) {
-                alert('Пожалуйста, введите корректный email адрес.');
-                return;
-            }
-
-            console.log('Subscribing email:', emailInput.value);
-            subscriptionMessage.style.display = 'block';
-            emailInput.value = '';
-
-            setTimeout(() => {
-                subscriptionMessage.style.display = 'none';
-            }, 3000);
+        // Theme Switcher
+        const themeSwitcher = document.querySelector('.theme-switcher');
+        themeSwitcher.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            themeSwitcher.classList.toggle('dark-mode');
         });
 
-        function isValidEmail(email) {
-            const emailRegex = /^[^s@]+@[^s@]+.[^s@]+$/;
-            return emailRegex.test(email);
+        //Particle animation
+        document.addEventListener('DOMContentLoaded', () => {
+        const header = document.querySelector('header');
+        const numberOfParticles = 40;
+
+        for (let i = 0; i < numberOfParticles; i++) {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+
+            // Random size for variety
+            const size = Math.random() * 8 + 4; // Size between 4px and 12px
+            particle.style.width = `${size}px`;
+            particle.style.height = `${size}px`;
+
+            // Random position within the header
+            particle.style.left = `${Math.random() * 100}%`;
+            particle.style.top = `${Math.random() * 100}%`;
+
+            // Random color - slightly lighter shade of the header
+            const colorValue = 100 + Math.floor(Math.random() * 50); // Increase RGB values for a lighter shade
+            particle.style.backgroundColor = `rgba(${colorValue}, ${colorValue + 50}, ${colorValue}, 0.6)`;
+
+            // Random animation duration for more variation
+            const animationDuration = Math.random() * 4 + 3; // Duration between 3s and 7s
+            particle.style.animationDuration = `${animationDuration}s`;
+
+            header.appendChild(particle);
         }
+    });
     </script>
 </body>
 
 </html>
-
- 
-});
-
-        function isValidEmail(email) {
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            return emailRegex.test(email);
-        }
-    </script>
-</body>
-
-    </html>
