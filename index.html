@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="InvaCoin (IVC) - криптовалюта для спасения животных. Поддержите благотворительные организации и проекты по защите животных с помощью децентрализованных технологий.">
+    <meta name="description"
+        content="InvaCoin (IVC) - криптовалюта для спасения животных. Поддержите благотворительные организации и проекты по защите животных с помощью децентрализованных технологий.">
     <meta name="keywords" content="InvaCoin, криптовалюта, помощь животным, благотворительность, блокчейн">
     <title>InvaCoin: Криптовалюта для спасения животных</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -379,13 +380,13 @@ CAF50;
 
 <body>
     <header>
-        <img src="logo.png" alt="InvaCoin Logo" class="logo">
-        <!-- Replace with your actual logo file -->
+        <img src="https://i.postimg.cc/9MSyzmf7/IMG-20250412-114846-882.png" alt="InvaCoin Logo" class="logo">
+        <!-- Правильный логотип -->
         <h1 class="fade-in">InvaCoin: Криптовалюта для спасения животных</h1>
         <p class="fade-in">Поддержите важные проекты по защите животных с помощью децентрализованных технологий.</p>
         <!-- Генерация случайных частиц -->
         <script>
-            document.addEventListener('DOMContentLoaded', function() {
+            document.addEventListener('DOMContentLoaded', function () {
                 const header = document.querySelector('header');
                 for (let i = 0; i < 50; i++) {
                     const particle = document.createElement('span');
@@ -393,9 +394,326 @@ CAF50;
                     particle.style.width = `${Math.random() * 10 + 5}px`;
                     particle.style.height = particle.style.width;
                     particle.style.left = `${Math.random() * 100}%`;
-                    particle.style.top = `${Math.random() *
+                    particle\
 
-100}%`;
+            background-color: #4CAF50;
+            transform: scale(1.1);
+        }
+
+        /* Основной контент */
+        main {
+            padding: 40px 20px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        section {
+            margin-bottom: 40px;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        section h2 {
+            color: #4CAF50;
+            font-size: 2.2em;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 10px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        section p {
+            font-size: 1.1em;
+            line-height: 1.7;
+            animation: slideInLeft 1s ease-out;
+        }
+
+        /* Изображения */
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Списки */
+        ul,
+        ol {
+            padding-left: 30px;
+        }
+
+        li {
+            margin-bottom: 15px;
+            animation: zoomIn 1s ease-out;
+        }
+
+        /* Футер */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Анимации */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            100% {
+                transform: scale(1.1);
+            }
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        /* Секция "Особенности" */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            align-items: start;
+        }
+
+        .feature {
+            background-color: #f0f0f0;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .feature h3 {
+            color: #4CAF50;
+
+font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .feature p {
+            font-size: 1.1em;
+        }
+
+        /* Медиа-запросы (адаптивность) */
+        @media (max-width: 575.98px) {
+            header {
+                padding: 20px 10px;
+            }
+
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            header p {
+                font-size: 0.9em;
+            }
+
+            nav a {
+                padding: 6px 12px;
+                font-size: 0.8em;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 15px;
+            }
+
+            section h2 {
+                font-size: 1.6em;
+            }
+        }
+
+        @media (min-width: 576px) and (max-width: 767.98px) {
+            header {
+                padding: 30px 15px;
+            }
+
+            header h1 {
+                font-size: 2em;
+            }
+
+            header p {
+                font-size: 1em;
+            }
+
+            nav a {
+                padding: 8px 15px;
+                font-size: 0.9em;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 20px;
+            }
+
+            section h2 {
+                font-size: 1.8em;
+            }
+        }
+
+        @media (min-width: 768px) and (max-width: 991.98px) {
+            .features {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Стили для формы подписки */
+        .subscribe-section {
+            background-color: #e0f7fa;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .subscribe-section h2 {
+            color: #4CAF50;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .subscribe-section input[type="email"] {
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+            width: 70%;
+            max-width: 400px;
+            margin-right: 10px;
+        }
+
+        .subscribe-section button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .subscribe-section button:hover {
+            background-color: #388E3C;
+        }
+
+        /* Стили для логотипа */
+        .logo {
+            max-width: 150px;
+            /* Adjust the size as needed */
+            height: auto;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="https://i.postimg.cc/9MSyzmf7/IMG-20250412-114846-882.png" alt="InvaCoin Logo" class="logo">
+        <!-- Правильный логотип -->
+        <h1 class="fade-in">InvaCoin: Криптовалюта для спасения животных</h1>
+        <p class="fade-in">Поддержите важные проекты по защите животных с помощью децентрализованных технологий.</p>
+        <!-- Генерация случайных частиц -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const header = document.querySelector('header');
+                for (let i = 0; i < 50; i++) {
+                    const particle = document.createElement('span');
+                    particle.classList.add('particle');
+                    particle.style.width = `${Math.random() * 10 + 5}px`;
+                    particle.style.height = particle.style.width;
+                    particle.style.left = `${Math.random() * 100}%`;
+                    particle.style.top
+
+= `${Math.random() * 100}%`;
                     particle.style.backgroundColor = `rgba(255, 255, 255, ${Math.random() * 0.5 + 0.3})`;
                     particle.style.animationDelay = `${Math.random() * 2}s`;
                     header.appendChild(particle);
@@ -417,41 +735,59 @@ CAF50;
     <main>
         <section id="about">
             <h2>Что такое InvaCoin (IVC)?</h2>
-            <p>InvaCoin (IVC) – это криптовалюта, созданная с искренней целью поддержки благотворительных организаций и проектов, которые ежедневно и неустанно заботятся о наших меньших братьях – животных. Мы верим, что объединив усилия криптосообщества и всех неравнодушных людей, мы сможем внести значительный вклад в решение насущных проблем, с которыми сталкиваются животные по всему миру. Это включает в себя борьбу с бездомностью, предотвращение жестокого обращения, сохранение редких и исчезающих видов, а также обеспечение доступной и качественной ветеринарной помощью для тех, кто в ней нуждается. </p>
-            <p>Наша миссия заключается в том, чтобы создать прозрачный и эффективный механизм для сбора и распределения средств, гарантируя, что каждое ваше пожертвование достигнет своей цели и принесет реальную пользу. Мы стремимся к тому, чтобы каждый участник нашего сообщества чувствовал свою причастность к благородному делу и видел результаты своей поддержки.</p>
-            <img src="dog.jpg" alt="Собака, спасенная из приюта, нуждается в вашей помощи. InvaCoin помогает таким животным.">
-            <!-- Replace with your actual image file -->
+            <p>InvaCoin (IVC) – это криптовалюта, созданная с искренней целью поддержки благотворительных организаций и проектов,
+                которые ежедневно и неустанно заботятся о наших меньших братьях – животных. Мы верим, что объединив усилия
+                криптосообщества и всех неравнодушных людей, мы сможем внести значительный вклад в решение насущных проблем, с
+                которыми сталкиваются животные по всему миру. Это включает в себя борьбу с бездомностью, предотвращение жестокого
+                обращения, сохранение редких и исчезающих видов, а также обеспечение доступной и качественной ветеринарной помощью
+                для тех, кто в ней нуждается. </p>
+            <p>Наша миссия заключается в том, чтобы создать прозрачный и эффективный механизм для сбора и распределения средств,
+                гарантируя, что каждое ваше пожертвование достигнет своей цели и принесет реальную пользу. Мы стремимся к тому, чтобы
+                каждый участник нашего сообщества чувствовал свою причастность к благородному делу и видел результаты своей
+                поддержки.</p>
+            <img src="https://i.postimg.cc/tTrhK4zV/Take-photos-of-cute-and-touching-animals-f19811fe-b4df-4921-afe6.jpg"
+                alt="Милая собака смотрит в камеру. InvaCoin помогает бездомным животным обрести дом.">
+            <!--  Изображение 1 -->
         </section>
 
         <section id="how-it-works">
             <h2>Как InvaCoin помогает животным?</h2>
-            <p>InvaCoin предоставляет разнообразные способы поддержки животных, позволяя каждому участнику внести свой вклад в общее дело:</p>
+            <p>InvaCoin предоставляет разнообразные способы поддержки животных, позволяя каждому участнику внести свой вклад в общее
+                дело:</p>
             <ul>
-                <li><strong>Прямые пожертвования:</strong> Вы можете отправлять InvaCoin напрямую в проверенные благотворительные организации, специализирующиеся на помощи животным.</li>
-                <li><strong>Финансирование проектов:</strong> Ваши пожертвования направляются на финансирование конкретных и значимых проектов, таких как строительство новых приютов, закупка жизненно важного корма и медикаментов, а также организация программ стерилизации и вакцинации.</li>
-                <li><strong>Абсолютная прозрачность:</strong> Все транзакции, осуществляемые с использованием InvaCoin, записываются в блокчейн Ethereum, что гарантирует полную прозрачность и исключает возможность мошенничества. Вы всегда можете отследить путь своего пожертвования и убедиться в его целевом использовании.</li>
-                <li><strong>Активное сообщество:</strong> Присоединяйтесь к нашему динамичному сообществу, где вы сможете принимать участие в обсуждениях и голосованиях, определяя, какие проекты получат нашу поддержку в первую очередь.</li>
+                <li><strong>Прямые пожертвования:</strong> Вы можете отправлять InvaCoin напрямую в проверенные благотворительные
+                    организации, специализирующиеся на помощи животным.</li>
+                <li><strong>Финансирование проектов:</strong> Ваши пожертвования направляются на финансирование конкретных и
+                    значимых проектов, таких как строительство новых приютов, закупка жизненно важного корма и медикаментов, а также
+                    организация программ стерилизации и вакцинации.</li>
+                <li><strong>Абсолютная прозрачность:</strong> Все транзакции, осуществляемые с использованием InvaCoin, записываются в
+                    блокчейн Ethereum, что гарантирует полную прозрачность и исключает возможность мошенничества. Вы всегда можете
+                    отследить путь своего пожертвования и убедиться в его целевом использовании.</li>
+                <li><strong>Активное сообщество:</strong> Присоединяйтесь к нашему динамичному сообществу, где вы сможете принимать
+                    участие в обсуждениях и голосованиях, определяя, какие проекты получат нашу поддержку в первую очередь.</li>
             </ul>
-            <img src="cat.jpg" alt="Кошка, спасенная из приюта, ищет дом.">
-            <!-- Replace with your actual image file -->
+            <img src="https://i.postimg.cc/vHxWKMxc/Take-photos-of-cute-and-touching-animals-f19811fe-b4df-4921-afe6-1.png"
+                alt="Два котенка обнимаются. InvaCoin помогает животным найти любящую семью.">
+            <!--  Изображение 2 -->
         </section>
 
-        <section id="features">
+<section id="features">
             <h2>Особенности InvaCoin</h2>
             <div class="features">
                 <div class="feature">
                     <h3>Поддержка благотворительности</h3>
-                    <p>Часть каждой транзакции (±5%) направляется в благотворительный фонд, проверенный и отобранный нашим сообществом.</p>
+                    <p>Часть каждой транзакции (±5%) направляется в благотворительный фонд, проверенный и отобранный нашим
+                        сообществом.</p>
                 </div>
                 <div class="feature">
                     <h3>Прозрачность</h3>
-                    <p>Все транзакци
-
-и записываются в блокчейн Ethereum, что обеспечивает полную прозрачность и невозможность подделки.</p>
+                    <p>Все транзакции записываются в блокчейн Ethereum, что обеспечивает полную прозрачность и невозможность
+                        подделки.</p>
                 </div>
                 <div class="feature">
                     <h3>Децентрализация</h3>
-                    <p>InvaCoin - это децентрализованная криптовалюта, не контролируемая ни одним органом, что гарантирует ее независимость и устойчивость.</p>
+                    <p>InvaCoin - это децентрализованная криптовалюта, не контролируемая ни одним органом, что гарантирует ее
+                        независимость и устойчивость.</p>
                 </div>
                 <div class="feature">
                     <h3>Бесплатные переводы</h3>
@@ -462,21 +798,30 @@ CAF50;
 
         <section id="roadmap">
             <h2>Дорожная карта</h2>
-            <p>Мы стремимся к постоянному развитию и совершенствованию InvaCoin, чтобы максимально эффективно помогать животным. Наша дорожная карта включает в себя следующие этапы:</p>
+            <p>Мы стремимся к постоянному развитию и совершенствованию InvaCoin, чтобы максимально эффективно помогать животным.
+                Наша дорожная карта включает в себя следующие этапы:</p>
             <ul>
-                <li><strong>Q2 2024:</strong> Запуск InvaCoin и создание базовой инфраструктуры (развертывание смарт-контракта, создание веб-сайта, аккаунты в социальных сетях).</li>
-                <li><strong>Q3 2024:</strong> Листинг на Uniswap и расширение сообщества (листинг на Uniswap, маркетинговая кампания, привлечение первых 1000 подписчиков).</li>
-                <li><strong>Q4 2024:</strong> Привлечение партнеров из сферы благотворительности (партнерство с 2-3 организациями, запуск партнерской программы).</li>
-                <li><strong>Q1 2025:</strong> Разработка MVP мобильного приложения (базовая версия приложения для iOS и Android).</li>
-                <li><strong>Q2 2025:</strong> Создание платформы для пожертвований (веб-платформа для приема пожертвований, привлечение первых проектов).</li>
+                <li><strong>Q2 2026:</strong> Запуск InvaCoin и создание базовой инфраструктуры (развертывание смарт-контракта,
+                    создание веб-сайта, аккаунты в социальных сетях).</li>
+                <li><strong>Q3 2026:</strong> Листинг на Uniswap и расширение сообщества (листинг на Uniswap, маркетинговая
+                    кампания, привлечение первых 1000 подписчиков).</li>
+                <li><strong>Q4 2026:</strong> Привлечение партнеров из сферы благотворительности (партнерство с 2-3 организациями,
+                    запуск партнерской программы).</li>
+                <li><strong>Q1 2027:</strong> Разработка MVP мобильного приложения (базовая версия приложения для iOS и Android).
+                </li>
+                <li><strong>Q2 2027:</strong> Создание платформы для пожертвований (веб-платформа для приема пожертвований,
+                    привлечение первых проектов).</li>
             </ul>
         </section>
 
         <section id="team">
             <h2>Команда</h2>
-            <p>Наша команда состоит из преданных своему делу профессионалов, объединенных общей целью – помогать животным. Мы обладаем опытом в различных областях, включая разработку, маркетинг, финансы и благотворительность, что позволяет нам эффективно реализовывать наш проект.</p>
-            <img src="puppy.jpg" alt="Щенок ищет хозяина.">
-            <!-- Replace with your actual image file -->
+            <p>Наша команда состоит из преданных своему делу профессионалов, объединенных общей целью – помогать животным. Мы
+                обладаем опытом в различных областях, включая разработку, маркетинг, финансы и благотворительность, что позволяет
+                нам эффективно реализовывать наш проект.</p>
+            <img src="https://i.postimg.cc/prbjjcRq/Take-photos-of-cute-and-touching-animals-f19811fe-b4df-4921-afe6-2.png"
+                alt="Щенок играет с мячиком. InvaCoin поддерживает программы помощи бездомным животным.">
+            <!--  Изображение 3 -->
             <!-- Добавьте информацию о членах команды -->
         </section>
 
@@ -490,7 +835,8 @@ CAF50;
                 <li>Перейти на сайт Uniswap и подключить свой кошелек.</li>
                 <li>Найдите InvaCoin по адресу смарт-контракта: <strong>ЗДЕСЬ БУДЕТ АДРЕС КОНТРАКТА</strong>.</li>
                 <li>Обменяйте ETH на InvaCoin.</li>
-            </ol>
+
+</ol>
         </section>
 
         <section id="support">
@@ -498,13 +844,17 @@ CAF50;
             <p>Вместе мы можем сделать мир лучше для животных! Поддержите InvaCoin и внесите свой вклад в благородное дело:</p>
             <ul>
                 <li>Купите InvaCoin и станьте частью нашего сообщества.</li>
-                <li>Пожертвуйте InvaCoin напрямую проверенным благотворительным организациям (адреса кошельков: <strong>ЗДЕСЬ БУДУТ АДРЕСА КОШЕЛЬКОВ</strong>).</li>
+                <li>Пожертвуйте InvaCoin напрямую проверенным благотворительным организациям (адреса кошельков:
+                    <strong>(скоро)</strong>).</li>
                 <li>Расскажите о InvaCoin своим друзьям и знакомым, чтобы привлечь больше внимания к нашей миссии.</li>
-                <li>Присоединяйтесь к нашим сообществам в социальных сетях, чтобы быть в курсе всех новостей и участвовать в обсуждениях:
+                <li>Присоединяйтесь к нашим сообществам в социальных сетях, чтобы быть в курсе всех новостей и участвовать в
+                    обсуждениях:
                     <a href="#">Twitter</a>
                     <a href="#">Telegram</a>
-
-</li>
+                </li>
+                <img src="https://i.postimg.cc/XNddWWkh/Take-photos-of-cute-and-touching-animals-f19811fe-b4df-4921-afe6-3.png"
+                     alt="InvaCoin помогает всем животным!" style="max-width: 200px; margin-top: 10px;">
+                <!--  Изображение 4 (добавлено в секцию "Поддержать проект") -->
             </ul>
         </section>
 
@@ -520,11 +870,11 @@ CAF50;
     </main>
 
     <footer>
-        <p>© 2024 InvaCoin. Все права защищены.</p>
+        <p>© 2025 InvaCoin. Все права защищены.</p>
     </footer>
 
     <script>
-        document.getElementById('subscriptionForm').addEventListener('submit', function(event) {
+        document.getElementById('subscriptionForm').addEventListener('submit', function (event) {
             event.preventDefault(); // Prevent the form from submitting in the traditional way
 
             const emailInput = document.getElementById('email');
