@@ -8,16 +8,23 @@
         content="InvaCoin (IVC) - криптовалюта для спасения животных. Поддержите благотворительные организации и проекты по защите животных с помощью децентрализованных технологий.">
     <meta name="keywords" content="InvaCoin, криптовалюта, помощь животным, благотворительность, блокчейн">
     <title>InvaCoin: Криптовалюта для спасения животных</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <!--  Изменил шрифт на Poppins  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         /* Общие стили */
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Poppins', sans-serif;
+            /*  Более современный шрифт  */
             margin: 0;
             padding: 0;
-            background-color: #f9f9f9;
-            color: #222;
-            line-height: 1.6;
+            background-color: #f0f4f8;
+            /*  Более приятный цвет фона  */
+            color: #333;
+            line-height: 1.7;
+            /*  Улучшена читабельность  */
             overflow-x: hidden;
             background: linear-gradient(to bottom, #e0f7fa, #b2ebf2);
             background-attachment: fixed;
@@ -28,23 +35,35 @@
         header {
             background: linear-gradient(to right, #4CAF50, #8BC34A);
             color: #fff;
-            padding: 40px 20px;
+            padding: 50px 20px;
+            /*  Больше отступы  */
             text-align: center;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            /*  Более выраженная тень  */
             position: relative;
             overflow: hidden;
+            border-bottom-left-radius: 20px;
+            /*  Скругление углов  */
+            border-bottom-right-radius: 20px;
         }
 
         header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
+            font-size: 3em;
+            /*  Больше заголовок  */
+            margin-bottom: 15px;
+            /*  Больше отступ  */
             animation: slideInDown 1s ease-out;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            /*  Тень для текста  */
         }
 
         header p {
-            font-size: 1.2em;
+            font-size: 1.3em;
             font-style: italic;
             animation: fadeIn 1.5s ease-out;
+
+            color: #e0f7fa;
+            /*  Более светлый цвет текста  */
         }
 
         /* Анимация частиц в шапке */
@@ -57,63 +76,85 @@
 
         /* Навигация */
         nav {
-            background-color: #333;
-            color: #fff;
-            padding: 15px;
+            background-color: #fff;
+            /*  Белый фон  */
+            color: #333;
+            padding: 20px;
+            /*  Больше отступы  */
             text-align: center;
-            border-bottom: 2px solid #4CAF50;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            /*  Тень  */
             position: sticky;
             top: 0;
             z-index: 100;
         }
 
         nav a {
-            color: #fff;
+            color: #333;
             text-decoration: none;
-            padding: 10px 20px;
+            padding: 12px 25px;
+            /*  Больше отступы  */
             display: inline-block;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-            animation: pulse 2s infinite alternate;
+            transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
+            /*  Добавлена анимация цвета  */
+            font-weight: 600;
+            /*  Жирный шрифт  */
+            border-radius: 8px;
+            /*  Скругление углов  */
         }
 
         nav a:hover {
-
             background-color: #4CAF50;
+            color: #fff;
+            /*  Белый текст при наведении  */
             transform: scale(1.1);
         }
 
         /* Основной контент */
         main {
-            padding: 40px 20px;
+            padding: 50px 20px;
+            /*  Больше отступы  */
             animation: fadeIn 1s ease-out;
         }
 
         section {
-            margin-bottom: 40px;
+            margin-bottom: 50px;
+            /*  Больше отступы  */
             background-color: #fff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            /*  Больше отступы  */
+            border-radius: 15px;
+            /*  Больше скругление углов  */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            /*  Более выраженная тень  */
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         section:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transform: translateY(-8px);
+            /*  Больше эффект при наведении  */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            /*  Более выраженная тень при наведении  */
         }
 
         section h2 {
             color: #4CAF50;
-            font-size: 2.2em;
-            margin-bottom: 20px;
-            border-bottom: 2px solid #4CAF50;
-            padding-bottom: 10px;
+            font-size: 2.8em;
+            /*  Больше заголовок  */
+            margin-bottom: 25px;
+            /*  Больше отступ  */
+            border-bottom: 3px solid #4CAF50;
+            /*  Более толстая линия  */
+            padding-bottom: 12px;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+            /*  Тень для текста  */
         }
 
         section p {
-            font-size: 1.1em;
-            line-height: 1.7;
+            font-size: 1.2em;
+            /*  Больше размер текста  */
+            line-height: 1.8;
+            /*  Улучшена читабельность  */
             animation: slideInLeft 1s ease-out;
         }
 
@@ -121,8 +162,10 @@
         img {
             max-width: 100%;
             height: auto;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            /*  Больше скругление углов  */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            /*  Более выраженная тень  */
             transition: transform 0.3s ease;
         }
 
@@ -139,6 +182,8 @@
         li {
             margin-bottom: 15px;
             animation: zoomIn 1s ease-out;
+            font-size: 1.1em;
+            /*  Больше размер текста  */
         }
 
         /* Футер */
@@ -146,8 +191,9 @@
             background-color: #333;
             color: #fff;
             text-align: center;
-            padding: 20px;
-            font-size: 0.9em;
+            padding: 30px;
+            /*  Больше отступы  */
+            font-size: 1em;
             position: relative;
             overflow: hidden;
         }
@@ -159,7 +205,7 @@
                 transform: translateY(20px);
             }
 
-            to {
+to {
                 opacity: 1;
                 transform: translateY(0);
             }
@@ -229,391 +275,58 @@
         .features {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            gap: 40px;
+            /*  Больше отступы  */
             align-items: start;
         }
 
         .feature {
-            background-color: #f0f0f0;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .feature:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .feature h3 {
-            color: #4
-
-CAF50;
-            font-size: 1.5em;
-            margin-bottom: 10px;
-        }
-
-        .feature p {
-            font-size: 1.1em;
-        }
-
-        /* Медиа-запросы (адаптивность) */
-        @media (max-width: 575.98px) {
-            header {
-                padding: 20px 10px;
-            }
-
-            header h1 {
-                font-size: 1.8em;
-            }
-
-            header p {
-                font-size: 0.9em;
-            }
-
-            nav a {
-                padding: 6px 12px;
-                font-size: 0.8em;
-            }
-
-            .features {
-                grid-template-columns: 1fr;
-            }
-
-            section {
-                padding: 15px;
-            }
-
-            section h2 {
-                font-size: 1.6em;
-            }
-        }
-
-        @media (min-width: 576px) and (max-width: 767.98px) {
-            header {
-                padding: 30px 15px;
-            }
-
-            header h1 {
-                font-size: 2em;
-            }
-
-            header p {
-                font-size: 1em;
-            }
-
-            nav a {
-                padding: 8px 15px;
-                font-size: 0.9em;
-            }
-
-            .features {
-                grid-template-columns: 1fr;
-            }
-
-            section {
-                padding: 20px;
-            }
-
-            section h2 {
-                font-size: 1.8em;
-            }
-        }
-
-        @media (min-width: 768px) and (max-width: 991.98px) {
-            .features {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        /* Стили для формы подписки */
-        .subscribe-section {
-            background-color: #e0f7fa;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            margin-top: 40px;
-        }
-
-        .subscribe-section h2 {
-            color: #4CAF50;
-            font-size: 2em;
-            margin-bottom: 20px;
-        }
-
-        .subscribe-section input[type="email"] {
-            padding: 12px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 1em;
-            width: 70%;
-            max-width: 400px;
-            margin-right: 10px;
-        }
-
-        .subscribe-section button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 12px 24px;
-            border: none;
-            border-radius: 5px;
-            font-size: 1em;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .subscribe-section button:hover {
-            background-color: #388E3C;
-        }
-
-        /* Стили для логотипа */
-        .logo {
-            max-width: 150px;
-            /* Adjust the size as needed */
-            height: auto;
-            margin-bottom: 20px;
-        }
-    </style>
-</head>
-
-<body>
-    <header>
-        <img src="https://i.postimg.cc/9MSyzmf7/IMG-20250412-114846-882.png" alt="InvaCoin Logo" class="logo">
-        <!-- Правильный логотип -->
-        <h1 class="fade-in">InvaCoin: Криптовалюта для спасения животных</h1>
-        <p class="fade-in">Поддержите важные проекты по защите животных с помощью децентрализованных технологий.</p>
-        <!-- Генерация случайных частиц -->
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                const header = document.querySelector('header');
-                for (let i = 0; i < 50; i++) {
-                    const particle = document.createElement('span');
-                    particle.classList.add('particle');
-                    particle.style.width = `${Math.random() * 10 + 5}px`;
-                    particle.style.height = particle.style.width;
-                    particle.style.left = `${Math.random() * 100}%`;
-                    particle\
-
-            background-color: #4CAF50;
-            transform: scale(1.1);
-        }
-
-        /* Основной контент */
-        main {
-            padding: 40px 20px;
-            animation: fadeIn 1s ease-out;
-        }
-
-        section {
-            margin-bottom: 40px;
             background-color: #fff;
+            /*  Белый фон  */
             padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        section:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        section h2 {
-            color: #4CAF50;
-            font-size: 2.2em;
-            margin-bottom: 20px;
-            border-bottom: 2px solid #4CAF50;
-            padding-bottom: 10px;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-        }
-
-        section p {
-            font-size: 1.1em;
-            line-height: 1.7;
-            animation: slideInLeft 1s ease-out;
-        }
-
-        /* Изображения */
-        img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        img:hover {
-            transform: scale(1.05);
-        }
-
-        /* Списки */
-        ul,
-        ol {
-            padding-left: 30px;
-        }
-
-        li {
-            margin-bottom: 15px;
-            animation: zoomIn 1s ease-out;
-        }
-
-        /* Футер */
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-            font-size: 0.9em;
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* Анимации */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes slideInDown {
-            from {
-                transform: translateY(-100%);
-                opacity: 0;
-            }
-
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        @keyframes float {
-            0% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-10px);
-            }
-
-            100% {
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-            }
-
-            100% {
-                transform: scale(1.1);
-            }
-        }
-
-        @keyframes zoomIn {
-            from {
-                transform: scale(0);
-                opacity: 0;
-            }
-
-            to {
-                transform: scale(1);
-                opacity: 1;
-            }
-        }
-
-        @keyframes slideInLeft {
-            from {
-                transform: translateX(-100%);
-                opacity: 0;
-            }
-
-            to {
-                transform: translateX(0);
-                opacity: 1;
-            }
-        }
-
-        /* Секция "Особенности" */
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            align-items: start;
-        }
-
-        .feature {
-            background-color: #f0f0f0;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            /*  Больше отступы  */
+            border-radius: 15px;
+            /*  Больше скругление углов  */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            /*  Более выраженная тень  */
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .feature:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transform: translateY(-8px);
+            /*  Больше эффект при наведении  */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            /*  Более выраженная тень при наведении  */
+        }
+
+        .feature i {
+            color: #4CAF50;
+            /*  Зеленый цвет иконок  */
+            margin-bottom: 15px;
+            /*  Отступ от иконки до заголовка  */
+            display: block;
+            /*  Чтобы margin-bottom работал  */
         }
 
         .feature h3 {
             color: #4CAF50;
-
-font-size: 1.5em;
-            margin-bottom: 10px;
+            font-size: 1.8em;
+            /*  Больше заголовок  */
+            margin-bottom: 15px;
         }
 
         .feature p {
-            font-size: 1.1em;
+            font-size: 1.2em;
         }
 
         /* Медиа-запросы (адаптивность) */
         @media (max-width: 575.98px) {
             header {
-                padding: 20px 10px;
+                padding: 30px 10px;
             }
 
             header h1 {
-                font-size: 1.8em;
-            }
-
-            header p {
-                font-size: 0.9em;
-            }
-
-            nav a {
-                padding: 6px 12px;
-                font-size: 0.8em;
-            }
-
-            .features {
-                grid-template-columns: 1fr;
-            }
-
-            section {
-                padding: 15px;
-            }
-
-            section h2 {
-                font-size: 1.6em;
-            }
-        }
-
-        @media (min-width: 576px) and (max-width: 767.98px) {
-            header {
-                padding: 30px 15px;
-            }
-
-            header h1 {
-                font-size: 2em;
+                font-size: 2.2em;
             }
 
             header p {
@@ -630,12 +343,44 @@ font-size: 1.5em;
             }
 
             section {
-                padding: 20px;
+                padding: 25px;
             }
 
             section h2 {
                 font-size: 1.8em;
             }
+        }
+
+        @media (min-width: 576px) and (max-width: 767.98px) {
+            header {
+                padding: 40px 15px;
+            }
+
+            header h1 {
+                font-size: 2.5em;
+            }
+
+            header p {
+                font-size: 1.1em;
+            }
+
+            nav a {
+                padding: 10px 20px;
+                font-size: 1em;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 30px;
+            }
+
+            section h2 {
+                font-size: 2em;
+
+}
         }
 
         @media (min-width: 768px) and (max-width: 991.98px) {
@@ -647,24 +392,32 @@ font-size: 1.5em;
         /* Стили для формы подписки */
         .subscribe-section {
             background-color: #e0f7fa;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            /*  Больше отступы  */
+            border-radius: 15px;
+            /*  Больше скругление углов  */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            /*  Более выраженная тень  */
             text-align: center;
-            margin-top: 40px;
+            margin-top: 50px;
+            /*  Больше отступ  */
         }
 
         .subscribe-section h2 {
             color: #4CAF50;
-            font-size: 2em;
-            margin-bottom: 20px;
+            font-size: 2.5em;
+            /*  Больше заголовок  */
+            margin-bottom: 25px;
+            /*  Больше отступ  */
         }
 
         .subscribe-section input[type="email"] {
-            padding: 12px;
+            padding: 15px;
+            /*  Больше отступы  */
             border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 1em;
+            border-radius: 8px;
+            /*  Больше скругление углов  */
+            font-size: 1.1em;
             width: 70%;
             max-width: 400px;
             margin-right: 10px;
@@ -673,12 +426,16 @@ font-size: 1.5em;
         .subscribe-section button {
             background-color: #4CAF50;
             color: white;
-            padding: 12px 24px;
+            padding: 15px 30px;
+            /*  Больше отступы  */
             border: none;
-            border-radius: 5px;
-            font-size: 1em;
+            border-radius: 8px;
+            /*  Больше скругление углов  */
+            font-size: 1.1em;
             cursor: pointer;
             transition: background-color 0.3s ease;
+            font-weight: 600;
+            /*  Жирный шрифт  */
         }
 
         .subscribe-section button:hover {
@@ -687,10 +444,11 @@ font-size: 1.5em;
 
         /* Стили для логотипа */
         .logo {
-            max-width: 150px;
-            /* Adjust the size as needed */
+            max-width: 180px;
+            /*  Больше логотип  */
             height: auto;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            /*  Больше отступ  */
         }
     </style>
 </head>
@@ -711,9 +469,7 @@ font-size: 1.5em;
                     particle.style.width = `${Math.random() * 10 + 5}px`;
                     particle.style.height = particle.style.width;
                     particle.style.left = `${Math.random() * 100}%`;
-                    particle.style.top
-
-= `${Math.random() * 100}%`;
+                    particle.style.top = `${Math.random() * 100}%`;
                     particle.style.backgroundColor = `rgba(255, 255, 255, ${Math.random() * 0.5 + 0.3})`;
                     particle.style.animationDelay = `${Math.random() * 2}s`;
                     header.appendChild(particle);
@@ -735,7 +491,9 @@ font-size: 1.5em;
     <main>
         <section id="about">
             <h2>Что такое InvaCoin (IVC)?</h2>
-            <p>InvaCoin (IVC) – это криптовалюта, созданная с искренней целью поддержки благотворительных организаций и проектов,
+            <p>InvaCoin (IVC) – это криптовалюта, созданная с искренней целью
+
+поддержки благотворительных организаций и проектов,
                 которые ежедневно и неустанно заботятся о наших меньших братьях – животных. Мы верим, что объединив усилия
                 криптосообщества и всех неравнодушных людей, мы сможем внести значительный вклад в решение насущных проблем, с
                 которыми сталкиваются животные по всему миру. Это включает в себя борьбу с бездомностью, предотвращение жестокого
@@ -771,25 +529,30 @@ font-size: 1.5em;
             <!--  Изображение 2 -->
         </section>
 
-<section id="features">
+        <section id="features">
             <h2>Особенности InvaCoin</h2>
             <div class="features">
                 <div class="feature">
+                    <i class="fas fa-hand-holding-heart fa-2x"></i> <!-- Иконка -->
                     <h3>Поддержка благотворительности</h3>
                     <p>Часть каждой транзакции (±5%) направляется в благотворительный фонд, проверенный и отобранный нашим
                         сообществом.</p>
                 </div>
                 <div class="feature">
+                    <i class="fas fa-search-dollar fa-2x"></i> <!-- Иконка -->
                     <h3>Прозрачность</h3>
                     <p>Все транзакции записываются в блокчейн Ethereum, что обеспечивает полную прозрачность и невозможность
                         подделки.</p>
                 </div>
                 <div class="feature">
+
+<i class="fas fa-network-wired fa-2x"></i> <!-- Иконка -->
                     <h3>Децентрализация</h3>
                     <p>InvaCoin - это децентрализованная криптовалюта, не контролируемая ни одним органом, что гарантирует ее
                         независимость и устойчивость.</p>
                 </div>
                 <div class="feature">
+                    <i class="fas fa-globe fa-2x"></i> <!-- Иконка -->
                     <h3>Бесплатные переводы</h3>
                     <p>Вы можете переводить InvaCoin даже в разные страны абсолютно без комиссии!</p>
                 </div>
@@ -801,15 +564,15 @@ font-size: 1.5em;
             <p>Мы стремимся к постоянному развитию и совершенствованию InvaCoin, чтобы максимально эффективно помогать животным.
                 Наша дорожная карта включает в себя следующие этапы:</p>
             <ul>
-                <li><strong>Q2 2026:</strong> Запуск InvaCoin и создание базовой инфраструктуры (развертывание смарт-контракта,
+                <li><strong>Q2 2025:</strong> Запуск InvaCoin и создание базовой инфраструктуры (развертывание смарт-контракта,
                     создание веб-сайта, аккаунты в социальных сетях).</li>
-                <li><strong>Q3 2026:</strong> Листинг на Uniswap и расширение сообщества (листинг на Uniswap, маркетинговая
+                <li><strong>Q3 2025:</strong> Листинг на Uniswap и расширение сообщества (листинг на Uniswap, маркетинговая
                     кампания, привлечение первых 1000 подписчиков).</li>
-                <li><strong>Q4 2026:</strong> Привлечение партнеров из сферы благотворительности (партнерство с 2-3 организациями,
+                <li><strong>Q4 2025:</strong> Привлечение партнеров из сферы благотворительности (партнерство с 2-3 организациями,
                     запуск партнерской программы).</li>
-                <li><strong>Q1 2027:</strong> Разработка MVP мобильного приложения (базовая версия приложения для iOS и Android).
+                <li><strong>Q1 2026:</strong> Разработка MVP мобильного приложения (базовая версия приложения для iOS и Android).
                 </li>
-                <li><strong>Q2 2027:</strong> Создание платформы для пожертвований (веб-платформа для приема пожертвований,
+                <li><strong>Q2 2026:</strong> Создание платформы для пожертвований (веб-платформа для приема пожертвований,
                     привлечение первых проектов).</li>
             </ul>
         </section>
@@ -835,8 +598,7 @@ font-size: 1.5em;
                 <li>Перейти на сайт Uniswap и подключить свой кошелек.</li>
                 <li>Найдите InvaCoin по адресу смарт-контракта: <strong>ЗДЕСЬ БУДЕТ АДРЕС КОНТРАКТА</strong>.</li>
                 <li>Обменяйте ETH на InvaCoin.</li>
-
-</ol>
+            </ol>
         </section>
 
         <section id="support">
@@ -846,7 +608,9 @@ font-size: 1.5em;
                 <li>Купите InvaCoin и станьте частью нашего сообщества.</li>
                 <li>Пожертвуйте InvaCoin напрямую проверенным благотворительным организациям (адреса кошельков:
                     <strong>(скоро)</strong>).</li>
-                <li>Расскажите о InvaCoin своим друзьям и знакомым, чтобы привлечь больше внимания к нашей миссии.</li>
+                <li>Расска
+
+жите о InvaCoin своим друзьям и знакомым, чтобы привлечь больше внимания к нашей миссии.</li>
                 <li>Присоединяйтесь к нашим сообществам в социальных сетях, чтобы быть в курсе всех новостей и участвовать в
                     обсуждениях:
                     <a href="#">Twitter</a>
@@ -905,4 +669,4 @@ font-size: 1.5em;
     </script>
 </body>
 
-</html>
+    </html>
