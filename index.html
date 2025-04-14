@@ -33,7 +33,8 @@
         header {
             background: linear-gradient(to right, #4CAF50, #8BC34A);
             color: #fff;
-            padding: 50px 20px;
+            padding: 40px 20px;
+            /*  Уменьшена высота шапки  */
             text-align: center;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             position: relative;
@@ -43,14 +44,16 @@
         }
 
         header h1 {
-            font-size: 3em;
-            margin-bottom: 15px;
+            font-size: 2.5em;
+            /*  Уменьшен размер заголовка  */
+            margin-bottom: 10px;
             animation: slideInDown 1s ease-out;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         header p {
-            font-size: 1.3em;
+            font-size: 1.2em;
+            /*  Уменьшен размер подзаголовка  */
             font-style: italic;
             animation: fadeIn 1.5s ease-out;
             color: #e0f7fa;
@@ -58,6 +61,7 @@
 
         /* Анимация частиц в шапке */
         .particle {
+
             position: absolute;
             border-radius: 50%;
             opacity: 0.7;
@@ -226,15 +230,16 @@
 
         @keyframes slideInLeft {
             from {
-                transform: translateX(-100%);
+                transform: transl
+
+ateX(-100%);
                 opacity: 0;
             }
 
             to {
                 transform: translateX(0);
                 opacity: 1;
-
-}
+            }
         }
 
         /* Секция "Особенности" */
@@ -251,6 +256,7 @@
             border-radius: 15px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            word-wrap: break-word; /*  Добавлено для предотвращения переполнения текста  */
         }
 
         .feature:hover {
@@ -279,13 +285,14 @@
             background-color: #f9f9f9;
             /* Изменяем цвет фона при наведении */
             cursor: pointer;
-            /* Меняем курсор */
         }
 
         /* Стили для таймлайна */
         .roadmap-timeline {
             position: relative;
             padding: 20px 0;
+            max-width: 800px; /*  Ограничение ширины таймлайна  */
+            margin: 0 auto; /*  Центрирование таймлайна  */
         }
 
         .roadmap-timeline::before {
@@ -314,6 +321,7 @@
             background: #f0f0f0;
             border-radius: 10px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            min-height: 150px; /*  Минимальная высота для контента  */
         }
 
         .timeline-content h3 {
@@ -376,7 +384,8 @@
         }
 
         .subscribe-section h2 {
-            color: #4CAF50;
+
+color: #4CAF50;
             font-size: 2.5em;
             margin-bottom: 25px;
         }
@@ -392,8 +401,7 @@
         }
 
         .subscribe-section button {
-
-background-color: #4CAF50;
+            background-color: #4CAF50;
             color: white;
             padding: 15px 30px;
             border: none;
@@ -410,9 +418,11 @@ background-color: #4CAF50;
 
         /* Стили для логотипа */
         .logo {
-            max-width: 180px;
+            max-width: 150px;
+            /*  Уменьшен размер логотипа  */
             height: auto;
-            margin-bottom: 25px;
+            margin-bottom: 15px;
+            /*  Уменьшен отступ  */
         }
 
         /* Стили для FAQ */
@@ -488,15 +498,14 @@ background-color: #4CAF50;
             <h2>Что такое InvaCoin (IVC)?</h2>
             <p>InvaCoin (IVC) – это криптовалюта, созданная с целью поддержки благотворительных организаций и проектов, которые
                 заботятся о животных. Мы верим, что объединив усилия криптосообщества, мы сможем внести значительный вклад в
-                решение проблем, с которыми сталкиваются животные по всему миру.</p>
+
+решение проблем, с которыми сталкиваются животные по всему миру.</p>
 
             <p><b>Наша цель:</b> собрать 1,000,000 IVC к концу 2026 года для финансирования проектов по защите животных.
                 Уже сейчас 5% каждой транзакции InvaCoin направляется в благотворительный фонд.</p>
 
             <p>Наша миссия заключается в создании прозрачного и эффективного механизма для сбора и распределения средств,
-                гарантируя, что каждое ваше пожертвование прине
-
-сет реальную пользу. Мы стремимся к тому, чтобы каждый участник
+                гарантируя, что каждое ваше пожертвование принесет реальную пользу. Мы стремимся к тому, чтобы каждый участник
                 нашего сообщества чувствовал свою причастность к благородному делу и видел результаты своей поддержки.</p>
 
             <img src="https://i.postimg.cc/tTrhK4zV/Take-photos-of-cute-and-touching-animals-f19811fe-b4df-4921-afe6.jpg"
@@ -550,16 +559,16 @@ background-color: #4CAF50;
                 <div class="feature">
                     <i class="fas fa-search-dollar fa-2x"></i>
                     <h3>Прозрачность</h3>
-                    <p>Все транзакции записываются в блокчейн Ethereum, что обеспечивает полную прозрачность и невозможность
+                    <p>Все транзакции записываются в блокчейн Ethereum, что обеспечивает полную прозра
+
+чность и невозможность
                         подделки. Вы можете отследить каждую транзакцию и убедиться, что средства используются по назначению.</p>
                 </div>
                 <div class="feature">
                     <i class="fas fa-network-wired fa-2x"></i>
                     <h3>Децентрализация</h3>
                     <p>InvaCoin - это децентрализованная криптовалюта, не контролируемая ни одним органом, что гарантирует ее
-                        независимо
-
-сть и устойчивость. Это значит, что никто не может заморозить ваши средства или изменить правила
+                        независимость и устойчивость. Это значит, что никто не может заморозить ваши средства или изменить правила
                         игры.</p>
                 </div>
                 <div class="feature">
@@ -624,7 +633,9 @@ background-color: #4CAF50;
             </ol>
 
             <p><b>Важно:</b> Будьте осторожны и не переводите средства на непроверенные адреса. Всегда проверяйте адрес
-                смарт-контракта InvaCoin на официальном сайте.</p>
+                смарт-контракта Inva
+
+Coin на официальном сайте.</p>
         </section>
 
         <section id="support">
@@ -633,9 +644,7 @@ background-color: #4CAF50;
             <ul>
                 <li>Купите InvaCoin и станьте частью нашего сообщества.</li>
                 <li>Пожертвуйте InvaCoin напрямую проверенным благотворительным организациям (адреса кошельков:
-                    <st
-
-rong>(скоро)</strong>).</li>
+                    <strong>(скоро)</strong>).</li>
                 <li>Расскажите о InvaCoin своим друзьям и знакомым, чтобы привлечь больше внимания к нашей миссии.</li>
                 <li>Присоединяйтесь к нашим сообществам в социальных сетях, чтобы быть в курсе всех новостей и участвовать в
                     обсуждениях:
@@ -702,7 +711,9 @@ rong>(скоро)</strong>).</li>
             }
 
             // Simulate successful subscription (replace with actual backend logic)
-            console.log('Subscribing email:', emailInput.value); // Log the email for demonstration
+            console.log('Su
+
+bscribing email:', emailInput.value); // Log the email for demonstration
             subscriptionMessage.style.display = 'block'; // Show the success message
             emailInput.value = ''; // Clear the input field
 
@@ -714,11 +725,10 @@ rong>(скоро)</strong>).</li>
 
         // Basic email validation function
         function isValidEmail(email) {
-
-const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             return emailRegex.test(email);
         }
     </script>
 </body>
 
-    </html>
+</html>
