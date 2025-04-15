@@ -11,7 +11,7 @@
     <title>InvaCoin: Криптовалюта для спасения животных</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <style>
         /* Общие стили */
         :root {
@@ -20,7 +20,7 @@
             --primary-color: #4CAF50;
             --secondary-color: #8BC34A;
             --header-bg: linear-gradient(to right, var(--primary-color), var(--secondary-color));
-            --nav-bg: rgba(255, 255, 255, 0.8); /* Прозрачный фон навигации */
+            --nav-bg: rgba(255, 255, 255, 0.8);
             --section-bg: #fff;
             --footer-bg: #333;
             --link-color: #333;
@@ -43,6 +43,7 @@
             background-attachment: fixed;
             scroll-behavior: smooth;
             transition: background-color var(--transition-duration), color var(--transition-duration);
+            box-sizing: border-box; /* Добавлено для предотвращения сдвига */
         }
 
         /* Темная тема */
@@ -50,7 +51,7 @@
             --bg-color: #222;
             --text-color: #eee;
             --header-bg: linear-gradient(to right, #37474F, #546E7A);
-            --nav-bg: rgba(51, 51, 51, 0.8); /* Прозрачный фон навигации в темной теме */
+            --nav-bg: rgba(51, 51, 51, 0.8);
             --section-bg: #333;
             --footer-bg: #111;
 
@@ -122,7 +123,7 @@
             position: sticky;
             top: 0;
             z-index: 100;
-            border-radius: 0 0 var(--border-radius) var(--border-radius); /* Скругление только нижней части */
+            border-radius: 0 0 var(--border-radius) var(--border-radius);
         }
 
         nav a {
@@ -185,10 +186,10 @@
         }
 
         /* Изображения */
-
-img {
+        img {
             max-width: 100%;
-            height: auto;
+
+height: auto;
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
             transition: transform var(--transition-duration);
@@ -310,12 +311,12 @@ img {
             box-shadow: var(--box-shadow);
             transition: transform var(--transition-duration), box-shadow var(--transition-duration);
             word-wrap: break-word;
-            border: 1px solid rgba(0, 0, 0, 0.1); /* Добавлена рамка */
+            border: 1px solid rgba(0, 0, 0, 0.1);
         }
 
         body.dark-mode .feature {
             background-color: #444;
-            border-color: rgba(255, 255, 255, 0.1); /* Рамка для темной темы */
+            border-color: rgba(255, 255, 255, 0.1);
         }
 
         .feature:hover {
@@ -350,10 +351,10 @@ img {
             margin-bottom: 20px;
             padding: 15px;
             background-color: var(--section-bg);
-
-border-radius: var(--border-radius);
+            border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
-        }
+
+}
 
         body.dark-mode .roadmap-timeline li {
             background-color: #444;
@@ -378,12 +379,12 @@ border-radius: var(--border-radius);
             text-align: center;
             margin-top: 40px;
             transition: background-color var(--transition-duration);
-            background: linear-gradient(135deg, #e0f7fa, #b2ebf2); /* Градиентный фон */
+            background: linear-gradient(135deg, #e0f7fa, #b2ebf2);
         }
 
         body.dark-mode .subscribe-section {
             background-color: #333;
-            background: linear-gradient(135deg, #37474F, #546E7A); /* Градиентный фон для темной темы */
+            background: linear-gradient(135deg, #37474F, #546E7A);
         }
 
         .subscribe-section h2 {
@@ -485,16 +486,15 @@ border-radius: var(--border-radius);
         }
 
         body.dark-mode .news-section {
-            background-color: #333
-
-;
+            background-color: #333;
         }
 
         .news-item {
             margin-bottom: 20px;
             padding-bottom: 20px;
             border-bottom: 1px solid #ccc;
-        }
+
+}
 
         body.dark-mode .news-item {
             border-bottom: 1px solid #444;
@@ -594,17 +594,59 @@ border-radius: var(--border-radius);
             border-radius: var(--border-radius);
             transition: background-color var(--transition-duration);
             margin-top: 20px;
-            box-shadow: var(--box-shadow); /* Добавлена тень */
+            box-shadow: var(--box-shadow);
         }
 
         .whitepaper-link:hover {
             background-color: #388E3C;
         }
+
+        /* Стили для секции "Наша команда" */
+        #team {
+            margin-top: 40px;
+            background-color: var(--section-bg);
+            color: var(--text-color);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            text-align: center;
+        }
+
+        body.dark-mode #team {
+            background-color: #333;
+        }
+
+        .team-members {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .team-member {
+            margin-bottom: 20px;
+        }
+
+        .team-member h3 {
+            font-size: 1.4em;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .team-member p {
+            font-size: 1em;
+        }
+
+        .team-member img {
+            border-radius: 50%;
+            margin-top: 10px;
+        }
     </style>
 </head>
 
 <body class="light-mode">
-    <header data-aos="fade-down" data-aos-duration="1000">
+    <header data-aos="fade-down" data-aos-durati
+
+on="1000">
         <img src="https://i.postimg.cc/9MSyzmf7/IMG-20250412-114846-882.png" alt="InvaCoin Logo" class="logo">
         <h1>InvaCoin: Криптовалюта для спасения животных</h1>
         <p>Поддержите важные проекты по защите животных с помощью децентрализованных технологий.</p>
@@ -618,13 +660,12 @@ border-radius: var(--border-radius);
         <a href="#news">Новости</a>
         <a href="#buy">Как купить</a>
         <a href="#support">Поддержать проект</a>
+        <a href="#team">Наша команда</a>
         <a href="#faq">FAQ</a>
     </nav>
 
     <main>
-        <sectio
-
-n id="about" data-aos="fade-right" data-aos-duration="1000">
+        <section id="about" data-aos="fade-right" data-aos-duration="1000">
             <h2>Что такое InvaCoin (IVC)?</h2>
             <p>InvaCoin (IVC) – это криптовалюта, созданная с целью поддержки благотворительных
                 организаций и проектов, которые заботятся о животных. Мы верим, что объединив усилия криптосообщества, мы сможем
@@ -670,7 +711,8 @@ n id="about" data-aos="fade-right" data-aos-duration="1000">
                     корма и медикаментов, а также организация программ стерилизации и вакцинации.
                 </li>
                 <li>
-                    <i class="fas fa-eye"></i>
+
+<i class="fas fa-eye"></i>
                     <strong>Абсолютная прозрачность:</strong> Все транзакции, осуществляемые с
                     использованием InvaCoin, записываются в блокчейн Ethereum, что гарантирует полную прозрачность и исключает
                     возможность мошенничества. Вы всегда можете отследить путь своего пожертвования и убедиться в его целевом
@@ -684,7 +726,7 @@ n id="about" data-aos="fade-right" data-aos-duration="1000">
                 </li>
             </ul>
 
-<img src="https://i.postimg.cc/vHxWKMxc/Take-photos-of-cute-and-touching-animals-f19811fe-b4df-4921-afe6-1.png"
+            <img src="https://i.postimg.cc/vHxWKMxc/Take-photos-of-cute-and-touching-animals-f19811fe-b4df-4921-afe6-1.png"
                 alt="Два котенка обнимаются. InvaCoin помогает животным найти любящую семью.">
         </section>
 
@@ -736,7 +778,9 @@ n id="about" data-aos="fade-right" data-aos-duration="1000">
                 <li>
                     <h3>Q4 2025: Партнерства</h3>
                     <p>Привлечение партнеров из сферы благотворительности: партнерство с 2-3 организациями, запуск партнерской
-                        программы.</p>
+                        прог
+
+раммы.</p>
                 </li>
                 <li>
                     <h3>Q1 2026: Мобильное приложение</h3>
@@ -754,8 +798,7 @@ n id="about" data-aos="fade-right" data-aos-duration="1000">
             <div class="news-section">
                 <div class="news-item">
                     <h3 class="news-title">InvaCoin объявляет о партнерстве с приютом "Верный
-
-друг"</h3>
+                        друг"</h3>
                     <p class="news-date">15 мая 2024</p>
                     <p class="news-content">Теперь часть средств от каждой транзакции InvaCoin
                         будет направляться на поддержку приюта "Верный друг", который заботится о бездомных собаках и кошках.</p>
@@ -802,30 +845,51 @@ n id="about" data-aos="fade-right" data-aos-duration="1000">
 
             <div class="social-widgets">
                 <div class="social-widget">
-                    <a href="#"><i class="fab fa-telegram"></i></a>
+                    <a href="https://t.me/InvaCoin_official"><i class="fab fa-telegram"></i></a>
                 </div>
                 <div class="social-widget">
-                    <a href="#"><i class="fab fa-vk"></i></a>
+                    <a href="https://vk.com/id846788176"><i class="fab fa-vk"></i></a>
                 </div>
                 <div class="social-widget">
-                    <a href="#"><i class="far fa-envelope"></i></a>
+                    <a href="
+
+mailto:invacoin0official@gmail.com"><i class="far fa-envelope"></i></a>
                 </div>
             </div>
 
             <p><b>Отсканируйте QR-код для пожертвования:</b></p>
             <img src="https://via.placeholder.com/150" alt="QR-код для пожертвования"
-                style="max-width: 150px; margin-top: 10px;">
+
+        style="max-width: 150px; margin-top: 10px;">
             <img src="https://i.postimg.cc/XNddWWkh/Take-photos-of-cute-and-touching-animals-f19811fe-b4df-4921-afe6-3.png"
                 alt="InvaCoin помогает всем животным!" style="max-width: 200px; margin-top: 10px;">
         </section>
 
         <a href="#" class="whitepaper-link">Скачать Whitepaper (скоро)</a>
 
-                <section class="subscribe-section" data-aos="zoom-in" data-aos-duration="1000">
+        <section class="subscribe-section" data-aos="zoom-in" data-aos-duration="1000">
             <h2>Подпишитесь на наши новости</h2>
             <p>Будьте в курсе последних новостей и обновлений InvaCoin.</p>
             <input type="email" placeholder="Ваш email">
             <button>Подписаться</button>
+        </section>
+
+        <section id="team" data-aos="fade-up" data-aos-duration="1000">
+            <h2>Наша команда</h2>
+            <div class="team-members">
+                <div class="team-member">
+                    <h3>Иван Каламаев</h3>
+                    <p>Создатель</p>
+                    <img src="https://i.postimg.cc/rp8WM7zg/1000032008.jpg" alt="Иван Каламаев"
+                        style="max-width: 150px;">
+                </div>
+                <div class="team-member">
+                    <h3>Кирилл Кашин</h3>
+                    <p>Тестировщик</p>
+                    <img src="https://i.postimg.cc/rp8WM7zg/1000032008.jpg" alt="Кирилл Кашин"
+                        style="max-width: 150px;">
+                </div>
+            </div>
         </section>
 
         <section class="faq-section" id="faq" data-aos="fade-up" data-aos-duration="1000">
@@ -844,6 +908,7 @@ n id="about" data-aos="fade-right" data-aos-duration="1000">
                 инструкция доступна в разделе "Как купить".</div>
 
             <div class="faq-question">Как я могу поддержать проект?</div>
+
             <div class="faq-answer">Вы можете купить InvaCoin, сделать пожертвование напрямую
                 благотворительным организациям или рассказать о проекте своим друзьям и знакомым.</div>
 
