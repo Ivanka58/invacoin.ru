@@ -29,6 +29,7 @@
             --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             --border-radius: 12px;
             --transition-duration: 0.3s;
+            --team-member-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Тень для карточек команды */
         }
 
         body {
@@ -38,12 +39,12 @@
             background-color: var(--bg-color);
             color: var(--text-color);
             line-height: 1.7;
-            overflow-x: hidden;
+            overflow-x: hidden; /* Предотвращаем горизонтальную прокрутку */
             background: linear-gradient(to bottom, #e0f7fa, #b2ebf2);
             background-attachment: fixed;
             scroll-behavior: smooth;
             transition: background-color var(--transition-duration), color var(--transition-duration);
-            box-sizing: border-box; /* Добавлено для предотвращения сдвига */
+            box-sizing: border-box;
         }
 
         /* Темная тема */
@@ -51,27 +52,29 @@
             --bg-color: #222;
             --text-color: #eee;
             --header-bg: linear-gradient(to right, #37474F, #546E7A);
+
             --nav-bg: rgba(51, 51, 51, 0.8);
             --section-bg: #333;
             --footer-bg: #111;
-
             --link-color: #eee;
             --link-hover-bg: #546E7A;
             --link-hover-color: #fff;
             --box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+            --team-member-shadow: 0 2px 5px rgba(255, 255, 255, 0.2); /* Тень для карточек команды в темной теме */
         }
 
         /* Шапка сайта */
         header {
             background: var(--header-bg);
             color: #fff;
-            padding: 30px 20px;
+            padding: 20px 20px; /* Уменьшаем вертикальный padding */
             text-align: center;
             box-shadow: var(--box-shadow);
             position: relative;
             overflow: hidden;
             border-bottom-left-radius: 20px;
             border-bottom-right-radius: 20px;
+            transition: padding var(--transition-duration); /* Плавное изменение высоты */
         }
 
         header::before {
@@ -174,7 +177,8 @@
             color: var(--primary-color);
             font-size: 2.5em;
             margin-bottom: 20px;
-            border-bottom: 3px solid var(--primary-color);
+
+border-bottom: 3px solid var(--primary-color);
             padding-bottom: 10px;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
         }
@@ -188,8 +192,7 @@
         /* Изображения */
         img {
             max-width: 100%;
-
-height: auto;
+            height: auto;
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
             transition: transform var(--transition-duration);
@@ -312,6 +315,7 @@ height: auto;
             transition: transform var(--transition-duration), box-shadow var(--transition-duration);
             word-wrap: break-word;
             border: 1px solid rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 1s ease-out; /* Добавлена анимация появления */
         }
 
         body.dark-mode .feature {
@@ -337,7 +341,7 @@ height: auto;
             margin-bottom: 15px;
         }
 
-        .feature p {
+.feature p {
             font-size: 1.1em;
         }
 
@@ -353,8 +357,8 @@ height: auto;
             background-color: var(--section-bg);
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
-
-}
+            animation: fadeInRight 1s ease-out; /* Добавлена анимация появления */
+        }
 
         body.dark-mode .roadmap-timeline li {
             background-color: #444;
@@ -380,6 +384,7 @@ height: auto;
             margin-top: 40px;
             transition: background-color var(--transition-duration);
             background: linear-gradient(135deg, #e0f7fa, #b2ebf2);
+            animation: zoomIn 1s ease-out; /* Добавлена анимация появления */
         }
 
         body.dark-mode .subscribe-section {
@@ -440,6 +445,7 @@ height: auto;
             padding: 30px;
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
+            animation: fadeInUp 1s ease-out; /* Добавлена анимация появления */
         }
 
         body.dark-mode .faq-section {
@@ -467,7 +473,434 @@ height: auto;
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
             display: none;
+            color: var(-\
+
+            --nav-bg: rgba(51, 51, 51, 0.8);
+            --section-bg: #333;
+            --footer-bg: #111;
+            --link-color: #eee;
+            --link-hover-bg: #546E7A;
+            --link-hover-color: #fff;
+            --box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+            --team-member-shadow: 0 2px 5px rgba(255, 255, 255, 0.2); /* Тень для карточек команды в темной теме */
+        }
+
+        /* Шапка сайта */
+        header {
+            background: var(--header-bg);
+            color: #fff;
+            padding: 20px 20px; /* Уменьшаем вертикальный padding */
+            text-align: center;
+            box-shadow: var(--box-shadow);
+            position: relative;
+            overflow: hidden;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            transition: padding var(--transition-duration); /* Плавное изменение высоты */
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://i.imgur.com/M8iX94f.png');
+            background-size: cover;
+            opacity: 0.1;
+            pointer-events: none;
+        }
+
+        header h1 {
+            font-size: 2em;
+            margin-bottom: 5px;
+            animation: slideInDown 1s ease-out;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            z-index: 1;
+            position: relative;
+        }
+
+        header p {
+            font-size: 1em;
+            font-style: italic;
+            animation: fadeIn 1.5s ease-out;
+            color: #e0f7fa;
+            z-index: 1;
+            position: relative;
+        }
+
+        /* Анимация частиц в шапке */
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.7;
+            animation: float 4s linear infinite;
+        }
+
+        /* Навигация */
+        nav {
+            background-color: var(--nav-bg);
             color: var(--text-color);
+            padding: 10px;
+            text-align: center;
+            box-shadow: var(--box-shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-radius: 0 0 var(--border-radius) var(--border-radius);
+        }
+
+        nav a {
+            color: var(--link-color);
+            text-decoration: none;
+            padding: 8px 15px;
+            display: inline-block;
+            transition: background-color var(--transition-duration), transform var(--transition-duration), color
+                var(--transition-duration);
+            font-weight: 600;
+            border-radius: var(--border-radius);
+            font-size: 0.9em;
+            margin: 0 5px;
+        }
+
+        nav a:hover {
+            background-color: var(--link-hover-bg);
+            color: var(--link-hover-color);
+            transform: scale(1.1);
+        }
+
+        /* Основной контент */
+        main {
+            padding: 40px 20px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        section {
+            margin-bottom: 40px;
+            background-color: var(--section-bg);
+            color: var(--text-color);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            transition: transform var(--transition-duration), box-shadow var(--transition-duration);
+        }
+
+        body.dark-mode section {
+            background-color: var(--section-bg);
+        }
+
+        section:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        section h2 {
+            color: var(--primary-color);
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            border
+
+-bottom: 3px solid var(--primary-color);
+            padding-bottom: 10px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        section p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            animation: slideInLeft 1s ease-out;
+        }
+
+        /* Изображения */
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            transition: transform var(--transition-duration);
+        }
+
+        img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Списки */
+        ul,
+        ol {
+            padding-left: 30px;
+        }
+
+        li {
+            margin-bottom: 15px;
+            animation: zoomIn 1s ease-out;
+            font-size: 1em;
+        }
+
+        /* Футер */
+        footer {
+            background-color: var(--footer-bg);
+            color: #fff;
+            text-align: center;
+            padding: 25px;
+            font-size: 0.9em;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Анимации */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            100% {
+                transform: scale(1.1);
+            }
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        /* Секция "Особенности" */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            align-items: start;
+        }
+
+        .feature {
+            background-color: var(--section-bg);
+            color: var(--text-color);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            transition: transform var(--transition-duration), box-shadow var(--transition-duration);
+            word-wrap: break-word;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 1s ease-out; /* Добавлена анимация появления */
+        }
+
+        body.dark-mode .feature {
+            background-color: #444;
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .feature i {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            display: block;
+            font-size: 2em;
+        }
+
+        .feature h3 {
+            color: var(--primary-color);
+            font-size: 1.6em;
+            margin-bottom: 15px;
+        }
+
+        .featu
+
+re p {
+            font-size: 1.1em;
+        }
+
+        /* Стили для таймлайна (УПРОЩЕННЫЙ) */
+        .roadmap-timeline {
+            list-style: none;
+            padding: 0;
+        }
+
+        .roadmap-timeline li {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: var(--section-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            animation: fadeInRight 1s ease-out; /* Добавлена анимация появления */
+        }
+
+        body.dark-mode .roadmap-timeline li {
+            background-color: #444;
+        }
+
+        .roadmap-timeline h3 {
+            font-size: 1.4em;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .roadmap-timeline p {
+            font-size: 1em;
+        }
+
+        /* Стили для формы подписки */
+        .subscribe-section {
+            background-color: #e0f7fa;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            text-align: center;
+            margin-top: 40px;
+            transition: background-color var(--transition-duration);
+            background: linear-gradient(135deg, #e0f7fa, #b2ebf2);
+            animation: zoomIn 1s ease-out; /* Добавлена анимация появления */
+        }
+
+        body.dark-mode .subscribe-section {
+            background-color: #333;
+            background: linear-gradient(135deg, #37474F, #546E7A);
+        }
+
+        .subscribe-section h2 {
+            color: var(--primary-color);
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .subscribe-section input[type="email"] {
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: var(--border-radius);
+            font-size: 1em;
+            width: 70%;
+            max-width: 350px;
+            margin-right: 8px;
+        }
+
+        .subscribe-section button {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: var(--border-radius);
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color var(--transition-duration);
+            font-weight: 600;
+            animation: pulse 2s infinite alternate;
+        }
+
+        .subscribe-section button:hover {
+            background-color: #388E3C;
+        }
+
+        /* Стили для логотипа */
+        .logo {
+            max-width: 100px;
+            height: auto;
+            margin-bottom: 8px;
+            transition: transform var(--transition-duration);
+        }
+
+        .logo:hover {
+            transform: scale(1.1);
+        }
+
+        /* Стили для FAQ */
+        .faq-section {
+            margin-top: 40px;
+            background-color: var(--section-bg);
+            color: var(--text-color);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            animation: fadeInUp 1s ease-out; /* Добавлена анимация появления */
+        }
+
+        body.dark-mode .faq-section {
+            background-color: #333;
+        }
+
+        .faq-question {
+            font-size: 1.2em;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+            cursor: pointer;
+            transition: color var(--transition-duration);
+        }
+
+        .faq-question:hover {
+            color: #388E3C;
+        }
+
+        .faq-answer {
+            font-size: 1em;
+            line-height: 1.5;
+            margin-bottom: 15px;
+            padding: 12px;
+            background-color: #fff;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            display: none;
+            color: var(--text-colo
+
+r);
         }
 
         body.dark-mode .faq-answer {
@@ -483,6 +916,7 @@ height: auto;
             padding: 30px;
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
+            animation: fadeInLeft 1s ease-out; /* Добавлена анимация появления */
         }
 
         body.dark-mode .news-section {
@@ -493,8 +927,7 @@ height: auto;
             margin-bottom: 20px;
             padding-bottom: 20px;
             border-bottom: 1px solid #ccc;
-
-}
+        }
 
         body.dark-mode .news-item {
             border-bottom: 1px solid #444;
@@ -532,6 +965,7 @@ height: auto;
             justify-content: center;
             box-shadow: var(--box-shadow);
             transition: background-color var(--transition-duration), border-color var(--transition-duration);
+            z-index: 1000; /* Чтобы переключатель был поверх всего */
         }
 
         body.dark-mode .theme-switcher {
@@ -595,6 +1029,7 @@ height: auto;
             transition: background-color var(--transition-duration);
             margin-top: 20px;
             box-shadow: var(--box-shadow);
+            animation: pulse 2s infinite alternate; /* Добавлена анимация пульсации */
         }
 
         .whitepaper-link:hover {
@@ -605,11 +1040,13 @@ height: auto;
         #team {
             margin-top: 40px;
             background-color: var(--section-bg);
-            color: var(--text-color);
+
+color: var(--text-color);
             padding: 30px;
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
             text-align: center;
+            animation: fadeInUp 1s ease-out; /* Добавлена анимация появления */
         }
 
         body.dark-mode #team {
@@ -618,12 +1055,29 @@ height: auto;
 
         .team-members {
             display: flex;
-            justify-content: space-around;
+            justify-content: center; /* Центрируем элементы */
             flex-wrap: wrap;
+            gap: 20px; /* Добавляем отступ между элементами */
+            margin-top: 20px; /* Добавляем отступ сверху */
         }
 
         .team-member {
-            margin-bottom: 20px;
+            background-color: var(--section-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--team-member-shadow); /* Используем переменную для тени */
+            padding: 20px;
+            text-align: center;
+            width: 250px; /* Фиксированная ширина для единообразия */
+            transition: transform var(--transition-duration), box-shadow var(--transition-duration);
+        }
+
+        .team-member:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Усиленная тень при наведении */
+        }
+
+        body.dark-mode .team-member {
+            background-color: #444;
         }
 
         .team-member h3 {
@@ -634,19 +1088,52 @@ height: auto;
 
         .team-member p {
             font-size: 1em;
+            color: #777; /* Цвет должности */
+        }
+
+        body.dark-mode .team-member p {
+            color: #bbb; /* Цвет должности в темной теме */
         }
 
         .team-member img {
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
             margin-top: 10px;
+            object-fit: cover; /* Обрезаем изображение, чтобы оно поместилось в круг */
+            object-position: center; /* Центрируем изображение в круге */
+            box-shadow: var(--box-shadow); /* Тень для изображения */
+        }
+
+        /* Дополнительные анимации */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
     </style>
 </head>
 
 <body class="light-mode">
-    <header data-aos="fade-down" data-aos-durati
-
-on="1000">
+    <header data-aos="fade-down" data-aos-duration="1000">
         <img src="https://i.postimg.cc/9MSyzmf7/IMG-20250412-114846-882.png" alt="InvaCoin Logo" class="logo">
         <h1>InvaCoin: Криптовалюта для спасения животных</h1>
         <p>Поддержите важные проекты по защите животных с помощью децентрализованных технологий.</p>
@@ -668,7 +1155,9 @@ on="1000">
         <section id="about" data-aos="fade-right" data-aos-duration="1000">
             <h2>Что такое InvaCoin (IVC)?</h2>
             <p>InvaCoin (IVC) – это криптовалюта, созданная с целью поддержки благотворительных
-                организаций и проектов, которые заботятся о животных. Мы верим, что объединив усилия криптосообщества, мы сможем
+                организаций и проектов, которые заботятся о животных. Мы верим, что объединив усили
+
+я криптосообщества, мы сможем
                 внести значительный вклад в решение проблем, с которыми сталкиваются животные по всему миру.</p>
 
             <p><b>Критерии выбора благотворительных организаций:</b> Мы сотрудничаем только с
@@ -711,8 +1200,7 @@ on="1000">
                     корма и медикаментов, а также организация программ стерилизации и вакцинации.
                 </li>
                 <li>
-
-<i class="fas fa-eye"></i>
+                    <i class="fas fa-eye"></i>
                     <strong>Абсолютная прозрачность:</strong> Все транзакции, осуществляемые с
                     использованием InvaCoin, записываются в блокчейн Ethereum, что гарантирует полную прозрачность и исключает
                     возможность мошенничества. Вы всегда можете отследить путь своего пожертвования и убедиться в его целевом
@@ -730,7 +1218,9 @@ on="1000">
                 alt="Два котенка обнимаются. InvaCoin помогает животным найти любящую семью.">
         </section>
 
-        <section id="features" data-aos="fade-right" data-aos-duration="1000">
+        <section id="features" data-aos="fade-right" data-ao
+
+s-duration="1000">
             <h2>Особенности InvaCoin</h2>
             <div class="features">
                 <div class="feature">
@@ -778,9 +1268,7 @@ on="1000">
                 <li>
                     <h3>Q4 2025: Партнерства</h3>
                     <p>Привлечение партнеров из сферы благотворительности: партнерство с 2-3 организациями, запуск партнерской
-                        прог
-
-раммы.</p>
+                        программы.</p>
                 </li>
                 <li>
                     <h3>Q1 2026: Мобильное приложение</h3>
@@ -801,10 +1289,13 @@ on="1000">
                         друг"</h3>
                     <p class="news-date">15 мая 2024</p>
                     <p class="news-content">Теперь часть средств от каждой транзакции InvaCoin
-                        будет направляться на поддержку приюта "Верный друг", который заботится о бездомных собаках и кошках.</p>
+                        будет направляться на поддержку приюта "Верный друг", который заботится о бездомных собаках и кошк
+
+ах.</p>
                 </div>
                 <div class="news-item">
                     <h3 class="news-title">InvaCoin успешно прошел аудит безопасности</h3>
+
                     <p class="news-date">10 мая 2024</p>
                     <p class="news-content">Команда InvaCoin рада сообщить, что проект успешно прошел
                         аудит безопасности, подтвердив надежность и безопасность платформы.</p>
@@ -850,17 +1341,15 @@ on="1000">
                 <div class="social-widget">
                     <a href="https://vk.com/id846788176"><i class="fab fa-vk"></i></a>
                 </div>
-                <div class="social-widget">
-                    <a href="
 
-mailto:invacoin0official@gmail.com"><i class="far fa-envelope"></i></a>
+                <div class="social-widget">
+                    <a href="mailto:invacoin0official@gmail.com"><i class="far fa-envelope"></i></a>
                 </div>
             </div>
 
             <p><b>Отсканируйте QR-код для пожертвования:</b></p>
             <img src="https://via.placeholder.com/150" alt="QR-код для пожертвования"
-
-        style="max-width: 150px; margin-top: 10px;">
+                style="max-width: 150px; margin-top: 10px;">
             <img src="https://i.postimg.cc/XNddWWkh/Take-photos-of-cute-and-touching-animals-f19811fe-b4df-4921-afe6-3.png"
                 alt="InvaCoin помогает всем животным!" style="max-width: 200px; margin-top: 10px;">
         </section>
@@ -880,14 +1369,12 @@ mailto:invacoin0official@gmail.com"><i class="far fa-envelope"></i></a>
                 <div class="team-member">
                     <h3>Иван Каламаев</h3>
                     <p>Создатель</p>
-                    <img src="https://i.postimg.cc/rp8WM7zg/1000032008.jpg" alt="Иван Каламаев"
-                        style="max-width: 150px;">
+                    <img src="https://i.postimg.cc/rp8WM7zg/1000032008.jpg" alt="Иван Каламаев">
                 </div>
                 <div class="team-member">
                     <h3>Кирилл Кашин</h3>
                     <p>Тестировщик</p>
-                    <img src="https://i.postimg.cc/rp8WM7zg/1000032008.jpg" alt="Кирилл Кашин"
-                        style="max-width: 150px;">
+                    <img src="https://i.postimg.cc/rp8WM7zg/1000032008.jpg" alt="Кирилл Кашин">
                 </div>
             </div>
         </section>
@@ -908,7 +1395,6 @@ mailto:invacoin0official@gmail.com"><i class="far fa-envelope"></i></a>
                 инструкция доступна в разделе "Как купить".</div>
 
             <div class="faq-question">Как я могу поддержать проект?</div>
-
             <div class="faq-answer">Вы можете купить InvaCoin, сделать пожертвование напрямую
                 благотворительным организациям или рассказать о проекте своим друзьям и знакомым.</div>
 
@@ -935,7 +1421,9 @@ mailto:invacoin0official@gmail.com"><i class="far fa-envelope"></i></a>
         document.querySelectorAll('.faq-question').forEach(question => {
             question.addEventListener('click', () => {
                 const answer = question.nextElementSibling;
-                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+                answer.style.display = answer.style.display === 'block' ?
+
+'none' : 'block';
             });
         });
 
@@ -955,4 +1443,4 @@ mailto:invacoin0official@gmail.com"><i class="far fa-envelope"></i></a>
     </script>
 </body>
 
-</html>
+    </html>
