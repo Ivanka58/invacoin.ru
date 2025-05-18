@@ -52,6 +52,7 @@
             scroll-behavior: smooth;
             transition: background-color var(--transition-duration), color var(--transition-duration);
 
+ChatGPT4 | Midjourney, [18.05.2025 17:35]
             box-sizing: border-box;
             position: relative;
         }
@@ -84,7 +85,7 @@
             border-bottom-left-radius: 20px;
             border-bottom-right-radius: 20px;
             transition: padding var(--transition-duration);
-            z-index: 1; /* Чтобы шарики были под текстом */
+            z-index: 1;
         }
 
         header::before {
@@ -98,7 +99,7 @@
             background-size: cover;
             opacity: 0.1;
             pointer-events: none;
-            z-index: 0; /* Под всем контентом шапки */
+            z-index: 0;
         }
 
         header h1 {
@@ -106,7 +107,7 @@
             margin-bottom: 5px;
             animation: slideInDown 1s ease-out;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            z-index: 2; /* Выше, чем .header-balls */
+            z-index: 2;
             position: relative;
         }
 
@@ -115,7 +116,7 @@
             font-style: italic;
             animation: fadeIn 1.5s ease-out;
             color: #e0f7fa;
-            z-index: 2; /* Выше, чем .header-balls */
+            z-index: 2;
             position: relative;
         }
 
@@ -127,7 +128,7 @@
             width: 100%;
             height: 100%;
             overflow: hidden;
-            z-index: 1; /* Под текстом, но над фоном */
+            z-index: 1;
             pointer-events: none;
         }
 
@@ -137,7 +138,7 @@
             width: 20px;
             height: 20px;
             border-radius: 50%;
-            background: rgba(124, 252, 0, 0.7); /* Яркий зеленый цвет */
+            background: rgba(124, 252, 0, 0.7);
             animation: float 15s linear infinite;
             bottom: -150px;
         }
@@ -187,9 +188,7 @@
         .header-balls span:nth-child(7) {
             left: 70%;
             width: 28px;
-            height
-
-: 28px;
+            height: 28px;
             animation-delay: 12s;
         }
 
@@ -197,7 +196,10 @@
             left: 80%;
             width: 32px;
             height: 32px;
-            animation-delay: 14s;
+            animation-
+
+ChatGPT4 | Midjourney, [18.05.2025 17:35]
+delay: 14s;
         }
 
         .header-balls span:nth-child(9) {
@@ -221,14 +223,14 @@
             padding: 10px;
             text-align: center;
             box-shadow: var(--box-shadow);
-            position: sticky; /* Фиксированное положение */
+            position: sticky;
             top: 0;
             left: 0;
             width: 100%;
-            z-index: 99; /* Меньше, чем у theme-switcher */
+            z-index: 99;
             border-radius: 0 0 var(--border-radius) var(--border-radius);
             box-sizing: border-box;
-            margin-top: 0; /* Убираем отступ сверху */
+            margin-top: 0;
         }
 
         nav a {
@@ -254,7 +256,7 @@
         main {
             padding: 40px 20px;
             animation: fadeIn 1s ease-out;
-            margin-top: 0; /* Убираем отступ сверху */
+            margin-top: 0;
             box-sizing: border-box;
         }
 
@@ -327,8 +329,7 @@
             padding: 25px;
             font-size: 0.9em;
             position: relative;
-
-overflow: hidden;
+            overflow: hidden;
             box-sizing: border-box;
         }
 
@@ -342,7 +343,9 @@ overflow: hidden;
             to {
                 opacity: 1;
                 transform: translateY(0);
-            }
+
+ChatGPT4 | Midjourney, [18.05.2025 17:35]
+}
         }
 
         @keyframes slideInDown {
@@ -488,16 +491,17 @@ overflow: hidden;
         /* Стили для формы подписки */
         .subscribe-section {
             background-color: #e0f7fa;
-            padding: 3
-
-0px;
+            padding: 30px;
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
             text-align: center;
             margin-top: 40px;
             transition: background-color var(--transition-duration);
             background: var(--gradient-bg);
-            animation: zoomIn 1s ease-out;
+            animation: zoomIn 1s
+
+ChatGPT4 | Midjourney, [18.05.2025 17:35]
+ease-out;
             position: relative;
             overflow: hidden;
             box-sizing: border-box;
@@ -630,8 +634,7 @@ overflow: hidden;
 
             20% {
                 opacity: 1;
-
-}
+            }
 
             80% {
                 opacity: 1;
@@ -647,7 +650,9 @@ overflow: hidden;
         .logo {
             max-width: 150px;
             height: auto;
-            margin-bottom: 8px;
+
+ChatGPT4 | Midjourney, [18.05.2025 17:35]
+margin-bottom: 8px;
             transition: transform var(--transition-duration);
         }
 
@@ -748,7 +753,7 @@ overflow: hidden;
         .theme-switcher {
             position: fixed;
             bottom: 20px;
-            right: 20px;
+            right: 60px;
             background-color: #fff;
             border: 1px solid #ccc;
             border-radius: 50%;
@@ -777,8 +782,7 @@ overflow: hidden;
             font-size: 1.5em;
             color: #555;
             transition: color var(--transition-duration);
-
-}
+        }
 
         body.dark-mode .theme-switcher i {
             color: #eee;
@@ -786,19 +790,21 @@ overflow: hidden;
 
         /* Стили для кнопки "Наверх" */
         #scrollToTopBtn {
-            display: none; /* Сначала скрываем кнопку */
+            display: none;
             position: fixed;
             bottom: 20px;
-            right: 80px; /* Смещаем кнопку "Наверх" левее */
+            left: 20px;
             background-color: var(--primary-color);
-            color: white;
+
+ChatGPT4 | Midjourney, [18.05.2025 17:35]
+color: white;
             border: none;
             border-radius: 50%;
             width: 40px;
             height: 40px;
             cursor: pointer;
             font-size: 1.2em;
-            z-index: 999; /* Чтобы кнопка была поверх всего */
+            z-index: 999;
             transition: background-color var(--transition-duration);
         }
 
@@ -908,9 +914,7 @@ overflow: hidden;
         .team-member h3 {
             font-size: 1.4em;
             color: var(--primary-color);
-            margin-bottom: 5
-
-px;
+            margin-bottom: 5px;
         }
 
         .team-member p {
@@ -929,7 +933,11 @@ px;
             margin-top: 10px;
             object-fit: cover;
             object-position: center;
-            box-shadow: var(--box-shadow);
+            box-shadow: var\
+
+ChatGPT4 | Midjourney, [18.05.2025 17:35]
+ 
+(--box-shadow);
             transition: transform var(--transition-duration);
             box-sizing: border-box;
         }
@@ -999,7 +1007,6 @@ px;
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
             text-align: center;
-
             box-sizing: border-box;
         }
 
@@ -1013,6 +1020,9 @@ px;
             margin-bottom: 20px;
         }
 
+        #calculator
+
+ChatGPT4 | Midjourney, [18.05.2025 17:35]
         #calculator input[type="number"] {
             padding: 12px;
             border: 1px solid #ccc;
@@ -1097,7 +1107,6 @@ px;
 
         /* Media Queries */
         @media (max-width: 768px) {
-
             header {
                 padding: 15px;
             }
@@ -1112,6 +1121,8 @@ px;
 
             nav a {
                 padding: 8px 15px;
+
+ChatGPT4 | Midjourney, [18.05.2025 17:35]
                 font-size: 0.9em;
                 margin: 0 5px;
             }
@@ -1224,14 +1235,15 @@ px;
                 <div class="feature" data-aos="zoom-in">
                     <i class="fas fa-hand-holding-heart"></i>
                     <h3>Благотворительность</h3>
-                    <p>Часть каждой транзакции направляется в благотворительные фонды по защи
-
-те животных.</p>
+                    <p>Часть каждой транзакции направляется в благотворительные фонды по защите животных.</p>
                 </div>
                 <div class="feature" data-aos="zoom-in">
                     <i class="fas fa-lock"></i>
                     <h3>Безопасность</h3>
-                    <p>Использование блокчейна обеспечивает безопасность и прозрачность всех операций.</p>
+                    <p>Использование блокчейна обеспечивает бе
+
+ChatGPT4 | Midjourney, [18.05.2025 17:35]
+зопасность и прозрачность всех операций.</p>
                 </div>
                 <div class="feature" data-aos="zoom-in">
                     <i class="fas fa-chart-line"></i>
@@ -1262,23 +1274,23 @@ px;
             <h2>Дорожная карта</h2>
             <ul class="roadmap-timeline">
                 <li data-aos="fade-right">
-                    <h3>Q1 2023: Запуск проекта</h3>
+                    <h3>Q1 2027: Запуск проекта</h3>
                     <p>Разработка Whitepaper, создание веб-сайта, запуск InvaCoin.</p>
                 </li>
                 <li data-aos="fade-left">
-                    <h3>Q2 2023: Партнерства</h3>
+                    <h3>Q2 2027: Партнерства</h3>
                     <p>Установление партнерских отношений с благотворительными организациями и криптобиржами.</p>
                 </li>
                 <li data-aos="fade-right">
-                    <h3>Q3 2023: Стейкинг и DeFi</h3>
+                    <h3>Q3 2027: Стейкинг и DeFi</h3>
                     <p>Запуск стейкинга InvaCoin и интеграция с DeFi платформами.</p>
                 </li>
                 <li data-aos="fade-left">
-                    <h3>Q4 2023: Масштабирование</h3>
+                    <h3>Q4 2027: Масштабирование</h3>
                     <p>Расширение сообщества, запуск новых функций и партнерств.</p>
                 </li>
                 <li data-aos="fade-right">
-                    <h3>Q1 2024: Глобальное расширение</h3>
+                    <h3>Q1 2028: Глобальное расширение</h3>
                     <p>Выход на международные рынки и поддержка новых благотворительных проектов.</p>
                 </li>
             </ul>
@@ -1300,8 +1312,8 @@ px;
             </div>
             <h2>Подпишитесь на нашу рассылку</h2>
             <p>Узнавайте первыми о новостях InvaCoin и акциях в поддержку животных!</p>
-            <input type="email" placeholder="Ваш email">
-            <button>Подписаться</button>
+            <input type="email" id="emailInput" placeholder="Ваш email">
+            <button onclick="subscribe()">Подписаться</button>
         </section>
 
         <!-- Секция "Наша команда" -->
@@ -1309,20 +1321,17 @@ px;
             <h2>Наша команда</h2>
             <div class="team-members">
                 <div class="team-member" data-aos="zoom-in">
-
-<img src="https://i.pravatar.cc/150?img=1" alt="Team Member 1">
-                    <h3>Иван Иванов</h3>
+                    <img src="https://i.postimg.cc/rmFdvMwF/image.png" alt="Team Member 1">
+                    <h3>Дмитрий Иванов</h3>
                     <p>Основатель и CEO</p>
                 </div>
-                <div class="team-member" data-aos="zoom-in">
-                    <img src="https://i.pravatar.cc/150?img=2" alt="Team Member 2">
-                    <h3>Мария Смирнова</h3>
+                <div c
+
+ChatGPT4 | Midjourney, [18.05.2025 17:35]
+lass="team-member" data-aos="zoom-in">
+                    <img src="https://i.postimg.cc/d14VGj3v/image.png" alt="Team Member 2">
+                    <h3>Екатерина Смирнова</h3>
                     <p>Технический директор</p>
-                </div>
-                <div class="team-member" data-aos="zoom-in">
-                    <img src="https://i.pravatar.cc/150?img=3" alt="Team Member 3">
-                    <h3>Алексей Петров</h3>
-                    <p>Маркетинг</p>
                 </div>
             </div>
         </section>
@@ -1336,10 +1345,9 @@ px;
             <a href="#" class="whitepaper-link">Скачать Whitepaper</a>
             <div class="social-widgets">
                 <div class="social-widget">
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="#" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://vk.com/invacoin" aria-label="VK"><i class="fab fa-vk"></i></a>
+                    <a href="https://t.me/invacoin" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                    <a href="mailto:support@invacoin.io" aria-label="Email"><i class="fas fa-envelope"></i></a>
                 </div>
             </div>
         </section>
@@ -1383,7 +1391,7 @@ px;
 
             <div class="news-item">
                 <h3 class="news-title">InvaCoin запускает новую благотворительную акцию</h3>
-                <p class="news-date">15 июня 2023</p>
+                <p class="news-date">15 июня 2025</p>
                 <p class="news-content">InvaCoin объявляет о запуске новой благотворительной акции в поддержку
                     приютов для бездомных животных. Все собранные средства будут направлены на закупку кормов и
                     медицинских препаратов.</p>
@@ -1391,9 +1399,12 @@ px;
 
             <div class="news-item">
                 <h3 class="news-title">InvaCoin интегрирован с новой DeFi платформой</h3>
-                <p class="news-date">10 июня 2023</p>
+                <p class="news-date">10 июня 2025</p>
                 <p class="news-content">InvaCoin успешно интегрирован с новой DeFi платформой, что позволит
-                    пользователям получать дополнительный доход за хранение InvaCoin и поддерживать развитие проекта.</p>
+                    пользователям получать дополнительный доход за хранение InvaCoin и по
+
+ChatGPT4 | Midjourney, [18.05.2025 17:35]
+ддерживать развитие проекта.</p>
             </div>
         </section>
 
@@ -1461,3 +1472,4 @@ px;
 </body>
 
 </html>
+
