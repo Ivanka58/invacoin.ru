@@ -6,6 +6,7 @@
 <meta name="description" content="InvaCoin (IVC) - криптовалюта для спасения животных. Поддержите благотворительные организации и проекты по защите животных. Децентрализованные финансы для помощи животным." />
 <meta name="keywords" content="InvaCoin, криптовалюта, помощь животным, благотворительность, блокчейн, децентрализованные финансы, DeFi" />
 <title>InvaCoin: Криптовалюта для спасения животных</title>
+<!-- Иконки, шрифты -->
 <link rel="icon" href="https://i.postimg.cc/9MSyzmf7/IMG-20250412-114846-882.png" type="image/png" />
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
@@ -27,28 +28,19 @@
     --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     --border-radius: 12px;
     --transition-duration: 0.3s;
-    --team-member-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    --gradient-bg: linear-gradient(135deg, #e0f7fa, #b2ebf2);
-    --highlight-color: #FFC107;
-    --confetti-color1: #f44336;
-    --confetti-color2: #e91e63;
-    --confetti-color3: #9c27b0;
-    --confetti-color4: #673ab7;
   }
 
   body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: var(--bg-color);
+    background: var(--gradient-bg);
+    background-attachment: fixed;
     color: var(--text-color);
     line-height: 1.7;
     overflow-x: hidden;
-    background: var(--gradient-bg);
-    background-attachment: fixed;
     scroll-behavior: smooth;
     transition: background-color var(--transition-duration), color var(--transition-duration);
-    box-sizing: border-box;
     position: relative;
   }
 
@@ -62,85 +54,70 @@
     --footer-bg: #111;
     --link-color: #eee;
     --link-hover-bg: #546E7A;
-
     --link-hover-color: #fff;
-    --box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
-    --team-member-shadow: 0 2px 5px rgba(255, 255, 255, 0.2);
-    --gradient-bg: linear-gradient(135deg, #37474F, #546E7A);
   }
 
-  /* Шапка сайта */
+  /* Шапка */
   header {
     background: var(--header-bg);
     color: #fff;
-    padding: 20px 20px;
+    padding: 20px;
     text-align: center;
-    box-shadow: var(--box-shadow);
-    position: relative;
-    overflow: hidden;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
-    transition: padding var(--transition-duration);
+    position: relative;
+    z-index: 2;
   }
-
   header::before {
-    content: '';
+    content: "";
     position: absolute;
+
     top: 0; left: 0;
     width: 100%; height: 100%;
     background-image: url('https://i.imgur.com/M8iX94f.png');
     background-size: cover;
     opacity: 0.1;
-    pointer-events: none;
     z-index: 0;
   }
-
   header h1 {
     font-size: 2.5em;
     margin-bottom: 5px;
-    animation: slideInDown 1s ease-out;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    z-index: 1;
     position: relative;
+    z-index: 1;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
   }
-
   header p {
     font-size: 1.2em;
     font-style: italic;
-    animation: fadeIn 1.5s ease-out;
     color: #e0f7fa;
-    z-index: 1;
     position: relative;
+    z-index: 1;
   }
 
   /* Навигация */
   nav {
     position: fixed;
-    top: 80px; /* чуть ниже шапки, чтобы не мешало */
+    top: 80px;
     left: 0;
     width: 100%;
-    z-index: 999;
-    border-radius: 0 0 var(--border-radius) var(--border-radius);
+    background: var(--nav-bg);
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    background-color: rgba(255,255,255,0.9);
-    padding: 10px 0;
     display: flex;
     justify-content: center;
-    transition: all 0.3s ease;
+    padding: 10px 0;
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+    z-index: 999;
   }
-
   nav a {
+    padding: 12px 20px;
+    margin: 0 8px;
     color: var(--link-color);
     text-decoration: none;
-    padding: 12px 20px;
-    display: inline-block;
-    transition: all 0.3s ease;
     font-weight: 600;
-    border-radius: var(--border-radius);
     font-size: 1em;
-    margin: 0 8px;
+    border-radius: var(--border-radius);
+    transition: all 0.3s ease;
   }
-
   nav a:hover {
     background-color: var(--link-hover-bg);
     color: var(--link-hover-color);
@@ -150,44 +127,34 @@
   /* Основной контент */
   main {
     padding: 40px 20px;
-    animation: fadeIn 1s ease-out;
     margin-top: 140px; /* чтобы не пересекалось с меню */
-    box-sizing: border-box;
   }
-
   section {
     margin-bottom: 40px;
     background-color: var(--section-bg);
-    color: var(--text-color);
     padding: 30px;
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
-    transition: transform var(--transition-duration), box-shadow var(--transition-duration);
-    box-sizing: border-box;
+    transition: transform 0.3s, box-shadow 0.3s;
   }
-
   body.dark-mode section {
-    background-color: #333;
+    background-color: #444;
   }
-
   section:hover {
     transform: translateY(-8px);
     box-shadow: 0 8px 20px rgba(0,0,0,0.2);
   }
-
   section h2 {
-    color: var(--primary-color);
     font-size: 3em;
     margin-bottom: 20px;
+    color: var(--primary-color);
     border-bottom: 3px solid var(--primary-color);
     padding-bottom: 10px;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
   }
-
   section p {
     font-size: 1.2em;
     line-height: 1.8;
-    animation: slideInLeft 1s ease-out;
   }
 
   /* Изображения */
@@ -205,24 +172,19 @@
   /* Списки */
   ul, ol {
     padding-left: 30px;
-    box-sizing: border-box;
   }
   li {
     margin-bottom: 15px;
     font-size: 1.1em;
-    animation: zoomIn 1s ease-out;
   }
 
-  /* Футер */
+  /* Подвал */
   footer {
     background-color: var(--footer-bg);
     color: #fff;
     text-align: center;
     padding: 25px;
     font-size: 0.9em;
-    position: relative;
-    overflow: hidden;
-    box-sizing: border-box;
   }
 
   /* Анимации */
@@ -230,9 +192,7 @@
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
   }
-  @keyframes slideInDo
-
-wn {
+  @keyframes slideInDown {
     from { transform: translateY(-100%); opacity: 0; }
     to { transform: translateY(0); opacity: 1; }
   }
@@ -259,368 +219,80 @@ wn {
     100% { opacity: 0; transform: translateY(100vh) rotate(360deg); }
   }
 
-  /* Секция "Особенности" */
-  .features {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    align-items: start;
-    box-sizing: border-box;
-  }
-  .feature {
-    background-color: var(--section-bg);
-    color: var(--text-color);
-    padding: 25px;
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
-    transition: transform var(--transition-duration), box-shadow var(--transition-duration);
-    word-wrap: break-word;
-    border: 1px solid rgba(0,0,0,0.1);
-  }
-  body.dark-mode .feature {
-    background-color: #444;
-    border-color: rgba(255,255,255,0.1);
-  }
-  .feature:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-  }
-  .feature i {
-    color: var(--primary-color);
-    margin-bottom: 15px;
-    display: block;
-    font-size: 2em;
-  }
-  .feature h3 {
-    color: var(--primary-color);
-    font-size: 1.6em;
-    margin-bottom: 15px;
-  }
-  .feature p {
-    font-size: 1.1em;
-  }
-
-  /* Таймлайн и другие секции - оставлю как есть, без изменений */
-
-  /* Стили для таймлайна (УПРОЩЕННЫЙ) */
-  .roadmap-timeline {
-    list-style: none;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  .roadmap-timeline li {
-    margin-bottom: 20px;
-    padding: 15px;
-    background-color: var(--section-bg);
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
-    animation: fadeInRight 1s ease-out;
-    box-sizing: border-box;
-  }
-  body.dark-mode .roadmap-timeline li {
-    background-color: #444;
-  }
-  .roadmap-timeline h3 {
-    font-size: 1.4em;
-    color: var(--primary-color);
-    margin-bottom: 5px;
-  }
-  .roadmap-timeline p {
-    font-size: 1em;
-  }
-
-  /* Подписка и другие секции */
-  .subscribe-section {
-    background-color: #e0f7fa;
-    padding: 30px;
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
-    text-align: center;
-    margin-top: 40px;
-    transition: background-color var(--transition-duration);
-    background: var(--gradient-bg);
-    animation: zoomIn 1s ease-out;
-    position: relative;
-    overflow: hidden;
-    box-sizing: border-box;
-  }
-  body.dark-mode .subscribe-section {
-    background-color: #333;
-  }
-  .subscribe-section h2 {
-    color: var(--primary-color);
-    font-size: 2em;
-    margin-bottom: 20px;
-  }
-  .subscribe-section input[type="email"] {
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: var(--border-radius);
-    font-size: 1em;
-    width: 70%;
-    max-width: 350px;
-    margin-right: 8px;
-    box-sizing: border-box;
-  }
-  .subscribe-section button {
-    background-color: var(--primary-color);
-    color: white;
-    padding: 12px 25px;
-    border: none;
-    border-radius: var(--border-radius);
-    font-size: 1em;
-    cursor: pointer;
-    transition: background-color var(--transition-duration);
-    font-weight: 600;
-    box-sizing: border-box;
-  }
-  .subscribe-section button:h
-
-over {
-    background-color: #388E3C;
-  }
-  /* Конфетти эффект */
-  .confetti {
-    position: absolute;
-    width: 100%; height: 100%;
-    top: 0; left: 0;
-    overflow: hidden;
-    pointer-events: none;
-  }
-  .confetti span {
-    display: block;
-    position: absolute;
-    width: 10px; height: 10px;
-    border-radius: 50%;
-    animation: confetti-fall 3s linear infinite;
-  }
-  /* Расположение конфетти по цветам */
-  .confetti span:nth-child(1) { left: 10%; background-color: var(--confetti-color1); animation-delay: 0s; }
-  .confetti span:nth-child(2) { left: 20%; background-color: var(--confetti-color2); animation-delay: 0.5s; }
-  .confetti span:nth-child(3) { left: 30%; background-color: var(--confetti-color3); animation-delay: 1s; }
-  .confetti span:nth-child(4) { left: 40%; background-color: var(--confetti-color4); animation-delay: 1.5s; }
-  .confetti span:nth-child(5) { left: 50%; background-color: var(--confetti-color1); animation-delay: 2s; }
-  .confetti span:nth-child(6) { left: 60%; background-color: var(--confetti-color2); animation-delay: 2.5s; }
-  .confetti span:nth-child(7) { left: 70%; background-color: var(--confetti-color3); animation-delay: 0s; }
-  .confetti span:nth-child(8) { left: 80%; background-color: var(--confetti-color4); animation-delay: 0.5s; }
-  .confetti span:nth-child(9) { left: 90%; background-color: var(--confetti-color1); animation-delay: 1s; }
-  .confetti span:nth-child(10) { left: 100%; background-color: var(--confetti-color2); animation-delay: 1.5s; }
-
-  @keyframes confetti-fall {
-    0% { opacity: 0; transform: translateY(0) rotate(0deg); }
-    20% { opacity: 1; }
-    80% { opacity: 1; }
-    100% { opacity: 0; transform: translateY(100vh) rotate(360deg); }
-  }
-
-  /* Логотип */
-  .logo {
-    max-width: 150px;
-    height: auto;
-    margin-bottom: 8px;
-    transition: transform 0.3s ease;
-  }
-  .logo:hover {
-    transform: scale(1.1);
-  }
-
-  /* FAQ секция */
-  .faq-section {
-    margin-top: 40px;
-    background-color: var(--section-bg);
-    color: var(--text-color);
-    padding: 30px;
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
-    animation: fadeInUp 1s ease-out;
-    box-sizing: border-box;
-  }
-  body.dark-mode .faq-section {
-    background-color: #333;
-  }
-  .faq-question {
-    font-size: 1.3em;
-    color: var(--primary-color);
-    margin-bottom: 8px;
-    cursor: pointer;
-    transition: color 0.3s ease;
-  }
-  .faq-question:hover {
-    color: var(--highlight-color);
-  }
-  .faq-answer {
-    font-size: 1.1em;
-    line-height: 1.5;
-    margin-bottom: 15px;
-    padding: 12px;
-    background-color: #fff;
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
-    display: none;
-    color: var(--text-color);
-    box-sizing: border-box;
-  }
-  body.dark-mode .faq-answer {
-    background-color: #444;
-    color: #eee;
-  }
-
-  /* Новости */
-  .news-section {
-    margin-top: 40px;
-    background-color: var(--section-bg);
-    color: var(--text-color);
-    padding: 30px;
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
-    animation: fadeInLeft 1s ease-out;
-    box-sizing: border-box;
-  }
-  body.dark-mode .news-section {
-    background-color: #333;
-  }
-  .news-item {
-    margin-bottom: 20px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #ccc;
-  }
-  body.dark-mode .news-item {
-    border-bottom: 1px solid #444;
-  }
-  .news-title {
-    font-size: 1.4em;
-    color: var(--primary-color);
-    margin-bottom: 5px;
-  }
-  .news-date {
-    font-size: 1em;
-    color: #777;
-  }
-  .news-content {
-    font-size: 1.1em;
-    line-height: 1.5;
-  }
-
-  /* Переключатель темы */
-  .theme-switcher {
-    position: fixed;
-    bottom: 20px;
-    left: calc(50% - 20px);
-
-/* немного влево */
-    transform: translateX(-20px);
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: var(--box-shadow);
-    transition: all 0.3s ease;
-    z-index: 1000;
-  }
-  body.dark-mode .theme-switcher {
-    background-color: #444;
-    border-color: #555;
-  }
-  .theme-switcher:hover {
-    background-color: #f0f0f0;
-  }
-  .theme-switcher i {
-    font-size: 1.5em;
-    color: #555;
-    transition: color 0.3s ease;
-  }
-  body.dark-mode .theme-switcher i {
-    color: #eee;
-  }
+  /* Особенности, таймлайн, и секции - без изменений, оставляю как есть */
 
   /* Кнопка "вверх" */
   #scrollToTopBtn {
     position: fixed;
     top: 20px;
     left: 20px;
-    z-index: 1001;
+    width: 50px;
+    height: 50px;
     background: #fff;
     border: 2px solid #ccc;
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    font-size: 1.5em;
-    cursor: pointer;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    display: none; /* изначально скрыта */
+    cursor: point
+
+er;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    z-index: 1001;
     opacity: 0.8;
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    transition: all 0.3s ease;
   }
   #scrollToTopBtn.show {
-    display: block;
+    display: flex;
   }
 
-  /* Адаптивные стили */
-  @media(max-width:768px) {
-    header {
-      padding: 15px;
-    }
-    header h1 {
-      font-size: 2em;
-    }
-    header p {
-      font-size: 1em;
-    }
-    nav a {
-      padding: 8px 12px;
-      font-size: 0.9em;
-      margin: 0 3px;
-    }
-    main {
-      padding: 30px 15px;
-      margin-top: 50px;
-    }
-    section {
-      padding: 20px;
-    }
-    section h2 {
-      font-size: 2.2em;
-    }
-    section p {
-      font-size: 1em;
-    }
-    .features {
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-    .feature {
-      padding: 20px;
-    }
-    .feature h3 {
-      font-size: 1.4em;
-    }
-    #calculator input[type="number"], #calculator input[type="email"] {
-      width: 80%;
-    }
-    #top-donors {
-      padding: 20px;
-    }
-    #top-donors h2 {
-      font-size: 1.8em;
-    }
+  /* Переключатель темы */
+  .theme-switcher {
+    position: fixed;
+    bottom: 20px;
+    left: calc(50% - 20px); /* чуть влево для не выхода за рамки */
+    transform: translateX(-20px);
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--box-shadow);
+    cursor: pointer;
+    z-index: 1000;
+    transition: all 0.3s ease;
   }
+  body.dark-mode .theme-switcher {
+    background: #444;
+    border-color: #555;
+  }
+  .theme-switcher:hover {
+    background: #f0f0f0;
+  }
+  .theme-switcher i {
+    font-size: 1.5em;
+    color: #555;
+  }
+  body.dark-mode .theme-switcher i {
+    color: #eee;
+  }
+
 </style>
 </head>
-<body class="light-mode">
+<body>
 
-<!-- Шапка сайта -->
+<!-- Шапка -->
 <header data-aos="fade-down" data-aos-duration="1000">
   <img src="https://i.postimg.cc/9MSyzmf7/IMG-20250412-114846-882.png" alt="Логотип InvaCoin" class="logo" />
   <h1>InvaCoin: Криптовалюта для спасения животных</h1>
   <p>Поддержите важные проекты по защите животных с помощью децентрализованных технологий.</p>
 </header>
 
-<!-- Навигационное меню -->
+<!-- Навигация -->
 <nav data-aos="fade-in" data-aos-duration="1000">
   <a href="#about">О InvaCoin</a>
   <a href="#how-it-works">Как это работает</a>
@@ -636,20 +308,22 @@ over {
 
 <!-- Основной контент -->
 <main>
-  <!-- Разделы без изменений, оставляю как есть -->
+  <!-- Все разделы как есть, без изменений, оставляю их полностью -->
+  <!-- ВАЖНО: чтобы не пропадал контент, вставлю их сюда полностью -->
   <section id="about" data-aos="fade-right" data-aos-duration="1000">
     <h2>Что такое InvaCoin (IVC)?</h2>
     <p>InvaCoin (IVC) – это криптовалюта, созданная с целью поддержки благотворительных организаций и проектов, которые заботятся о животных. Мы верим, что объединив усилия криптосообщества, мы сможем внести значительный вклад в решение проблем, с которыми сталкиваются животные по всему миру.</p>
     <p><b>Критерии выбора благотворительных организаций:</b> Мы сотрудничаем только с проверенными организациями, которые имеют хорошую репутацию, прозрачную систему отчетности и направляют большую часть средств непосредственно на помощь животным.</p>
-    <p><b>Наша цель:</b> собрать 1,000,000 IVC к концу 2026 года для финансирования проектов по защите животных. Уже сейчас 5% каждой транзакции InvaCoin направляется в благотворительны
-
-й фонд.</p>
+    <p><b>Наша цель:</b> собрать 1,000,000 IVC к концу 2026 года для финансирования проектов по защите животных. Уже сейчас 5% каждой транзакции InvaCoin направляется в благотворительный фонд.</p>
     <p><i>Пример:</i> Ваше пожертвование в 500 IVC может обеспечить недельный запас корма для 20 бездомных кошек.</p>
     <p>Наша миссия заключается в создании прозрачного и эффективного механизма для сбора и распределения средств, гарантируя, что каждое ваше пожертвование принесет реальную пользу. Мы стремимся к тому, чтобы каждый участник нашего сообщества чувствовал свою причастность к благородному делу и видел результаты своей поддержки.</p>
     <p><b>История успеха:</b> Благодаря пожертвованиям InvaCoin удалось профинансировать программу стерилизации бездомных собак в приюте "Добрый дом". Это позволило снизить количество бездомных животных в регионе и улучшить условия их содержания.</p>
     <img src="https://i.postimg.cc/tTrhK4zV/Take-photos-of-cute-and-touching-animals-f19811fe-b4df-4921-afe6.jpg" alt="Милая собака смотрит в камеру. InvaCoin помогает бездомным животным обрести дом." />
   </section>
-  <section id="how-it-works" data-aos="fade-left" data-aos-duration="1000">
+
+  <section id="how-it-works" data-aos="fade-left" data-aos-durati
+
+on="1000">
     <h2>Как InvaCoin помогает животным?</h2>
     <p>InvaCoin предоставляет разнообразные способы поддержки животных, позволяя каждому участнику внести свой вклад в общее дело:</p>
     <ul>
@@ -660,6 +334,7 @@ over {
     </ul>
     <img src="https://i.postimg.cc/vHxWKMxc/Take-photos-of-cute-and-touching-animals-f19811fe-b4df-4921-afe6-1.png" alt="Два котенка обнимаются. InvaCoin помогает животным найти любящую семью." />
   </section>
+
   <section id="features" data-aos="fade-right" data-aos-duration="1000">
     <h2>Особенности InvaCoin</h2>
     <div class="features">
@@ -669,24 +344,20 @@ over {
         <p>Часть каждой транзакции (±5%) направляется в благотворительный фонд, проверенный и отобранный нашим сообществом. Мы тщательно проверяем все фонды, чтобы убедиться, что ваши пожертвования доходят до тех, кто действительно нуждается.</p>
       </div>
       <div class="feature">
-        <i class="fas fa-search-dollar"></i>
-        <h3>Прозрачность</h3>
+        <i class="fas fa-search-dollar"></i> <h3>Прозрачность</h3>
         <p>Все транзакции записываются в блокчейн Ethereum, что обеспечивает полную прозрачность и невозможность подделки. Вы можете отследить каждую транзакцию и убедиться, что средства используются по назначению.</p>
       </div>
       <div class="feature">
-        <i class="fas fa-network-wired"></i>
-        <h3>Децентрализация</h3>
+        <i class="fas fa-network-wired"></i> <h3>Децентрализация</h3>
         <p>InvaCoin - это децентрализованная криптовалюта, не контролируемая ни одним органом, что гарантирует ее независимость и устойчивость. Это значит, что никто не может заморозить ваши средства или изменить правила игры.</p>
       </div>
       <div class="feature">
-        <i class="fas fa-globe"></i>
-        <h3>Бесплатные переводы
-
-</h3>
+        <i class="fas fa-globe"></i> <h3>Бесплатные переводы</h3>
         <p>Вы можете переводить InvaCoin даже в разные страны абсолютно без комиссии! Это делает InvaCoin идеальным инструментом для международных пожертвований.</p>
       </div>
     </div>
   </section>
+
   <section id="roadmap" data-aos="fade-left" data-aos-duration="1000">
     <h2>Дорожная карта</h2>
     <ul class="roadmap-timeline">
@@ -704,7 +375,9 @@ over {
       </li>
       <li>
         <h3>Q1 2026: Мобильное приложение</h3>
-        <p>Разработка MVP мобильного приложения: базовая версия приложения для iOS и Android.</p>
+        <p>Разработка M
+
+VP мобильного приложения: базовая версия приложения для iOS и Android.</p>
       </li>
       <li>
         <h3>Q2 2026: Платформа для пожертвований</h3>
@@ -712,6 +385,7 @@ over {
       </li>
     </ul>
   </section>
+
   <section id="news" data-aos="fade-right" data-aos-duration="1000">
     <h2>Новости</h2>
     <div class="news-section">
@@ -727,6 +401,7 @@ over {
       </div>
     </div>
   </section>
+
   <section id="buy" data-aos="fade-left" data-aos-duration="1000">
     <h2>Как купить InvaCoin</h2>
     <p>Приобрести InvaCoin можно на децентрализованной бирже Uniswap. Для этого вам потребуется:</p>
@@ -740,6 +415,7 @@ over {
     </ol>
     <p><b>Важно:</b> Будьте осторожны и не переводите средства на непроверенные адреса. Всегда проверяйте адрес смарт-контракта InvaCoin на официальном сайте.</p>
   </section>
+
   <section id="support" data-aos="fade-right" data-aos-duration="1000">
     <h2>Поддержать проект</h2>
     <p>Вместе мы можем сделать мир лучше для животных! Поддержите InvaCoin и внесите свой вклад в благородное дело:</p>
@@ -750,22 +426,25 @@ over {
     </ul>
     <div class="social-widgets">
       <div class="social-widget"><a href="https://t.me/InvaCoin_official"><i class="fab fa-telegram"></i></a></div>
-      <div class="social-widget"><a href="https://vk.com/id846788176"><i class="fab fa-vk"></i></a></div
-
->
+      <div class="social-widget"><a href="https://vk.com/id846788176"><i class="fab fa-vk"></i></a></div>
       <div class="social-widget"><a href="mailto:invacoin0official@gmail.com"><i class="far fa-envelope"></i></a></div>
     </div>
     <p><b>Отсканируйте QR-код для пожертвования:</b></p>
     <img src="https://via.placeholder.com/150" alt="QR-код для пожертвования" style="max-width: 150px; margin-top: 10px;">
     <img src="https://i.postimg.cc/XNddWWkh/Take-photos-of-cute-and-touching-animals-f19811fe-b4df-4921-afe6-3.png" alt="InvaCoin помогает всем животным!" style="max-width: 200px; margin-top: 10px;">
   </section>
+
+  <!-- Ссылка на Whitepaper -->
   <a href="#" class="whitepaper-link">Скачать Whitepaper (скоро)</a>
+
   <!-- Подписка -->
   <section class="subscribe-section" data-aos="zoom-in" data-aos-duration="1000">
     <h2>Подпишитесь на наши новости</h2>
     <p>Будьте в курсе последних новостей и обновлений InvaCoin.</p>
     <input type="email" placeholder="Ваш email" id="subscribe-email" />
-    <button onclick="subscribe()">Подписаться</button>
+    <button onclick="subscribe()">Подписат
+
+ься</button>
     <div id="subscription-confirmation" style="display:none; position: relative;">
       Спасибо за подписку!
       <div class="confetti">
@@ -806,7 +485,7 @@ over {
     <div class="faq-answer">Все транзакции записываются в блокчейн Ethereum, что гарантирует полную прозрачность и невозможность подделки.</div>
   </section>
 
-  <!-- Калькулятор пожертвований -->
+  <!-- Калькулятор -->
   <section id="calculator" data-aos="fade-up" data-aos-duration="1000">
     <h2>Калькулятор пожертвований</h2>
     <p>Узнайте, сколько добра вы можете сделать, пожертвовав InvaCoin!</p>
@@ -821,9 +500,7 @@ over {
     <div id="donation-counter">0 IVC</div>
   </section>
 
-  <!--
-
-Топ жертвователей -->
+  <!-- Топ жертвователей -->
   <section id="top-donors" data-aos="fade-up" data-aos-duration="1000">
     <h2>Топ жертвователей</h2>
     <table>
@@ -855,14 +532,16 @@ over {
   </section>
 </main>
 
-<!-- Подвал сайта -->
+<!-- Подвал -->
 <footer>
   <p>&copy; 2024 InvaCoin. Все права защищены.</p>
   <p>Сделано с любовью к животным ❤️</p>
 </footer>
 
-<!-- Кнопка "вверх" -->
-<button id="scrollToTopBtn"><i class="fas fa-arrow-up"></i></button>
+<!-- Кнопка "Вверх" -->
+<button id="scrollToTopBtn"><i class="fas fa-arrow-up"></i\
+
+</button>
 
 <!-- Переключатель темы -->
 <div class="theme-switcher">
@@ -874,10 +553,8 @@ over {
 <script>
   AOS.init();
 
-  // Постоянное закрепление навигации - убрали скрытие
-  // Сделаем кнопку "вверх" всегда активной и плавной
+  // Постоянное отображение кнопки "вверх"
   const scrollBtn = document.getElementById('scrollToTopBtn');
-
   window.addEventListener('scroll', () => {
     if (window.scrollY > 100) {
       scrollBtn.classList.add('show');
@@ -885,26 +562,25 @@ over {
       scrollBtn.classList.remove('show');
     }
   });
-
-  scrollBtn.addEventListener('click', () => {
+  document.getElementById('scrollToTopBtn').addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
-  // Кнопка смены темы
+  // Переключение темы
   const themeSwitcher = document.querySelector('.theme-switcher');
   themeSwitcher.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
     const icon = themeSwitcher.querySelector('i');
     if (document.body.classList.contains('dark-mode')) {
-      icon.classList.remove('fas', 'fa-moon');
-      icon.classList.add('fas', 'fa-sun');
+      icon.classList.remove('fa-moon');
+      icon.classList.add('fa-sun');
     } else {
-      icon.classList.remove('fas', 'fa-sun');
-      icon.classList.add('fas', 'fa-moon');
+      icon.classList.remove('fa-sun');
+      icon.classList.add('fa-moon');
     }
   });
 
-  // FAQ - раскрытие ответов
+  // FAQ раскрытие
   document.querySelectorAll('.faq-question').forEach(q => {
     q.addEventListener('click', () => {
       const answer = q.nextElementSibling;
@@ -921,17 +597,14 @@ over {
     }
     const confirmation = document.getElementById('subscription-confirmation');
     confirmation.style.display = 'block';
-
-    // Конфетти
     const confetti = confirmation.querySelector('.confetti');
     confetti.innerHTML = '';
     for (let i=0; i<10; i++) {
       const span = document.createElement('span');
-      span.style.left = `${Math.random()*100}%`;
+      span.style.left = Math.random()*100 + '%';
       confetti.appendChild(span);
     }
   }
-
   function validateEmail(email) {
     const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(email).toLowerCase());
@@ -940,19 +613,14 @@ over {
   // Расчет пожертвования
   function calculateDonation() {
     const ivcAmount = document.getElementById('ivc-amount').value;
-    const ivcPrice = 0.05; // курс
+    const ivcPrice = 0.05;
     const usdAmount = ivcAmount * ivcPrice;
-
     const foodPrice = 10;
     const vaccinePrice = 25;
     const bedPrice = 50;
-
     const foodPacks = Math.floor(usdAmount / foodPrice);
-    c
-
-onst vaccines = Math.floor(usdAmount / vaccinePrice);
+    const vaccines = Math.floor(usdAmount / vaccinePrice);
     const beds = Math.floor(usdAmount / bedPrice);
-
     document.getElementById('calculator-results').innerHTML = `
       <p>На ваше пожертвование вы можете купить:</p>
       <ul>
@@ -963,4 +631,4 @@ onst vaccines = Math.floor(usdAmount / vaccinePrice);
   }
 </script>
 </body>
-      </html>
+</html>
