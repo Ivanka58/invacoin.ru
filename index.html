@@ -2975,56 +2975,31 @@ hadow);
 
 
 
-        // Subscribe
         function subscribe() {
-            const email = document.getElementById('subscribe-email').value;
-   if (!validateEmail(email)) {
-    alert('Пожалуйста, введите корректный email адрес.');
-    return;
-   }
+    const email = document.getElementById('subscribe-email').value;
+    if (!validateEmail(email)) {
+        alert('Пожалуйста, введите корректный email адрес.');
+        return;
+    }
 
+    const confirmation = document.getElementById('subscription-confirmation');
+    confirmation.style.display = 'block';
 
+    // Плавное появление
+    setTimeout(() => {
+        confirmation.style.opacity = '1';
+    }, 10);
 
-
-
-
-
-
-            const confirmation = document.getElementById('subscription-confirmation');
-            confirmation.style.display = 'block';
-
-
-
-
-
-
-
-
-            // Анимация конфетти
-            const confetti = confirmation.querySelector('.confetti');
-            confetti.innerHTML = ''; // Очищаем существующие конфетти
-
-
-
-
-
-
-
-
-            for (let i = 0; i < 10; i++) {
-                const span = document.createElem
-
-
-
-
-
-
-
-
-ent('span');
-                span.style.left = `${Math.random() * 100}%`;
-                confetti.appendChild(span);
-            }
+    // Анимация конфетти
+    const confetti = confirmation.querySelector('.confetti');
+    confetti.innerHTML = '';
+    for (let i = 0; i < 20; i++) {  // увеличил количество конфетти для эффекта
+        const span = document.createElement('span');
+        span.style.left = `${Math.random() * 100}%`;
+        span.style.animationDelay = `${Math.random() * 3}s`;
+        confetti.appendChild(span);
+    }
+        }
    // Здесь можно добавить отправку email на сервер
    // fetch('/subscribe', {
    //  method: 'POST',
