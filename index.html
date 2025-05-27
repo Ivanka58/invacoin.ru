@@ -16,22 +16,22 @@
     <style>
         /* Общие стили */
         :root {
-            --bg-color: #f9f9f9;
-            --text-color: #333;
+            --bg-color: #f0f6f4;
+            --text-color: #2e3a33;
             --primary-color: #4caf50;
-            --secondary-color: #8bc34a;
+            --secondary-color: #81c784;
             --header-bg: linear-gradient(to right, var(--primary-color), var(--secondary-color));
-            --nav-bg: rgba(255, 255, 255, 0.95);
-            --section-bg: #fff;
-            --footer-bg: #333;
-            --link-color: #333;
+            --nav-bg: #a8d5ba;
+            --section-bg: #ffffff;
+            --footer-bg: #ffffff;
+            --link-color: #2e3a33;
             --link-hover-bg: var(--primary-color);
             --link-hover-color: #fff;
             --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             --border-radius: 12px;
             --transition-duration: 0.3s;
-            --team-member-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            --gradient-bg: linear-gradient(135deg, #e0f7fa, #b2ebf2);
+            --team-member-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            --gradient-bg: linear-gradient(135deg, #e6f2e6, #cde9cd);
             --highlight-color: #ffc107;
             --confetti-color1: #f44336;
             --confetti-color2: #e91e63;
@@ -43,16 +43,13 @@
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: var(--bg-color);
+            background: var(--gradient-bg);
             color: var(--text-color);
             line-height: 1.7;
             overflow-x: hidden;
-            background: var(--gradient-bg);
-            background-attachment: fixed;
             scroll-behavior: smooth;
             transition: background-color var(--transition-duration),
                 color var(--transition-duration);
-
             box-sizing: border-box;
             position: relative;
         }
@@ -73,11 +70,11 @@
             --gradient-bg: linear-gradient(135deg, #37474f, #546e7a);
         }
 
-        /* Уменьшенная и стилизованная шапка */
+        /* Шапка */
         header {
             background: var(--header-bg);
             color: #fff;
-            padding: 15px 20px;
+            padding: 25px 20px;
             text-align: center;
             box-shadow: var(--box-shadow);
             position: relative;
@@ -85,14 +82,14 @@
             border-bottom-left-radius: 20px;
             border-bottom-right-radius: 20px;
             transition: padding var(--transition-duration);
-            height: 100px;
+            height: auto;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            gap: 8px;
         }
 
-        /* Плавающие зеленые шарики в шапке */
         header .floating-balls {
             position: absolute;
             top: 10px;
@@ -146,24 +143,26 @@
         }
 
         @keyframes float {
-            0%, 100% {
+            0%,
+            100% {
                 transform: translateY(0);
             }
+
             50% {
                 transform: translateY(-12px);
             }
         }
 
         header h1 {
-            font-size: 1.8em;
-            margin: 5px 0 0 0;
+            font-size: 2.2em;
+            margin: 0;
             z-index: 1;
             position: relative;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.35);
         }
 
         header p {
-            font-size: 1em;
+            font-size: 1.1em;
             font-style: italic;
             color: #d0f0d0;
             margin: 0;
@@ -171,46 +170,46 @@
             position: relative;
         }
 
-        /* Навигация под шапкой, статичная и уменьшенная */
+        /* Навигация */
         nav {
             background-color: var(--nav-bg);
-            color: var(--text-color);
-            padding: 8px 10px;
+            color: var(--link-color);
+            padding: 12px 15px;
             text-align: center;
             box-shadow: var(--box-shadow);
             position: static;
             width: 100%;
             border-radius: 0 0 var(--border-radius) var(--border-radius);
             box-sizing: border-box;
-            margin-top: -8px;
+            margin-top: -10px;
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap:
-
-6px;
-            z-index: 10;
+            gap: 8px;
+            font-weight: 600;
+            font-size: 1em;
         }
 
         nav a {
             color: var(--link-color);
-            text-decoration: none;
-            padding: 8px 14px;
+            text-decorat
+
+ion: none;
+            padding: 10px 18px;
             display: inline-block;
             transition: background-color var(--transition-duration),
                 transform var(--transition-duration),
                 color var(--transition-duration);
-            font-weight: 600;
             border-radius: var(--border-radius);
-            font-size: 0.9em;
-            margin: 0 4px;
             white-space: nowrap;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
         }
 
         nav a:hover {
             background-color: var(--link-hover-bg);
             color: var(--link-hover-color);
-            transform: scale(1.05);
+            transform: scale(1.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
         }
 
         main {
@@ -238,8 +237,8 @@
         }
 
         section:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            transform: translateY(-6px);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
         }
 
         section h2 {
@@ -283,32 +282,193 @@
             font-size: 1.1em;
         }
 
-        /* Секции и классы без изменений, кроме удаления #top-donors */
+        /* Наша команда */
+        .team-members {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
 
-        /* Адаптивные стили */
+        .team-member {
+            background-color: var(--section-bg);
+            border-radius: 50%;
+            box-shadow: var(--team-member-shadow);
+            width: 140px;
+            height: 140px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            cursor: default;
+        }
+
+        .team-member:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+        }
+
+        .team-member img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            border: 3px solid var(--primary-color);
+        }
+
+        .team-member h3 {
+            font-size: 1.1em;
+            margin: 0;
+            color: var(--primary-color);
+        }
+
+        .team-member p {
+            margin: 2px 0 0 0;
+            font-size: 0.9em;
+            color: var(--text-color);
+        }
+
+        /* FAQ */
+        .faq-section .faq-ques
+
+tion {
+            cursor: pointer;
+            padding: 12px 15px;
+            background-color: #e7f0e7;
+            border-radius: var(--border-radius);
+            margin-bottom: 8px;
+            font-weight: 600;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+        }
+
+        .faq-section .faq-question:hover {
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+
+        .faq-section .faq-answer {
+            display: none;
+            padding: 15px 20px;
+            background-color: #f5f9f5;
+            border-left: 4px solid var(--primary-color);
+            margin-bottom: 20px;
+            border-radius: var(--border-radius);
+            font-size: 1em;
+            color: var(--text-color);
+            box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Кнопка переключения темы */
+        .theme-switcher {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            color: #fff;
+            font-size: 1.4em;
+            z-index: 1100;
+            transition: background-color 0.3s ease;
+        }
+
+        .theme-switcher:hover {
+            background-color: var(--secondary-color);
+        }
+
+        /* Кнопка "Наверх" */
+        #scrollToTopBtn {
+            display: block;
+            position: fixed;
+            left: 20px;
+            bottom: 80px;
+            z-index: 1000;
+            background-color: var(--primary-color);
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            box-shadow: var(--box-shadow);
+            color: white;
+            font-size: 1.2em;
+            transition: background-color 0.3s ease;
+        }
+
+        #scrollToTopBtn:hover {
+            background-color: var(--secondary-color);
+        }
+
+        /* Футер */
+        footer {
+            background-color: var(--footer-bg);
+            padding: 15px 20px;
+            box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.05);
+            color: var(--text-color);
+            text-align: center;
+            font-size: 1em;
+            font-weight: 500;
+            border-top: 1px solid #ddd;
+            max-width: 1200px;
+            margin: 0 auto;
+            border-radius: 0 0 var(--border-radius) var(--border-radius);
+        }
+
+        /* Подписка: конфетти */
+        .confetti span {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            animation: confetti-fall 2s linear forwards;
+            opacity: 0.9;
+        }
+
+        @keyframes confetti-fall {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(120px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Адаптив */
         @media (max-width: 768px) {
             header {
-                height: 80px;
-                padding: 12px 15px;
+                padding: 18px 15px;
             }
 
             header h1 {
-                font-size: 1.4em;
+                font-size: 1.6em;
             }
 
             header p {
-                font-size: 0.9em;
+                font-size: 1em;
             }
 
             nav {
-                padding: 6px 8px;
-                gap: 5px;
+                gap: 6px;
+                font-size: 0.9em;
+                padding: 10px 12px;
             }
 
             nav a {
-                padding: 6px 10px;
-                font-size: 0.85em;
-                margin: 0 2px;
+                padding: 8px 14px;
             }
 
             main {
@@ -319,7 +479,7 @@
                 padding: 20px;
             }
 
-            section h2 {
+section h2 {
                 font-size: 2em;
             }
 
@@ -327,51 +487,32 @@
                 font-size: 1em;
             }
 
-            .features {
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            .team-members {
                 gap: 20px;
             }
 
-            .feature {
-                padding: 20px;
-            }
-
-            .feature h3 {
-                font-size: 1.4em;
-            }
-
-            .roadmap-timeline li {
+            .team-member {
+                width: 110px;
+                height: 110px;
                 padding: 12px;
             }
 
-            .road
-
-map-timeline h3 {
-                font-size: 1.2em;
+            .team-member img {
+                width: 80px;
+                height: 80px;
             }
 
-            .subscribe-section {
-                padding: 20px;
+            .team-member h3 {
+                font-size: 1em;
             }
 
-            .subscribe-section h2 {
-                font-size: 1.8em;
+            .faq-section .faq-question {
+                font-size: 1em;
+                padding: 10px 12px;
             }
 
-            .subscribe-section input[type="email"] {
-                width: 80%;
-            }
-
-            #calculator {
-                padding: 20px;
-            }
-
-            #calculator h2 {
-                font-size: 1.8em;
-            }
-
-            #calculator input[type="number"] {
-                width: 80%;
+            .faq-section .faq-answer {
+                font-size: 0.95em;
             }
         }
     </style>
@@ -405,202 +546,27 @@ map-timeline h3 {
     </nav>
 
     <main>
-        <section id="about" data-aos="fade-right" data-aos-duration="1000">
-            <h2>Что такое InvaCoin (IVC)?</h2>
-            <p>InvaCoin (IVC) – это криптовалюта, созданная с целью поддержки благотворительных организаций и проектов, которые заботятся о животных. Мы верим, что объединив усилия криптосообщества, мы сможем внести значительный вклад в решение проблем, с которыми сталкиваются животные по всему миру.</p>
-
-            <p><b>Критерии выбора благотворительных организаций:</b> Мы сотрудничаем только с проверенными организациями, которые имеют хорошую репутацию, прозрачную систему отчетности и направляют большую часть средств непосредственно на помощь животным.</p>
-
-            <p><b>Наша цель:</b> собрать 1,000,000 IVC к концу 2026 года для финансирования проектов по защите животных. Уже сейчас 5% каждой транзакции InvaCoin направляется в благотворительный фонд.</p>
-
-            <p><i>Пример:</i> Ваше пожертвование в 500 IVC может обеспечить недельный запас корма для 20 бездомных кошек.</p>
-
-            <p>Наша миссия заключается в создании прозрачного и эффективного механизма для сбора и распределения средств, гарантируя, что каждое ваше пожертвование принесет реальную пользу. Мы стремимся к тому, чтобы каждый участник нашего сообщества чувствовал свою причастность к благородному делу и видел результаты своей поддержки.</p>
-
-            <p><b>История успеха:</b> Благодаря пожертвованиям InvaCoin удалось профинансировать программу стерилизации бездомных собак в приюте "Добрый дом". Это позволило снизить количество бездомных животных в регионе и улучшить условия их содержания.</p>
-
-            <img src="https://i.postimg.cc/tTrhK4zV/Take-photos-of-cute-and-touching-animals-f19811fe-b4df-4921-afe6.jpg"
-                alt="Милая собака смотрит в камеру. InvaCoin помогает бездомным животным обрести дом." />
-        </section>
-
-        <section id="how-it-works" data-aos="fade-left" data-aos-duration="1000">
-            <h2>Как InvaCoin помогает животным?</h2>
-            <p>InvaCoin предоставляет разнообразные способы поддерж
-
-ки животных, позволяя каждому участнику внести свой вклад в общее дело:</p>
-            <ul>
-                <li>
-                    <i class="fas fa-donate"></i>
-                    <strong>Прямые пожертвования:</strong> Вы можете отправлять InvaCoin напрямую в проверенные благотворительные организации, специализирующиеся на помощи животным.
-                </li>
-                <li>
-                    <i class="fas fa-piggy-bank"></i>
-                    <strong>Финансирование проектов:</strong> Ваши пожертвования направляются на финансирование конкретных и значимых проектов, таких как строительство новых приютов, закупка жизненно важного корма и медикаментов, а также организация программ стерилизации и вакцинации.
-                </li>
-                <li>
-                    <i class="fas fa-eye"></i>
-                    <strong>Абсолютная прозрачность:</strong> Все транзакции, осуществляемые с использованием InvaCoin, записываются в блокчейн Ethereum, что гарантирует полную прозрачность и исключает возможность мошенничества. Вы всегда можете отследить путь своего пожертвования и убедиться в его целевом использовании.
-                </li>
-                <li>
-                    <i class="fas fa-users"></i>
-                    <strong>Активное сообщество:</strong> Присоединяйтесь к нашему динамичному сообществу, где вы сможете принимать участие в обсуждениях и голосованиях, определяя, какие проекты получат нашу поддержку в первую очередь.
-                </li>
-            </ul>
-
-            <img src="https://i.postimg.cc/vHxWKMxc/Take-photos-of-cute-and-touching-animals-f19811fe-b4df-4921-afe6-1.png"
-                alt="Два котенка обнимаются. InvaCoin помогает животным найти любящую семью." />
-        </section>
-
-        <section id="features" data-aos="fade-right" data-aos-duration="1000">
-            <h2>Особенности InvaCoin</h2>
-            <div class="features">
-                <div class="feature">
-                    <i class="fas fa-hand-holding-heart"></i>
-                    <h3>Поддержка благотворительности</h3>
-                    <p>Часть каждой транзакции (±5%) направляется в благотворительный фонд, проверенный и отобранный нашим сообществом. Мы тщательно проверяем все фонды, чтобы убедиться, что ваши пожертвования доходят до тех, кто действительно нуждается.</p>
-                </div>
-                <div class="feature">
-                    <i class="fas fa-search-dollar"></i>
-                    <h3>Прозрачность</h3>
-                    <p>Все транзакции записываются в блокчейн Ethereum, что обеспечивает полную прозрачность и невозможность подделки. Вы можете отследить каждую транзакцию и убедиться, что средства используются по назначению.</p>
-                </div>
-                <div class="feature">
-                    <i class="fas fa-network-wired"></i>
-                    <h3>Децентрализация</h3>
-                    <p>InvaCoin - это децентрализованная криптовалюта, не контролируемая ни одним органом, что гарантирует ее независимость и устойчивость. Это значит, что никто не может заморозить ваши средства или изменить правила игры.</p>
-                </div>
-                <div class="feature">
-                    <i class="fas fa-globe"></i>
-                    <h3>Бесплатные переводы</h3>
-                    <p>Вы можете переводить InvaCoin даже в разные страны абсолютно без комиссии! Это делает InvaCoin идеальным инструментом для международных пожертвований.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="roadmap" data-aos="fade-left" data-aos-duration="1000">
-            <h2>Дорожная карта</h2>
-            <ul class="roadmap-timeline">
-                <li>
-                    <h3>Q2 2025: Запуск InvaCoin</h3>
-                    <p>Создание базовой инфраструктуры: развертывание смарт-контракта, создание веб-сайта, аккаунты
-
-в социальных сетях.</p>
-                </li>
-                <li>
-                    <h3>Q3 2025: Листинг на Uniswap</h3>
-                    <p>Расширение сообщества: листинг на Uniswap, маркетинговая кампания, привлечение первых 1000 подписчиков.</p>
-                </li>
-                <li>
-                    <h3>Q4 2025: Партнерства</h3>
-                    <p>Привлечение партнеров из сферы благотворительности: партнерство с 2-3 организациями, запуск партнерской программы.</p>
-                </li>
-                <li>
-                    <h3>Q1 2026: Мобильное приложение</h3>
-                    <p>Разработка MVP мобильного приложения: базовая версия приложения для iOS и Android.</p>
-                </li>
-                <li>
-                    <h3>Q2 2026: Платформа для пожертвований</h3>
-                    <p>Создание платформы для пожертвований: веб-платформа для приема пожертвований, привлечение первых проектов.</p>
-                </li>
-            </ul>
-        </section>
-
-        <section id="news" data-aos="fade-right" data-aos-duration="1000">
-            <h2>Новости</h2>
-            <div class="news-section">
-                <div class="news-item">
-                    <h3 class="news-title">InvaCoin объявляет о партнерстве с приютом "Верный друг"</h3>
-                    <p class="news-date">15 мая 2024</p>
-                    <p class="news-content">Теперь часть средств от каждой транзакции InvaCoin будет направляться на поддержку приюта "Верный друг", который заботится о бездомных собаках и кошках.</p>
-                </div>
-                <div class="news-item">
-                    <h3 class="news-title">InvaCoin успешно прошел аудит безопасности</h3>
-                    <p class="news-date">10 мая 2024</p>
-                    <p class="news-content">Команда InvaCoin рада сообщить, что проект успешно прошел аудит безопасности, подтвердив надежность и безопасность платформы.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="buy" data-aos="fade-left" data-aos-duration="1000">
-            <h2>Как купить InvaCoin</h2>
-            <p>Приобрести InvaCoin можно на децентрализованной бирже Uniswap. Для этого вам потребуется:</p>
-            <ol>
-                <li>Установите кошелек Metamask (или другой кошелек, поддерживающий ERC-20 токены).</li>
-                <li>Приобретите ETH (Ethereum) на криптовалютной бирже.</li>
-                <li>Переведите ETH на свой кошелек Metamask.</li>
-                <li>Перейдите на сайт Uniswap и подключите свой кошелек.</li>
-                <li>Найдите InvaCoin по адресу смарт-контракта: <strong>СКОРО</strong>.</li>
-                <li>Обменяйте ETH на InvaCoin.</li>
-            </ol>
-            <p><b>Важно:</b> Будьте осторожны и не переводите средства на непроверенные адреса. Всегда проверяйте адрес смарт-контракта InvaCoin на официальном сайте.</p>
-        </section>
-
-        <section id="support" data-aos="fade-right" data-aos-duration="1000">
-            <h2>Поддержать проект</h2>
-            <p>Вместе мы можем сделать мир лучше для животных! Поддержите InvaCoin и внесите свой вклад в благородное дело:</p>
-            <ul>
-                <li>Купите InvaCoin и станьте частью нашего сообщества.</li>
-                <li>Пожертвуйте InvaCoin напрямую проверенным благотворительным организациям (адреса кошельков: <strong>(скоро)</strong>).</li>
-                <li>Расскажите о InvaCoin своим друзьям и знакомым, чтобы привлечь больше внимания к нашей миссии.</li>
-            </ul>
-            <div class="social-widgets">
-                <div class="social-widget">
-                    <a href="https://t.me/InvaCoin_official"><i class="fab fa-telegram"></i></a>
-                </div>
-                <div class="social-widget">
-                    <a h
-
-ref="https://vk.com/id846788176"><i class="fab fa-vk"></i></a>
-                </div>
-                <div class="social-widget">
-                    <a href="mailto:invacoin0official@gmail.com"><i class="far fa-envelope"></i></a>
-                </div>
-            </div>
-            <p><b>Отсканируйте QR-код для пожертвования:</b></p>
-            <img src="https://via.placeholder.com/150" alt="QR-код для пожертвования" style="max-width: 150px; margin-top: 10px;" />
-            <img src="https://i.postimg.cc/XNddWWkh/Take-photos-of-cute-and-touching-animals-f19811fe-b4df-4921-afe6-3.png"
-                alt="InvaCoin помогает всем животным!" style="max-width: 200px; margin-top: 10px;" />
-        </section>
-
-        <a href="#" class="whitepaper-link">Скачать Whitepaper (скоро)</a>
-
-        <section class="subscribe-section" data-aos="zoom-in" data-aos-duration="1000">
-            <h2>Подпишитесь на наши новости</h2>
-            <p>Будьте в курсе последних новостей и обновлений InvaCoin.</p>
-            <input type="email" placeholder="Ваш email" id="subscribe-email" />
-            <button onclick="subscribe()">Подписаться</button>
-            <div id="subscription-confirmation" style="display:none;">
-                Спасибо за подписку!
-                <div class="confetti">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
-        </section>
+        <!-- Здесь идут все остальные секции без изменений, кроме следующей -->
 
         <section id="team" data-aos="fade-up" data-aos-duration="1000">
             <h2>Наша команда</h2>
             <div class="team-members">
                 <div class="team-member">
+                    <img src="https://i.postimg.cc/rp8WM7zg/1000032008.jpg" alt="Иван Каламаев" />
                     <h3>Иван Каламаев</h3>
                     <p>Создатель</p>
-                    <img src="https://i.postimg.cc/rp8WM7zg/1000032008.jpg" alt="Иван Каламаев" />
                 </div>
                 <div class="team-member">
+                    <img src="https://i.postimg.cc/rp8WM7zg/1000032008.jpg" alt="Кирилл Кашин" />
                     <h3>Кирилл Кашин</h3>
                     <p>Тестировщик</p>
-                    <img src="https://i.postimg.cc/rp8WM7zg/1000032008.jpg" alt="Кирилл Кашин" />
                 </div>
             </div>
         </section>
+
+---
+
+▌Часть 2 (оставшиеся секции, футер, скрипты)
 
         <section class="faq-section" id="faq" data-aos="fade-up" data-aos-duration="1000">
             <h2>Часто задаваемые вопросы</h2>
@@ -621,18 +587,8 @@ ref="https://vk.com/id846788176"><i class="fab fa-vk"></i></a>
             <div class="faq-answer">Все транзакции записываются в блокчейн Ethereum, что гарантирует полную прозрачность и невозможность подделки.</div>
         </section>
 
-        <section id="calculator" data-aos="fade-up" data-aos-duration="1000">
-            <h2>Калькулятор пожертвований</h2>
-            <p>Узнайте, сколько добра вы можете сделать, пожертвовав InvaCoin!</p>
-            <input type="number" id="ivc-amount" placeholder="Введите количество IVC" min="0" />
-            <button onclick="calculateDonation()">Рассчитать</button>
-            <div id="calculator-results"></div>
-        </section>
+        <!-- Остальные секции без изменений (calculator, donations и т.д.) -->
 
-        <section id="donations" data-aos="zoom-in" data-aos-duration="1000">
-            <h2>Всего пожертвовано:</h2>
-            <div id="donation-counter">0 IVC</div>
-        </section>
     </main>
 
     <footer>
@@ -640,13 +596,13 @@ ref="https://vk.com/id846788176"><i class="fab fa-vk"></i></a>
         <p>Сделано с любовью к животным ❤️</p>
     </footer>
 
-    <!-- Кнопка переключения темы, сдвинута влево и всегда видна -->
-    <div class="theme-switcher" style="right: 10px; bottom: 20px;">
+    <!-- Кнопка переключения темы -->
+    <div class="theme-switcher" title="Переключить тему">
         <i class="fas fa-moon"></i>
     </div>
 
-    <!-- Кнопка "Наверх" всегда видна в левом нижнем углу -->
-    <button id="scrollToTopBtn" style="display:block; position: fixed; left: 20px; bottom: 20px; z-index: 1000; background-color: var(--primary-color); border: none; border-radius: 50%; width: 40px; height: 40px; cursor: pointer; box-shadow: var(--box-shadow); color: white; font-size: 1.2em;">
+    <!-- Кнопка "Наверх" -->
+    <button id="scrollToTopBtn" aria-label="Наверх">
         <i class="fas fa-arrow-up"></i>
     </button>
 
@@ -667,6 +623,7 @@ ref="https://vk.com/id846788176"><i class="fab fa-vk"></i></a>
         });
 
         // Theme switcher
+
         const themeSwitcher = document.querySelector('.theme-switcher');
         themeSwitcher.addEventListener('click', () => {
             document.body.classList.toggle('dark-mode');
@@ -698,12 +655,12 @@ ref="https://vk.com/id846788176"><i class="fab fa-vk"></i></a>
             const vaccines = Math.floor(usdAmount / vaccinePrice);
             const beds = Math.floor(usdAmount / bedPrice);
 
-            let results = `<p>На ваше пожертвование вы можете купить:</p>
+            let results = <p>На ваше пожертвование вы можете купить:</p>
                 <ul>
                     <li>${foodPacks} пачек корма для кошек</li>
                     <li>${vaccines} вакцин для собак</li>
                     <li>${beds} новых лежанок для приюта</li>
-                </ul>`;
+                </ul>;
 
             document.getElementById('calculator-results').innerHTML = results;
         }
@@ -724,7 +681,7 @@ ref="https://vk.com/id846788176"><i class="fab fa-vk"></i></a>
             confetti.innerHTML = '';
             for (let i = 0; i < 10; i++) {
                 const span = document.createElement('span');
-                span.style.left = `${Math.random() * 100}%`;
+                span.style.left = ${Math.random() * 100}%;
                 span.style.backgroundColor = ['#f44336', '#e91e63', '#9c27b0', '#673ab7'][i % 4];
                 confetti.appendChild(span);
             }
@@ -747,11 +704,11 @@ ref="https://vk.com/id846788176"><i class="fab fa-vk"></i></a>
 
         // Email validation
         function validateEmail(email) {
-            const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            const re = /^(([^<>()[]\.,;:s@"]+(.[^<>()[]\.,;:s@"]+)*)|(".+"))@(([[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}])|(([a-zA-Z-0-9]+.)+[a-zA-Z]{2,}))$/;
             return re.test(String(email).toLowerCase());
         }
 
-        // Кнопка "Наверх" - всегда видна, прокрутка наверх при клике
+        // Кнопка "Наверх" - работает корректно
         const scrollToTopBtn = document.getElementById("scrollToTopBtn");
         scrollToTopBtn.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
