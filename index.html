@@ -183,19 +183,19 @@
 
         /* Навигация */
         nav {
-            background-color: var(--nav-bg);
-            color: var(--text-color);
-            padding: 10px;
-            text-align: center;
-            box-shadow: var(--box-shadow);
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 100;
-            border-radius: 0 0 var(--border-radius) var(--border-radius);
-            box-sizing: border-box;
-            transition: all 0.3s ease; /* Плавное появление и исчезновение */
+    background-color: var(--nav-bg);
+    color: var(--text-color);
+    padding: 8px 0; /* Немного уменьшил */
+    text-align: center;
+    box-shadow: var(--box-shadow);
+    position: fixed;
+    top: 70px; /* Под шапкой */
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+    box-sizing: border-box;
+    transition: all 0.3s ease;
         }
 
 
@@ -1261,7 +1261,7 @@ radius);
 
 
 
-        .news-date {
+news-date {
             font-size: 1em;
             color: #777;
         }
@@ -1287,71 +1287,41 @@ radius);
 
         /* Стили для переключателя темы */
         .theme-switcher {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #fff;
-            border: 1px solid #ccc;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: var(--box-shadow);
-            transition: background-color var(--transition-duration), border-color var(--transition-duration);
-            z-index: 1000;
-            box-sizing: border-box;
-        }
+    position: fixed;
+    bottom: 20px;
+    right: 20px; /* Правый нижний угол */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--box-shadow);
+    transition: background-color var(--transition-duration), border-color var(--transition-duration);
+    z-index: 1000;
+}
 
+body.dark-mode .theme-switcher {
+    background-color: #444;
+    border-color: #555;
+}
 
+.theme-switcher:hover {
+    background-color: #f0f0f0;
+}
 
+.theme-switcher i {
+    font-size: 1.5em;
+    color: #555;
+    transition: color var(--transition-duration);
+}
 
-
-
-
-
-        body.dark-mode .theme-switcher {
-            background-color: #444;
-            border-color: #555;
-        }
-
-
-
-
-
-
-
-
-        .theme-switcher:hover {
-            background-color: #f0f0f0;
-        }
-
-
-
-
-
-
-
-
-        .theme-switcher i {
-            font-size: 1.5em;
-            color: #555;
-            transition: color var(--transition-duration);
-        }
-
-
-
-
-
-
-
-
-        body.dark-mode .theme-switcher i {
-            color: #eee;
-        }
-
+body.dark-mode .theme-switcher i {
+    color: #eee;
+}
 
 
 
@@ -2470,23 +2440,14 @@ hadow);
             <h2>Новости</h2>
             <div class="news-section">
                 <div class="news-item">
-                    <h3 class="news-title">InvaCoin объявляет о партнерстве с приютом "Верный друг"</h3>
-                    <p class="news-date">15 мая 2024</p>
+                    <h3 class="news-title">InvaCoin объявляет о партнерстве с приютом "(скоро)"</h3>
+                    <p class="news-date">15 мая 2025</p>
                     <p class="news-content">Теперь часть средств от каждой транзакции InvaCoin
-                        буд
-
-
-
-
-
-
-
-
-ет направляться на поддержку приюта "Верный друг", который заботится о бездомных собаках и кошках.</p>
+                        будет направляться на поддержку приюта "(скоро)", который заботится о бездомных собаках и кошках.</p>
                 </div>
                 <div class="news-item">
                     <h3 class="news-title">InvaCoin успешно прошел аудит безопасности</h3>
-                    <p class="news-date">10 мая 2024</p>
+                    <p class="news-date">29 апреля 2025</p>
                     <p class="news-content">Команда InvaCoin рада сообщить, что проект успешно прошел
                         аудит безопасности, подтвердив надежность и безопасность платформы.</p>
                 </div>
