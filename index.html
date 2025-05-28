@@ -355,21 +355,48 @@ ase;
             height: 100px;
             object-fit: cover;
             border-radius: 50%;
-            margin-bottom: 10px;
-            border: 3px solid var(--primary-color);
-        }
+/* --- Секция "Наша команда" --- */
+.team-members {
+    display: flex;
+    flex-direction: column; /* Вертикально */
+    gap: 30px;
+    align-items: center;
+}
 
-        .team-member h3 {
-            font-size: 1.1em;
-            margin: 0;
-            color: var(--primary-color);
-        }
+.team-member {
+    background-color: var(--section-bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--team-member-shadow);
+    width: 200px;
+    padding: 20px 15px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    cursor: default;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
 
-        .team-member p {
-            margin: 2px 0 0 0;
-            font-size: 0.9em;
-            color: var(--text-color);
-        }
+.team-member:hover {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+}
+
+.team-member h3 {
+    font-size: 1.3em;
+    margin: 0;
+    color: var(--primary-color);
+}
+
+.team-member img {
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--primary-color);
+    margin: 0 auto;
+}
 
         /* FAQ */
         .faq-section .faq-question {
@@ -785,19 +812,17 @@ ase;
         </section>
 
         <section id="team" data-aos="fade-up" data-aos-duration="1000">
-            <h2>Наша команда</h2>
-            <div class="team-members">
-                <div class="team-member">
-                    <img src="https://i.postimg.cc/rp8WM7zg/1000032008.jpg" alt="Иван Каламаев" />
-                    <h3>Иван Каламаев</h3>
-                    <p>Создатель</p>
-                </div>
-                <div class="team-member">
-                    <img src="https://i.postimg.cc/rp8WM7zg/1000032008.jpg" alt="Кирилл Кашин" />
-                    <h3>Кирилл Кашин</h3>
-                    <p>Тестировщик</p>
-                </div>
-            </div>
+    <h2>Наша команда</h2>
+    <div class="team-members">
+        <div class="team-member">
+            <h3>Иван Каламаев</h3>
+            <img src="https://i.postimg.cc/rp8WM7zg/1000032008.jpg" alt="Иван Каламаев" />
+        </div>
+        <div class="team-member">
+            <h3>Кирилл Кашин</h3>
+            <img src="https://i.postimg.cc/rp8WM7zg/1000032008.jpg" alt="Кирилл Кашин" />
+        </div>
+    </div>
         </section>
 
         <section class="faq-section" id="faq" data-aos="fade-up" data-aos-duration="1000">
