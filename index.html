@@ -256,6 +256,43 @@ ion: none;
             animation: slideInLeft 1s ease-out;
         }
 
+        /* Анимация появления */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes zoomIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
         /* Изображения */
         img {
             max-width: 100%;
@@ -302,7 +339,9 @@ ion: none;
             justify-content: center;
             padding: 15px;
             text-align: center;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s e
+
+ase;
             cursor: default;
         }
 
@@ -333,9 +372,7 @@ ion: none;
         }
 
         /* FAQ */
-        .faq-section .faq-ques
-
-tion {
+        .faq-section .faq-question {
             cursor: pointer;
             padding: 12px 15px;
             background-color: #e7f0e7;
@@ -439,7 +476,8 @@ tion {
             0% {
                 transform: translateY(0) rotate(0deg);
                 opacity: 1;
-            }
+
+}
 
             100% {
                 transform: translateY(120px) rotate(360deg);
@@ -479,7 +517,7 @@ tion {
                 padding: 20px;
             }
 
-section h2 {
+            section h2 {
                 font-size: 2em;
             }
 
@@ -518,7 +556,7 @@ section h2 {
     </style>
 </head>
 
-<body class="light-mode">
+<body>
     <header data-aos="fade-down" data-aos-duration="1000">
         <div class="floating-balls" aria-hidden="true">
             <span></span>
@@ -546,7 +584,8 @@ section h2 {
     </nav>
 
     <main>
-        <!-- Здесь идут все остальные секции без изменений, кроме следующей -->
+
+        <!-- Здесь идут все остальные секции без изменений, кроме следующих -->
 
         <section id="team" data-aos="fade-up" data-aos-duration="1000">
             <h2>Наша команда</h2>
@@ -563,7 +602,8 @@ section h2 {
                 </div>
             </div>
         </section>
- <section class="faq-section" id="faq" data-aos="fade-up" data-aos-duration="1000">
+
+        <section class="faq-section" id="faq" data-aos="fade-up" data-aos-duration="1000">
             <h2>Часто задаваемые вопросы</h2>
 
             <div class="faq-question">Что такое InvaCoin?</div>
@@ -582,7 +622,7 @@ section h2 {
             <div class="faq-answer">Все транзакции записываются в блокчейн Ethereum, что гарантирует полную прозрачность и невозможность подделки.</div>
         </section>
 
-        <!-- Остальные секции без изменений (calculator, donations и т.д.) -->
+        <!-- Здесь предполагаются другие секции: calculator, donations и т.д. -->
 
     </main>
 
@@ -592,7 +632,8 @@ section h2 {
     </footer>
 
     <!-- Кнопка переключения темы -->
-    <div class="theme-switcher" title="Переключить тему">
+    <div class="theme-switcher" title="Переключить тему" aria-label="Переключить тему">
+
         <i class="fas fa-moon"></i>
     </div>
 
@@ -618,7 +659,6 @@ section h2 {
         });
 
         // Theme switcher
-
         const themeSwitcher = document.querySelector('.theme-switcher');
         themeSwitcher.addEventListener('click', () => {
             document.body.classList.toggle('dark-mode');
@@ -650,12 +690,14 @@ section h2 {
             const vaccines = Math.floor(usdAmount / vaccinePrice);
             const beds = Math.floor(usdAmount / bedPrice);
 
-            let results = <p>На ваше пожертвование вы можете купить:<p>
+            let results = `
+                <p>На ваше пожертвование вы можете купить:</p>
                 <ul>
                     <li>${foodPacks} пачек корма для кошек</li>
                     <li>${vaccines} вакцин для собак</li>
                     <li>${beds} новых лежанок для приюта</li>
-                </ul>;
+                </ul>
+            `;
 
             document.getElementById('calculator-results').innerHTML = results;
         }
@@ -676,7 +718,7 @@ section h2 {
             confetti.innerHTML = '';
             for (let i = 0; i < 10; i++) {
                 const span = document.createElement('span');
-                span.style.left = ${Math.random() * 100}%;
+                span.style.left = `${Math.random() * 100}%`;
                 span.style.backgroundColor = ['#f44336', '#e91e63', '#9c27b0', '#673ab7'][i % 4];
                 confetti.appendChild(span);
             }
@@ -689,7 +731,9 @@ section h2 {
             fetch('/subscribe', {
                 method: 'POST',
                 body: JSON.stringify({ email: email }),
-                headers: { 'Content-Type': 'application/json' }
+                headers: { 'Content-Type': 'application/json'
+
+}
             })
             .then(response => response.json())
             .then(data => console.log('Success:', data))
@@ -699,11 +743,11 @@ section h2 {
 
         // Email validation
         function validateEmail(email) {
-            const re = /^(([^<>()[]\.,;:s@"]+(.[^<>()[]\.,;:s@"]+)*)|(".+"))@(([[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}])|(([a-zA-Z-0-9]+.)+[a-zA-Z]{2,}))$/;
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             return re.test(String(email).toLowerCase());
         }
 
-        // Кнопка "Наверх" - работает корректно
+        // Кнопка "Наверх"
         const scrollToTopBtn = document.getElementById("scrollToTopBtn");
         scrollToTopBtn.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
