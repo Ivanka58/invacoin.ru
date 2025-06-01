@@ -28,7 +28,7 @@
             --link-hover-bg: var(--primary-color);
             --link-hover-color: #fff;
             --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            --border-radius: 12px;
+            --border-radius: 20px; /* Увеличен радиус для более мягких углов */
             --transition-duration: 0.3s;
             --team-member-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
             --gradient-bg: linear-gradient(135deg, #e6f2e6, #cde9cd);
@@ -50,8 +50,8 @@
             line-height: 1.7;
             overflow-x: hidden;
             scroll-behavior: smooth;
-            transition: background-color var(--transition-duration),
 
+            transition: background-color var(--transition-duration),
                 color var(--transition-duration);
 
             box-sizing: border-box;
@@ -189,11 +189,10 @@
         header h1 {
             font-size: 2.4em;
             margin: 0;
-            z-index: 1;
-            position: relative;
-            text-s
 
-hadow: 2px 2px 6px rgba(0, 0, 0, 0.35);
+z-index: 1;
+            position: relative;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.35);
         }
 
         header p {
@@ -320,13 +319,14 @@ hadow: 2px 2px 6px rgba(0, 0, 0, 0.35);
 
             to {
                 opacity: 1;
-                transform: translateX(0);
+                transform: transl
+
+ateX(0);
             }
         }
 
         @keyframes zoomIn {
-
-from {
+            from {
                 opacity: 0;
                 transform: scale(0.8);
             }
@@ -401,14 +401,6 @@ from {
             color: var(--primary-color);
         }
 
-        .team-member p {
-            font-size: 1em;
-            margin: 0;
-            color: var(--text-color);
-            font-weight: 500;
-            user-select: none;
-        }
-
         .team-member img {
             width: 130px;
             height: 130px;
@@ -418,7 +410,6 @@ from {
             margin: 0 auto;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
             transition: transform 0.3s ease;
-            background-color: #fff;
         }
 
         .team-member img:hover {
@@ -469,15 +460,15 @@ from {
         }
 
         .faq-section .faq-question:hover,
-        .faq-secti
-
-on .faq-question:focus {
+        .faq-section .faq-question:focus {
             background-color: var(--primary-color);
             color: #fff;
             outline: none;
         }
 
-        .faq-section .faq-answer {
+        .
+
+faq-section .faq-answer {
             display: none;
             padding: 18px 24px;
             background-color: #f5f9f5;
@@ -493,7 +484,7 @@ on .faq-question:focus {
 
         body.dark-mode .faq-section .faq-answer {
             background-color: var(--faq-bg, #2b3b33);
-            color: var(--faq-text, #d9e6de);
+            color: #d9e6de;
         }
 
         /* Кнопка переключения темы */
@@ -569,35 +560,36 @@ on .faq-question:focus {
 
         /* Изменения в разделе "сколько уже подержано" */
         #donations {
-            background: linear-gradient(135deg, #d4edda, #a8d5ba);
+            background: #e7f0e7; /* Убран градиент, оставлен светлый фон */
             border-radius: var(--border-radius);
-            padding: 35px 40px;
-            box-shadow: 0 8px 20px rgba(76, 175, 80, 0.3);
+            padding: 25px 20px; /* Уменьшено значение для уменьшения размера */
+            box-shadow: 0 4px 10px rgba(76, 175, 80, 0.3);
             text-align: center;
             color: #27632a;
             font-weight: 700;
-            font-size: 2em;
+            font-size: 1.5em; /* Уменьшен размер текста */
             user-select: none;
-            max-width: 400px;
+            max-width: 300px; /* Уменьшена ширина */
             margin: 0 auto 50px auto;
             border: 2px solid #4caf50;
             transition: box-shadow 0.3s ease;
         }
 
         #donations:hover {
-            box-shadow: 0 12px 30px rgba(76, 175, 80, 0.5);
+            box-shadow: 0 8px 20px rgba(76, 175, 80, 0.5);
         }
 
         #donation-counter {
             margin-top: 12px;
-            font-size: 2.5em;
+            font-size: 2em;
             color: var(--primary-color);
             font-weight: 900;
-
-user-select: text;
+            user-select: text;
         }
 
-        /* Подписка: конфетти */
+        /* Подписка: конфетт
+
+и */
         .confetti {
             position: relative;
             height: 40px;
@@ -740,10 +732,10 @@ user-select: text;
             }
 
             .team-member {
-
-width: 180px;
+                width: 180px;
                 padding: 18px 15px;
-            }
+
+}
 
             .team-member img {
                 width: 100px;
@@ -838,10 +830,10 @@ width: 180px;
             <p style="margin-top: 30px;"><b>Отсканируйте QR-код для пожертвования:</b></p>
             <img src="https://via.placeholder.com/150" alt="QR-код для пожертвования" style="max-width: 150px; margin-top: 10px;">
             <img src="https://i.postimg.cc/XNddWWkh/Take-photos-of-cute-and-touching-animals-f19811fe-b4df-4921-afe6-3.png"
-                alt="InvaCoin помогает всем
+                alt="InvaCoin помогает всем животным!" style="max-width: 200px; margin-top: 10px;">
+        \
 
-животным!" style="max-width: 200px; margin-top: 10px;">
-        </section>
+</section>
 
         <a href="#" class="whitepaper-link">Скачать Whitepaper (скоро)</a>
 
@@ -872,18 +864,27 @@ width: 180px;
             <div class="team-members">
                 <div class="team-member" tabindex="0" aria-label="Иван Каламаев, Создатель">
                     <h3>Иван Каламаев</h3>
-                    <p>Создатель</p>
-                    <img src="https://i.postimg.cc/3x6Fq1vB/default-avatar.png" alt="Фото Иван Каламаев" />
+                    <img src="https://i.postimg.cc/rp8WM7zg/1000032008.jpg" alt="Иван Каламаев" />
                 </div>
                 <div class="team-member" tabindex="0" aria-label="Кирилл Кашин, Тестировщик">
                     <h3>Кирилл Кашин</h3>
-                    <p>Тестировщик</p>
-                    <img src="https://i.postimg.cc/3x6Fq1vB/default-avatar.png" alt="Фото Кирилл Кашин" />
+                    <img src="https://i.postimg.cc/rp8WM7zg/1000032008.jpg" alt="Кирилл Кашин" />
                 </div>
             </div>
         </section>
 
-        <!-- Остальные секции без изменений -->
+        <section id="donations" data-aos="zoom-in" data-aos-duration="1000" aria-live="polite">
+            <h2>Всего пожертвовано:</h2>
+            <div id="donation-counter" style="font-size: 1.5em; color: var(--primary-color);">0 IVC</div>
+        </section>
+
+        <section id="calculator" data-aos="fade-up" data-aos-duration="1000">
+            <h2>Калькулятор пожертвований</h2>
+            <p>Узнайте, сколько добра вы можете сделать, пожертвовав InvaCoin!</p>
+            <input type="number" id="ivc-amount" placeholder="Введите количество IVC" aria-label="Количество IVC">
+            <button onclick="calculateDonation()" aria-label="Рассчитать пожертвование">Рассчитать</button>
+            <div id="calculator-results" aria-live="polite" style="margin-top: 15px;"></div>
+        </section>
 
         <section class="faq-section" id="faq" data-aos="fade-up" data-aos-duration="1000">
             <h2>Часто задаваемые вопросы</h2>
@@ -899,23 +900,10 @@ width: 180px;
             <div class="faq-question" tabindex="0">Как я могу поддержать проект?</div>
             <div class="faq-answer">Вы можете купить InvaCoin, сделать пожертвование напрямую благотворительным организациям или рассказать о проекте своим друзьям и знакомым.</div>
 
-            <div class="faq-question" tabindex="0">Как обеспечивается прозрачность транзакций?</div>
+            <div class="faq-question" tabind
+
+ex="0">Как обеспечивается прозрачность транзакций?</div>
             <div class="faq-answer">Все транзакции записываются в блокчейн Ethereum, что гарантирует полную прозрачность и невозможность подделки.</div>
-        </section>
-
-        <section id="calculator" data-aos="fade-up" data-aos-duration="1000">
-            <h2>Калькулятор пожертвований</h2>
-            <p>Узнайте, сколько добра вы можете сделать, пожертвовав InvaCoin!</p>
-            <input type="number" id="ivc-amount" placeholder="Введите количество IVC" aria-label="Количество IVC">
-            <button onclick="calculateDonation()" aria-la
-
-bel="Рассчитать пожертвование">Рассчитать</button>
-            <div id="calculator-results" aria-live="polite" style="margin-top: 15px;"></div>
-        </section>
-
-        <section id="donations" data-aos="zoom-in" data-aos-duration="1000" aria-live="polite">
-            <h2>Всего пожертвовано:</h2>
-            <div id="donation-counter">0 IVC</div>
         </section>
     </main>
 
@@ -1008,13 +996,13 @@ bel="Рассчитать пожертвование">Рассчитать</butt
                 alert('Пожалуйста, введите корректный email адрес.');
                 return;
             }
-            const confirmation = document.get
-
-ElementById('subscription-confirmation');
+            const confirmation = document.getElementById('subscription-confirmation');
             confirmation.style.display = 'block';
             confirmation.classList.add('visible');
 
-            // Анимация конфетти
+            //
+
+Анимация конфетти
             const confetti = confirmation.querySelector('.confetti');
             confetti.innerHTML = '';
             const colors = ['#f44336', '#e91e63', '#9c27b0', '#673ab7', '#4caf50', '#81c784'];
@@ -1069,4 +1057,4 @@ ElementById('subscription-confirmation');
     </script>
 </body>
 
-</html>
+    </html>
