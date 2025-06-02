@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description"
         content="InvaCoin (IVC) - криптовалюта для спасения животных. Поддержите благотворительные организации и проекты по защите животных. Децентрализованные финансы для помощи животным." />
     <meta name="keywords"
@@ -19,19 +19,20 @@
             --text-color: #2e3a33;
             --primary-color: #4caf50;
             --secondary-color: #81c784;
-            --header-bg: linear-gradient(to right, var(--primary-color), var(--secondary-color));
-            --nav-bg: #8cc48a; 
+            --header-bg: linear-gradient(135deg, #4caf50, #81c784);
+            --nav-bg: #6bb16b;
             --section-bg: #ffffff;
             --footer-bg: #ffffff;
             --link-color: #2e3a33;
             --link-hover-bg: var(--primary-color);
             --link-hover-color: #fff;
-            --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            --border-radius: 20px; 
-            --transition-duration: 0.3s;
-            --team-member-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            --box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+            --border-radius: 24px;
+            --transition-duration: 0.35s;
+            --team-member-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
             --gradient-bg: linear-gradient(135deg, #e6f2e6, #cde9cd);
             --highlight-color: #ffc107;
+            --confetti-colors: #f44336, #e91e63, #9c27b0, #673ab7, #4caf50, #81c784;
         }
 
         body {
@@ -40,201 +41,693 @@
             padding: 0;
             background: var(--gradient-bg);
             color: var(--text-color);
-            line-height: 1.7;
+            line-height: 1.75;
             overflow-x: hidden;
             scroll-behavior: smooth;
             box-sizing: border-box;
             position: relative;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         /* Темная тема */
         body.dark-mode {
             --bg-color: #121b1a;
             --text-color: #d9e6de;
-            --header-bg: linear-gradient(to right, #2e4a3d, #49775a);
-            --nav-bg: #3a5a3f; 
+
+            --header-bg: linear-gradient(135deg, #2e4a3d, #49775a);
+            --nav-bg: #3a5a3f;
             --section-bg: #1e2a26;
             --footer-bg: #121b1a;
-
             --link-color: #d9e6de;
             --link-hover-bg: #49775a;
             --link-hover-color: #fff;
-            --box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
-            --team-member-shadow: 0 2px 5px rgba(255, 255, 255, 0.2);
+            --box-shadow: 0 6px 18px rgba(255, 255, 255, 0.15);
+            --team-member-shadow: 0 3px 10px rgba(255, 255, 255, 0.2);
             --gradient-bg: linear-gradient(135deg, #2e4a3d, #49775a);
         }
 
-        /* Шапка */
+        /* Шапка с градиентом и шариками */
         header {
+            position: relative;
             background: var(--header-bg);
             color: #fff;
-            padding: 25px 20px;
+            padding: 40px 20px 60px 20px;
             text-align: center;
+            border-bottom-left-radius: var(--border-radius);
+            border-bottom-right-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
-            position: relative;
             overflow: visible;
-            border-bottom-left-radius: 20px;
-            border-bottom-right-radius: 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 8px;
             z-index: 10;
+            user-select: none;
+        }
+
+        /* Плавающие шарики */
+        header .floating-balls {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            height: 140px;
+            pointer-events: none;
+            z-index: 0;
+            overflow: visible;
+        }
+
+        header .floating-balls span {
+            position: absolute;
+            background-color: rgba(76, 175, 80, 0.5);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+            opacity: 0.6;
+            filter: blur(1.2px);
+            box-shadow: 0 0 20px rgba(76, 175, 80, 0.8);
+            will-change: transform;
+        }
+
+        header .floating-balls span:nth-child(1) {
+            width: 22px;
+            height: 22px;
+            left: 12%;
+            animation-delay: 0s;
+            top: 20px;
+        }
+
+        header .floating-balls span:nth-child(2) {
+            width: 16px;
+            height: 16px;
+            left: 28%;
+            animation-delay: 1.8s;
+            top: 45px;
+        }
+
+        header .floating-balls span:nth-child(3) {
+            width: 20px;
+            height: 20px;
+            left: 44%;
+            animation-delay: 3.2s;
+            top: 35px;
+        }
+
+        header .floating-balls span:nth-child(4) {
+            width: 14px;
+            height: 14px;
+            left: 60%;
+            animation-delay: 4.7s;
+            top: 55px;
+        }
+
+        header .floating-balls span:nth-child(5) {
+            width: 24px;
+            height: 24px;
+            left: 74%;
+            animation-delay: 0.9s;
+            top: 25px;
+        }
+
+        header .floating-balls span:nth-child(6) {
+            width: 12px;
+            height: 12px;
+            left: 82%;
+            animation-delay: 2.7s;
+            top: 65px;
+        }
+
+        header .floating-balls span:nth-child(7) {
+            width: 18px;
+            height: 18px;
+            left: 92%;
+            animation-delay: 4.4s;
+            top: 40px;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
         }
 
         header h1 {
-            font-size: 2.4em;
-            margin: 0;
-            z-index: 1;
+            font-size: 2.8rem;
+            margin: 0 0 8px 0;
             position: relative;
-            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.35);
+            z-index: 1;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.45);
+            font-weight: 700;
         }
 
         header p {
-            font-size: 1.15em;
+            font-size: 1.25rem;
             font-style: italic;
             color: #d0f0d0;
             margin: 0;
-            z-index: 1;
             position: relative;
+            z-index: 1;
+            user-select: none;
+        }
+
+        header img.logo {
+            max-width: 120px;
+            margin-bottom: 12px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3)
+
+;
+            transition: transform 0.4s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        header img.logo:hover {
+            transform: scale(1.07);
         }
 
         /* Навигация */
         nav {
             background-color: var(--nav-bg);
             color: var(--link-color);
-            padding: 15px 20px;
-            text-align: center;
+            padding: 14px 20px;
             box-shadow: var(--box-shadow);
-            width: 100%;
             border-radius: 0 0 var(--border-radius) var(--border-radius);
+            max-width: 1200px;
+            margin: 0 auto 50px auto;
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 12px;
+            gap: 14px;
             font-weight: 600;
-            font-size: 1.1em;
-            transition: background-color var(--transition-duration), color var(--transition-duration);
+            font-size: 1.1rem;
             user-select: none;
-            z-index: 9;
+            transition: background-color var(--transition-duration), color var(--transition-duration);
+            overflow: hidden;
         }
 
         nav a {
             color: var(--link-color);
             text-decoration: none;
-            padding: 12px 20px;
-            display: inline-block;
+            padding: 10px 22px;
             border-radius: var(--border-radius);
-            transition: background-color var(--transition-duration), transform var(--transition-duration), color var(--transition-duration);
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+            transition: background-color var(--transition-duration), transform var(--transition-duration), color var(--transition-duration), box-shadow var(--transition-duration);
+            white-space: nowrap;
+            font-weight: 600;
         }
 
         nav a:hover,
         nav a:focus {
             background-color: var(--link-hover-bg);
             color: var(--link-hover-color);
-            transform: scale(1.1);
-            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+            transform: scale(1.12);
+            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
             outline: none;
         }
 
+        /* Основной контейнер */
         main {
-            padding: 40px 25px 50px 25px;
             max-width: 1200px;
-            margin: 0 auto;
+            margin: 0 auto 80px auto;
+            padding: 0 25px 0 25px;
         }
 
+        /* Все секции - мягкие тени, плавные углы, плавные анимации */
         section {
-            margin-bottom: 50px;
             background-color: var(--section-bg);
-            color: var(--text-color);
-            padding: 35px 40px;
             border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-            transition: transform var(--transition-duration), box-shadow var(--transition-duration);
+            padding: 40px 45px;
+            margin-bottom: 50px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            transition: box-shadow 0.4s ease, transform 0.4s ease;
+            overflow-wrap: break-word;
         }
 
         section:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 14px 48px rgba(0, 0, 0, 0.15);
+            transform: translateY(-8px);
         }
 
         section h2 {
             color: var(--primary-color);
-            font-size: 2.8em;
-            margin-bottom: 25px;
-            border-bottom: 3px solid var(--primary-color);
-            padding-bottom: 12px;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.12);
+            font-size: 2.8rem;
+            margin-bottom: 28px;
+            border-bottom: 4px solid var(--primary-color);
+            padding-bottom: 14px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
             user-select: none;
+            font-weight: 700;
         }
 
         section p {
-            font-size: 1.2em;
-            line-height: 1.8;
+            font-size: 1.25rem;
+            line-height: 1.85;
+            color: var(--text-color);
+            user-select: text;
         }
 
-        /* Изображения */
+        ul, ol {
+            padding-left: 40px;
+            margin-top: 16px;
+            margin-bottom: 16px;
+        }
+
+        li {
+            margin-bottom: 16px;
+            font-size: 1.18rem;
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+
+        /* Изображения с мягкими тенями и скруглениями */
         img {
             max-width: 100%;
-            height: auto;
-            border-radius: var(--bord
-
-er-radius);
-            box-shadow: var(--box-shadow);
-            transition: transform var(--transition-duration);
+            border-radius: var(--border-radius);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transition: transform 0.35s ease;
+            user-select: none;
         }
 
         img:hover {
-            transform: scale(1.05);
+            transform: scale(1.06);
         }
 
-        /* Кнопка "Скачать Whitepaper" */
+        /* Секция "Всего пожертвовано" с градиентом и аккуратным размером */
+        #donations {
+            max-width: 360px;
+            margin: 0 auto 60px auto;
+            padding: 30px 25px;
+            border-radius: var(--border-radius);
+            background: linear-gradient(135deg, #4caf50, #81c784);
+            box-sha
+
+dow: 0 12px 28px rgba(76, 175, 80, 0.6);
+            color: #fff;
+            text-align: center;
+            user-select: none;
+            transition: box-shadow 0.4s ease;
+        }
+
+        #donations:hover {
+            box-shadow: 0 18px 40px rgba(76, 175, 80, 0.85);
+        }
+
+        #donations h2 {
+            font-size: 2.5rem;
+            margin-bottom: 18px;
+            border-bottom: none;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        #donation-counter {
+            font-size: 2.8rem;
+            font-weight: 900;
+            letter-spacing: 0.06em;
+            text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.25);
+            user-select: text;
+        }
+
+        /* Кнопка "Скачать Whitepaper" с эффектом свечения и анимацией */
         .whitepaper-link {
             display: inline-block;
             background: linear-gradient(135deg, #6a11cb, #2575fc);
             color: #fff;
             font-weight: 700;
-            font-size: 1.1rem;
-            padding: 14px 32px;
+            font-size: 1.2rem;
+            padding: 16px 38px;
             border-radius: 40px;
+            box-shadow: 0 10px 30px rgba(38, 115, 255, 0.5);
             text-align: center;
-            margin: 20px 0;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 15px rgba(38, 115, 255, 0.3);
+            margin: 20px auto 40px auto;
+            transition: box-shadow 0.4s ease, transform 0.4s ease;
+            cursor: pointer;
+            user-select: none;
+            text-decoration: none;
+            display: block;
+            max-width: 280px;
+            animation: pulse-glow 2.5s infinite ease-in-out;
         }
 
         .whitepaper-link:hover {
-            box-shadow: 0 12px 20px rgba(38, 115, 255, 0.5);
-            transform: translateY(-3px);
+            box-shadow: 0 16px 45px rgba(38, 115, 255, 0.85);
+            transform: translateY(-4px) scale(1.05);
+            text-decoration: none;
         }
 
-        /* Футер */
-        footer {
-            background-color: var(--footer-bg);
-            padding: 25px 25px;
-            color: var(--text-color);
+        @keyframes pulse-glow {
+            0%, 100% {
+                box-shadow: 0 10px 30px rgba(38, 115, 255, 0.5);
+            }
+            50% {
+                box-shadow: 0 16px 45px rgba(38, 115, 255, 0.85);
+            }
+        }
+
+        /* Секция подписки */
+        .subscribe-section {
+            max-width: 480px;
+            margin: 0 auto 70px auto;
+            background-color: var(--section-bg);
+            padding: 40px 35px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
             text-align: center;
-            font-size: 1.05em;
-            font-weight: 500;
-            border-top: 1px solid #ddd;
-            max-width: 1200px;
-            margin: 0 auto;
-            border-radius: 0 0 var(--border-radius) var(--border-radius);
+            position: relative;
+            transition: background-color var(--transition-duration), color var(--transition-duration);
             user-select: none;
+        }
+
+        .subscribe-section h2 {
+            margin-bottom: 14px;
+        }
+
+        .subscribe-section p {
+            margin-bottom: 28px;
+            font-size: 1.18rem;
+            color: var(--text-color);
+        }
+
+        .subscribe-section input[type="email"] {
+            width: 80%;
+            padding: 16px 20px;
+            font-size: 1.15rem;
+            border-radius: var(--border-radius);
+            border: 2px solid var(--primary-color);
+            outline: none;
+            transition: border-color 0.3s ease;
+            box-sizing: border-box;
+            margin-bottom: 24px;
+            color: var(--text-color);
+            background-color: transparent;
+            user-select: text;
+        }
+
+        .subscribe-section input[type="email"]:focus {
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 8px var(--secondary-color);
+        }
+
+        .subscribe-section button {
+            background-color: var(--primary-color);
+            color: #fff;
+            border: none;
+            padding: 16px 36px;
+            font-size: 1.2rem;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            box-shadow: 0 8px 24px rgba(76, 175, 80, 0.7);
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            user-select: none;
+        }
+
+        .subscribe-section button:hover,
+        .subsc
+
+ribe-section button:focus {
+            background-color: var(--secondary-color);
+            outline: none;
+            transform: scale(1.07);
+            box-shadow: 0 12px 30px rgba(129, 199, 132, 0.9);
+        }
+
+        /* Конфетти */
+        .confetti {
+            position: relative;
+            height: 40px;
+            margin-top: 16px;
+            overflow: visible;
+            pointer-events: none;
+        }
+
+        .confetti span {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            animation: confetti-fall 2.2s linear forwards;
+            opacity: 0.9;
+            box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+            will-change: transform, opacity;
+        }
+
+        @keyframes confetti-fall {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(130px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        #subscription-confirmation {
+            font-weight: 600;
+            font-size: 1.15rem;
+            color: var(--primary-color);
+            opacity: 0;
+            transition: opacity 0.8s ease;
+            user-select: none;
+            margin-top: 12px;
+            pointer-events: none;
+        }
+
+        #subscription-confirmation.visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* Наша команда */
+        .team-members {
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .team-member {
+            background-color: var(--section-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--team-member-shadow);
+            width: 220px;
+            padding: 30px 25px;
+            text-align: center;
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+            cursor: default;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            color: var(--text-color);
+            user-select: none;
+            position: relative;
+        }
+
+        .team-member:hover,
+        .team-member:focus {
+            transform: translateY(-12px) scale(1.08);
+            box-shadow: 0 20px 48px rgba(0, 0, 0, 0.32);
+            outline: none;
+        }
+
+        .team-member h3 {
+            font-size: 1.5rem;
+            margin: 0;
+            color: var(--primary-color);
+            user-select: none;
+        }
+
+        .team-member img {
+            width: 140px;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid var(--primary-color);
+            margin: 0 auto;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+            transition: transform 0.35s ease;
+            user-select: none;
+        }
+
+        .team-member img:hover {
+            transform: scale(1.12);
+        }
+
+        /* Кнопка переключения темы (плавающий зеленый круг с анимацией) */
+        .theme-switcher {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            width: 56px;
+            height: 56px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 8px 22px rgba(76, 175, 80, 0.7);
+            cursor: pointer;
+            color: #fff;
+            font-size: 1.8rem;
+            z-index: 1100;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            user-select: none;
+            animation: floatButton 3.5s ease-in-out infinite;
+        }
+
+        .theme-switcher:hover,
+        .theme
+
+-switcher:focus {
+            background-color: var(--secondary-color);
+            outline: none;
+            transform: scale(1.15);
+            box-shadow: 0 12px 30px rgba(129, 199, 132, 0.9);
+        }
+
+        @keyframes floatButton {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Кнопка "Наверх" */
+        #scrollToTopBtn {
+            display: none;
+            position: fixed;
+            left: 20px;
+            bottom: 88px;
+            z-index: 1000;
+            background-color: var(--primary-color);
+            border: none;
+            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            cursor: pointer;
+            box-shadow: 0 8px 22px rgba(76, 175, 80, 0.7);
+            color: white;
+            font-size: 1.3rem;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            user-select: none;
+        }
+
+        #scrollToTopBtn:hover,
+        #scrollToTopBtn:focus {
+            background-color: var(--secondary-color);
+            outline: none;
+            transform: scale(1.15);
+        }
+
+        /* Адаптив */
+        @media (max-width: 768px) {
+            header {
+                padding: 30px 15px 50px 15px;
+            }
+
+            header h1 {
+                font-size: 2.2rem;
+            }
+
+            header p {
+                font-size: 1rem;
+            }
+
+            nav {
+                gap: 10px;
+                font-size: 1rem;
+                padding: 12px 15px;
+            }
+
+            nav a {
+                padding: 10px 16px;
+                font-weight: 600;
+                white-space: normal;
+            }
+
+            main {
+                padding: 0 20px 0 20px;
+            }
+
+            section {
+                padding: 30px 25px;
+                margin-bottom: 40px;
+            }
+
+            section h2 {
+                font-size: 2.2rem;
+                margin-bottom: 20px;
+            }
+
+            section p, li {
+                font-size: 1.1rem;
+            }
+
+            .team-members {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .team-member {
+                width: 220px;
+                padding: 25px 20px;
+            }
+
+            .team-member img {
+                width: 120px;
+                height: 120px;
+            }
+
+            .team-member h3 {
+                font-size: 1.3rem;
+            }
+
+            .subscribe-section {
+                max-width: 90%;
+                padding: 30px 20px;
+            }
+
+            #calculator input[type="number"] {
+                width: 100%;
+                margin-bottom: 14px;
+            }
+
+            #calculator button {
+                width: 100%;
+            }
+
+            #donations {
+                max-width: 90%;
+                padding: 25px 20px;
+                font-size: 1.3rem;
+            }
+
+            .whitepaper-link {
+                max-width: 90%;
+                padding: 14px 28px;
+                font-size: 1.1rem;
+            }
         }
     </style>
 </head>
 <body>
-    <header data-aos="fade-down" data-aos-duration="1000">
-        <img src="https://i.postimg.cc/9MSyzmf7/IMG-20250412-114846-882.png" alt="Логотип InvaCoin" class="logo" style="max-width: 120px; margin-bottom: 6px;" />
+    <header data-aos="fade-down" data-aos-duration="1000" aria-label="Заголовок сайта">
+        <div class="floating-balls" aria-hidden="true">
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <img src="https://i.postimg.cc/9MSyzmf7/IMG-20250412-114846-882.png" alt="Логотип InvaCoin" class="logo" />
         <h1>InvaCoin: Криптовалюта для спасения животных</h1>
         <p>Поддержите важные проекты по защите животных с помощью децентрализованных технологий.</p>
     </header>
 
     <nav data-aos="fade-in" data-aos-duration="1000" aria-label="Главное меню">
-        <a href="#about">О InvaCoin</a>
+        <a href="#about">О I
+
+nvaCoin</a>
         <a href="#how-it-works">Как это работает</a>
         <a href="#features">Особенности</a>
         <a href="#roadmap">Дорожная карта</a>
@@ -247,7 +740,7 @@ er-radius);
     </nav>
 
     <main>
-        <section id="support" data-aos="fade-right" data-aos-duration="1000">
+        <section id="support" data-aos="fade-right" data-aos-duration="1000" aria-label="Поддержка проекта">
             <h2>Поддержать проект</h2>
             <p>Вместе мы можем сделать мир лучше для животных! Поддержите InvaCoin и внесите свой вклад в благородное дело:</p>
             <ul>
@@ -260,33 +753,20 @@ er-radius);
             <img src="https://i.postimg.cc/XNddWWkh/Take-photos-of-cute-and-touching-animals-f19811fe-b4df-4921-afe6-3.png" alt="InvaCoin помогает всем животным!" style="max-width: 200px; margin-top: 10px;">
         </section>
 
-        <a href="#" class="whitepaper-link">Скачать Whitepaper (скоро)</a>
+        <a href="#" class="whitepaper-link" aria-label="Скачать Whitepaper">Скачать Whitepaper (скоро)</a>
 
-        <section class="subscribe-section" data-aos="zoom-in" data-aos-duration="1000">
+        <section class="subscribe-section" data-aos="zoom-in" data-aos-duration="1000" aria-label="Подписка на новости">
             <h2>Подпишитесь на наши новости</h2>
             <p>Будьте в курсе последних новостей и обновлений InvaCoin.</p>
-            <input type="email" placeholder="Ваш email" id="subscribe-email" aria-label="Email для подписки">
-            <button onclick="subscribe()" a
-
-ria-label="Подписаться на новости">Подписаться</button>
-            <div id="subscription-confirmation" style="display:none;">
+            <input type="email" placeholder="Ваш email" id="subscribe-email" aria-label="Email для подписки" autocomplete="email" />
+            <button onclick="subscribe()" aria-label="Подписаться на новости">Подписаться</button>
+            <div id="subscription-confirmation" aria-live="polite" role="alert" style="display:none;">
                 Спасибо за подписку!
-                <div class="confetti" aria-hidden="true">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
+                <div class="confetti" aria-hidden="true"></div>
             </div>
         </section>
 
-        <section id="team" data-aos="fade-up" data-aos-duration="1000">
+        <section id="team" data-aos="fade-up" data-aos-duration="1000" aria-label="Наша команда">
             <h2>Наша команда</h2>
             <div class="team-members">
                 <div class="team-member" tabindex="0" aria-label="Иван Каламаев, Создатель">
@@ -300,31 +780,772 @@ ria-label="Подписаться на новости">Подписаться</b
             </div>
         </section>
 
-        <section id="donations" data-aos="zoom-in" data-aos-duration="1000" aria-live="polite">
+        <section id="donations" data-aos="zoom-in" data-aos-duration="1000" aria-live="polite" aria-label="Всего пожертвовано">
             <h2>Всего пожертвовано:</h2>
-            <div id="donation-counter" style="font-size: 1.5em; color: var(--primary-color);">0 IVC</div>
+            <div id="donation-counter">0 IVC</div>
         </section>
 
-        <section id="calculator" data-aos="fade-up" data-aos-duration="1000">
+        <section id="calculator" data-aos="fade-up" data-aos-duration="1000" aria-label="Калькулятор пожертвований">
             <h2>Калькулятор пожертвований</h2>
             <p>Узнайте, сколько добра вы можете сделать, пожертвовав InvaCoin!</p>
-            <input type="number" id="ivc-amount" placeholder="Введите количество IVC" aria-label="Количество IVC">
-            <button onclick="calculateDonation()" aria-label="Рассчитать пожертвование">Рассчитать</button>
-            <div id="calculator-results" aria-live="polite" style="margin-top: 15px;"></div>
+            <input type="number" id="ivc-amount" placeholder="Введите количество IVC" aria-label="Количество IVC" min="0" />
+            <button onclick="calculateDonation()" aria-label\
+
+            --header-bg: linear-gradient(135deg, #2e4a3d, #49775a);
+            --nav-bg: #3a5a3f;
+            --section-bg: #1e2a26;
+            --footer-bg: #121b1a;
+            --link-color: #d9e6de;
+            --link-hover-bg: #49775a;
+            --link-hover-color: #fff;
+            --box-shadow: 0 6px 18px rgba(255, 255, 255, 0.15);
+            --team-member-shadow: 0 3px 10px rgba(255, 255, 255, 0.2);
+            --gradient-bg: linear-gradient(135deg, #2e4a3d, #49775a);
+        }
+
+        /* Шапка с градиентом и шариками */
+        header {
+            position: relative;
+            background: var(--header-bg);
+            color: #fff;
+            padding: 40px 20px 60px 20px;
+            text-align: center;
+            border-bottom-left-radius: var(--border-radius);
+            border-bottom-right-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            overflow: visible;
+            z-index: 10;
+            user-select: none;
+        }
+
+        /* Плавающие шарики */
+        header .floating-balls {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            height: 140px;
+            pointer-events: none;
+            z-index: 0;
+            overflow: visible;
+        }
+
+        header .floating-balls span {
+            position: absolute;
+            background-color: rgba(76, 175, 80, 0.5);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+            opacity: 0.6;
+            filter: blur(1.2px);
+            box-shadow: 0 0 20px rgba(76, 175, 80, 0.8);
+            will-change: transform;
+        }
+
+        header .floating-balls span:nth-child(1) {
+            width: 22px;
+            height: 22px;
+            left: 12%;
+            animation-delay: 0s;
+            top: 20px;
+        }
+
+        header .floating-balls span:nth-child(2) {
+            width: 16px;
+            height: 16px;
+            left: 28%;
+            animation-delay: 1.8s;
+            top: 45px;
+        }
+
+        header .floating-balls span:nth-child(3) {
+            width: 20px;
+            height: 20px;
+            left: 44%;
+            animation-delay: 3.2s;
+            top: 35px;
+        }
+
+        header .floating-balls span:nth-child(4) {
+            width: 14px;
+            height: 14px;
+            left: 60%;
+            animation-delay: 4.7s;
+            top: 55px;
+        }
+
+        header .floating-balls span:nth-child(5) {
+            width: 24px;
+            height: 24px;
+            left: 74%;
+            animation-delay: 0.9s;
+            top: 25px;
+        }
+
+        header .floating-balls span:nth-child(6) {
+            width: 12px;
+            height: 12px;
+            left: 82%;
+            animation-delay: 2.7s;
+            top: 65px;
+        }
+
+        header .floating-balls span:nth-child(7) {
+            width: 18px;
+            height: 18px;
+            left: 92%;
+            animation-delay: 4.4s;
+            top: 40px;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            margin: 0 0 8px 0;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.45);
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 1.25rem;
+            font-style: italic;
+            color: #d0f0d0;
+            margin: 0;
+            position: relative;
+            z-index: 1;
+            user-select: none;
+        }
+
+        header img.logo {
+            max-width: 120px;
+            margin-bottom: 12px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+
+transition: transform 0.4s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        header img.logo:hover {
+            transform: scale(1.07);
+        }
+
+        /* Навигация */
+        nav {
+            background-color: var(--nav-bg);
+            color: var(--link-color);
+            padding: 14px 20px;
+            box-shadow: var(--box-shadow);
+            border-radius: 0 0 var(--border-radius) var(--border-radius);
+            max-width: 1200px;
+            margin: 0 auto 50px auto;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 14px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            user-select: none;
+            transition: background-color var(--transition-duration), color var(--transition-duration);
+            overflow: hidden;
+        }
+
+        nav a {
+            color: var(--link-color);
+            text-decoration: none;
+            padding: 10px 22px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+            transition: background-color var(--transition-duration), transform var(--transition-duration), color var(--transition-duration), box-shadow var(--transition-duration);
+            white-space: nowrap;
+            font-weight: 600;
+        }
+
+        nav a:hover,
+        nav a:focus {
+            background-color: var(--link-hover-bg);
+            color: var(--link-hover-color);
+            transform: scale(1.12);
+            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
+            outline: none;
+        }
+
+        /* Основной контейнер */
+        main {
+            max-width: 1200px;
+            margin: 0 auto 80px auto;
+            padding: 0 25px 0 25px;
+        }
+
+        /* Все секции - мягкие тени, плавные углы, плавные анимации */
+        section {
+            background-color: var(--section-bg);
+            border-radius: var(--border-radius);
+            padding: 40px 45px;
+            margin-bottom: 50px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            transition: box-shadow 0.4s ease, transform 0.4s ease;
+            overflow-wrap: break-word;
+        }
+
+        section:hover {
+            box-shadow: 0 14px 48px rgba(0, 0, 0, 0.15);
+            transform: translateY(-8px);
+        }
+
+        section h2 {
+            color: var(--primary-color);
+            font-size: 2.8rem;
+            margin-bottom: 28px;
+            border-bottom: 4px solid var(--primary-color);
+            padding-bottom: 14px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
+            user-select: none;
+            font-weight: 700;
+        }
+
+        section p {
+            font-size: 1.25rem;
+            line-height: 1.85;
+            color: var(--text-color);
+            user-select: text;
+        }
+
+        ul, ol {
+            padding-left: 40px;
+            margin-top: 16px;
+            margin-bottom: 16px;
+        }
+
+        li {
+            margin-bottom: 16px;
+            font-size: 1.18rem;
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+
+        /* Изображения с мягкими тенями и скруглениями */
+        img {
+            max-width: 100%;
+            border-radius: var(--border-radius);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transition: transform 0.35s ease;
+            user-select: none;
+        }
+
+        img:hover {
+            transform: scale(1.06);
+        }
+
+        /* Секция "Всего пожертвовано" с градиентом и аккуратным размером */
+        #donations {
+            max-width: 360px;
+            margin: 0 auto 60px auto;
+            padding: 30px 25px;
+            border-radius: var(--border-radius);
+            background: linear-gradient(135deg, #4caf50, #81c784);
+            box-shadow: 0 12px
+
+28px rgba(76, 175, 80, 0.6);
+            color: #fff;
+            text-align: center;
+            user-select: none;
+            transition: box-shadow 0.4s ease;
+        }
+
+        #donations:hover {
+            box-shadow: 0 18px 40px rgba(76, 175, 80, 0.85);
+        }
+
+        #donations h2 {
+            font-size: 2.5rem;
+            margin-bottom: 18px;
+            border-bottom: none;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        #donation-counter {
+            font-size: 2.8rem;
+            font-weight: 900;
+            letter-spacing: 0.06em;
+            text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.25);
+            user-select: text;
+        }
+
+        /* Кнопка "Скачать Whitepaper" с эффектом свечения и анимацией */
+        .whitepaper-link {
+            display: inline-block;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: #fff;
+            font-weight: 700;
+            font-size: 1.2rem;
+            padding: 16px 38px;
+            border-radius: 40px;
+            box-shadow: 0 10px 30px rgba(38, 115, 255, 0.5);
+            text-align: center;
+            margin: 20px auto 40px auto;
+            transition: box-shadow 0.4s ease, transform 0.4s ease;
+            cursor: pointer;
+            user-select: none;
+            text-decoration: none;
+            display: block;
+            max-width: 280px;
+            animation: pulse-glow 2.5s infinite ease-in-out;
+        }
+
+        .whitepaper-link:hover {
+            box-shadow: 0 16px 45px rgba(38, 115, 255, 0.85);
+            transform: translateY(-4px) scale(1.05);
+            text-decoration: none;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% {
+                box-shadow: 0 10px 30px rgba(38, 115, 255, 0.5);
+            }
+            50% {
+                box-shadow: 0 16px 45px rgba(38, 115, 255, 0.85);
+            }
+        }
+
+        /* Секция подписки */
+        .subscribe-section {
+            max-width: 480px;
+            margin: 0 auto 70px auto;
+            background-color: var(--section-bg);
+            padding: 40px 35px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            text-align: center;
+            position: relative;
+            transition: background-color var(--transition-duration), color var(--transition-duration);
+            user-select: none;
+        }
+
+        .subscribe-section h2 {
+            margin-bottom: 14px;
+        }
+
+        .subscribe-section p {
+            margin-bottom: 28px;
+            font-size: 1.18rem;
+            color: var(--text-color);
+        }
+
+        .subscribe-section input[type="email"] {
+            width: 80%;
+            padding: 16px 20px;
+            font-size: 1.15rem;
+            border-radius: var(--border-radius);
+            border: 2px solid var(--primary-color);
+            outline: none;
+            transition: border-color 0.3s ease;
+            box-sizing: border-box;
+            margin-bottom: 24px;
+            color: var(--text-color);
+            background-color: transparent;
+            user-select: text;
+        }
+
+        .subscribe-section input[type="email"]:focus {
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 8px var(--secondary-color);
+        }
+
+        .subscribe-section button {
+            background-color: var(--primary-color);
+            color: #fff;
+            border: none;
+            padding: 16px 36px;
+            font-size: 1.2rem;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            box-shadow: 0 8px 24px rgba(76, 175, 80, 0.7);
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            user-select: none;
+        }
+
+        .subscribe-section button:hover,
+        .subscribe-secti
+
+on button:focus {
+            background-color: var(--secondary-color);
+            outline: none;
+            transform: scale(1.07);
+            box-shadow: 0 12px 30px rgba(129, 199, 132, 0.9);
+        }
+
+        /* Конфетти */
+        .confetti {
+            position: relative;
+            height: 40px;
+            margin-top: 16px;
+            overflow: visible;
+            pointer-events: none;
+        }
+
+        .confetti span {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            animation: confetti-fall 2.2s linear forwards;
+            opacity: 0.9;
+            box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+            will-change: transform, opacity;
+        }
+
+        @keyframes confetti-fall {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(130px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        #subscription-confirmation {
+            font-weight: 600;
+            font-size: 1.15rem;
+            color: var(--primary-color);
+            opacity: 0;
+            transition: opacity 0.8s ease;
+            user-select: none;
+            margin-top: 12px;
+            pointer-events: none;
+        }
+
+        #subscription-confirmation.visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* Наша команда */
+        .team-members {
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .team-member {
+            background-color: var(--section-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--team-member-shadow);
+            width: 220px;
+            padding: 30px 25px;
+            text-align: center;
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+            cursor: default;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            color: var(--text-color);
+            user-select: none;
+            position: relative;
+        }
+
+        .team-member:hover,
+        .team-member:focus {
+            transform: translateY(-12px) scale(1.08);
+            box-shadow: 0 20px 48px rgba(0, 0, 0, 0.32);
+            outline: none;
+        }
+
+        .team-member h3 {
+            font-size: 1.5rem;
+            margin: 0;
+            color: var(--primary-color);
+            user-select: none;
+        }
+
+        .team-member img {
+            width: 140px;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid var(--primary-color);
+            margin: 0 auto;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+            transition: transform 0.35s ease;
+            user-select: none;
+        }
+
+        .team-member img:hover {
+            transform: scale(1.12);
+        }
+
+        /* Кнопка переключения темы (плавающий зеленый круг с анимацией) */
+        .theme-switcher {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            width: 56px;
+            height: 56px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 8px 22px rgba(76, 175, 80, 0.7);
+            cursor: pointer;
+            color: #fff;
+            font-size: 1.8rem;
+            z-index: 1100;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            user-select: none;
+            animation: floatButton 3.5s ease-in-out infinite;
+        }
+
+        .theme-switcher:hover,
+        .theme-switcher:
+
+focus {
+            background-color: var(--secondary-color);
+            outline: none;
+            transform: scale(1.15);
+            box-shadow: 0 12px 30px rgba(129, 199, 132, 0.9);
+        }
+
+        @keyframes floatButton {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Кнопка "Наверх" */
+        #scrollToTopBtn {
+            display: none;
+            position: fixed;
+            left: 20px;
+            bottom: 88px;
+            z-index: 1000;
+            background-color: var(--primary-color);
+            border: none;
+            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            cursor: pointer;
+            box-shadow: 0 8px 22px rgba(76, 175, 80, 0.7);
+            color: white;
+            font-size: 1.3rem;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            user-select: none;
+        }
+
+        #scrollToTopBtn:hover,
+        #scrollToTopBtn:focus {
+            background-color: var(--secondary-color);
+            outline: none;
+            transform: scale(1.15);
+        }
+
+        /* Адаптив */
+        @media (max-width: 768px) {
+            header {
+                padding: 30px 15px 50px 15px;
+            }
+
+            header h1 {
+                font-size: 2.2rem;
+            }
+
+            header p {
+                font-size: 1rem;
+            }
+
+            nav {
+                gap: 10px;
+                font-size: 1rem;
+                padding: 12px 15px;
+            }
+
+            nav a {
+                padding: 10px 16px;
+                font-weight: 600;
+                white-space: normal;
+            }
+
+            main {
+                padding: 0 20px 0 20px;
+            }
+
+            section {
+                padding: 30px 25px;
+                margin-bottom: 40px;
+            }
+
+            section h2 {
+                font-size: 2.2rem;
+                margin-bottom: 20px;
+            }
+
+            section p, li {
+                font-size: 1.1rem;
+            }
+
+            .team-members {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .team-member {
+                width: 220px;
+                padding: 25px 20px;
+            }
+
+            .team-member img {
+                width: 120px;
+                height: 120px;
+            }
+
+            .team-member h3 {
+                font-size: 1.3rem;
+            }
+
+            .subscribe-section {
+                max-width: 90%;
+                padding: 30px 20px;
+            }
+
+            #calculator input[type="number"] {
+                width: 100%;
+                margin-bottom: 14px;
+            }
+
+            #calculator button {
+                width: 100%;
+            }
+
+            #donations {
+                max-width: 90%;
+                padding: 25px 20px;
+                font-size: 1.3rem;
+            }
+
+            .whitepaper-link {
+                max-width: 90%;
+                padding: 14px 28px;
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header data-aos="fade-down" data-aos-duration="1000" aria-label="Заголовок сайта">
+        <div class="floating-balls" aria-hidden="true">
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <img src="https://i.postimg.cc/9MSyzmf7/IMG-20250412-114846-882.png" alt="Логотип InvaCoin" class="logo" />
+        <h1>InvaCoin: Криптовалюта для спасения животных</h1>
+        <p>Поддержите важные проекты по защите животных с помощью децентрализованных технологий.</p>
+    </header>
+
+    <nav data-aos="fade-in" data-aos-duration="1000" aria-label="Главное меню">
+        <a href="#about">О InvaCoin</a
+
+>
+        <a href="#how-it-works">Как это работает</a>
+        <a href="#features">Особенности</a>
+        <a href="#roadmap">Дорожная карта</a>
+        <a href="#news">Новости</a>
+        <a href="#buy">Как купить</a>
+        <a href="#support">Поддержать проект</a>
+        <a href="#team">Наша команда</a>
+        <a href="#faq">FAQ</a>
+        <a href="#calculator">Калькулятор</a>
+    </nav>
+
+    <main>
+        <section id="support" data-aos="fade-right" data-aos-duration="1000" aria-label="Поддержка проекта">
+            <h2>Поддержать проект</h2>
+            <p>Вместе мы можем сделать мир лучше для животных! Поддержите InvaCoin и внесите свой вклад в благородное дело:</p>
+            <ul>
+                <li>Купите InvaCoin и станьте частью нашего сообщества.</li>
+                <li>Пожертвуйте InvaCoin напрямую проверенным благотворительным организациям (адреса кошельков: <strong>(скоро)</strong>).</li>
+                <li>Расскажите о InvaCoin своим друзьям и знакомым, чтобы привлечь больше внимания к нашей миссии.</li>
+            </ul>
+            <p style="margin-top: 30px;"><b>Отсканируйте QR-код для пожертвования:</b></p>
+            <img src="https://via.placeholder.com/150" alt="QR-код для пожертвования" style="max-width: 150px; margin-top: 10px;">
+            <img src="https://i.postimg.cc/XNddWWkh/Take-photos-of-cute-and-touching-animals-f19811fe-b4df-4921-afe6-3.png" alt="InvaCoin помогает всем животным!" style="max-width: 200px; margin-top: 10px;">
         </section>
 
-        <section class="faq-section" id="faq" data-aos="fade-up" data-aos-duration="1000">
+        <a href="#" class="whitepaper-link" aria-label="Скачать Whitepaper">Скачать Whitepaper (скоро)</a>
+
+        <section class="subscribe-section" data-aos="zoom-in" data-aos-duration="1000" aria-label="Подписка на новости">
+            <h2>Подпишитесь на наши новости</h2>
+            <p>Будьте в курсе последних новостей и обновлений InvaCoin.</p>
+            <input type="email" placeholder="Ваш email" id="subscribe-email" aria-label="Email для подписки" autocomplete="email" />
+            <button onclick="subscribe()" aria-label="Подписаться на новости">Подписаться</button>
+            <div id="subscription-confirmation" aria-live="polite" role="alert" style="display:none;">
+                Спасибо за подписку!
+                <div class="confetti" aria-hidden="true"></div>
+            </div>
+        </section>
+
+        <section id="team" data-aos="fade-up" data-aos-duration="1000" aria-label="Наша команда">
+            <h2>Наша команда</h2>
+            <div class="team-members">
+                <div class="team-member" tabindex="0" aria-label="Иван Каламаев, Создатель">
+                    <h3>Иван Каламаев</h3>
+                    <img src="https://i.postimg.cc/rp8WM7zg/1000032008.jpg" alt="Иван Каламаев" />
+                </div>
+                <div class="team-member" tabindex="0" aria-label="Кирилл Кашин, Тестировщик">
+                    <h3>Кирилл Кашин</h3>
+                    <img src="https://i.postimg.cc/rp8WM7zg/1000032008.jpg" alt="Кирилл Кашин" />
+                </div>
+            </div>
+        </section>
+
+        <section id="donations" data-aos="zoom-in" data-aos-duration="1000" aria-live="polite" aria-label="Всего пожертвовано">
+            <h2>Всего пожертвовано:</h2>
+            <div id="donation-counter">0 IVC</div>
+        </section>
+
+        <section id="calculator" data-aos="fade-up" data-aos-duration="1000" aria-label="Калькулятор пожертвований">
+            <h2>Калькулятор пожертвований</h2>
+            <p>Узнайте, сколько добра вы можете сделать, пожертвовав InvaCoin!</p>
+            <input type="number" id="ivc-amount" placeholder="Введите количество IVC" aria-label="Количество IVC" min="0" />
+            <button onclick="calculateDonation()" aria-label="Рассчитат
+
+ь пожертвование">Рассчитать</button>
+            <div id="calculator-results" aria-live="polite" role="region" style="margin-top: 15px;"></div>
+        </section>
+
+        <section class="faq-section" id="faq" data-aos="fade-up" data-aos-duration="1000" aria-label="Часто задаваемые вопросы">
             <h2>Часто задаваемые вопросы</h2>
-            <div class="faq-question" tabindex="0">Что такое InvaCoin?</div>
-            <div class="faq-answer">InvaCoin - это криптовалюта, созданная для поддержки благотворительных организаций и проектов, занимающихся защитой животных.</div>
-            <div class="faq-question" tabindex="0">Как InvaCoin помогает животным?</div>
-            <div class="faq-answer">Часть каждой транзакции направляется в благотворительный фонд, который финансирует различные проекты помощи животным.</div>
-            <div class="faq-question" tabindex="0">Как я могу купить InvaCoin?</div>
-            <div class="faq-answer">InvaCoin можно приобрести на децентрализованной бирже Uniswap. Подробная инструкция доступна в разделе "Как купить".</div>
-            <div class="faq-question" tabindex="0">Как я могу поддержать проект?</div>
-            <div class="faq-answer">Вы можете купить InvaCoin, сделать пожертвование напрямую благотворительным организациям или рассказать о проекте своим друзьям и знакомым.</div>
-            <div class="faq-question" tabindex="0">Как обеспечивается прозрачность транзакций?</div>
-            <div class="faq-answer">Все транзакции записываются в блокчейн Ethereum, что гарантирует полную прозрачность и невозможность подделки.</div>
+            <div class="faq-question" tabindex="0" role="button" aria-expanded="false">Что такое InvaCoin?</div>
+            <div class="faq-answer" hidden>InvaCoin - это криптовалюта, созданная для поддержки благотворительных организаций и проектов, занимающихся защитой животных.</div>
+
+            <div class="faq-question" tabindex="0" role="button" aria-expanded="false">Как InvaCoin помогает животным?</div>
+            <div class="faq-answer" hidden>Часть каждой транзакции направляется в благотворительный фонд, который финансирует различные проекты помощи животным.</div>
+
+            <div class="faq-question" tabindex="0" role="button" aria-expanded="false">Как я могу купить InvaCoin?</div>
+            <div class="faq-answer" hidden>InvaCoin можно приобрести на децентрализованной бирже Uniswap. Подробная инструкция доступна в разделе "Как купить".</div>
+
+            <div class="faq-question" tabindex="0" role="button" aria-expanded="false">Как я могу поддержать проект?</div>
+            <div class="faq-answer" hidden>Вы можете купить InvaCoin, сделать пожертвование напрямую благотворительным организациям или рассказать о проекте своим друзьям и знакомым.</div>
+
+            <div class="faq-question" tabindex="0" role="button" aria-expanded="false">Как обеспечивается прозрачность транзакций?</div>
+            <div class="faq-answer" hidden>Все транзакции записываются в блокчейн Ethereum, что гарантирует полную прозрачность и невозможность подделки.</div>
         </section>
     </main>
 
@@ -334,26 +1555,31 @@ ria-label="Подписаться на новости">Подписаться</b
     </footer>
 
     <!-- Кнопка переключения темы -->
-    <div class="theme-switcher" title="Переключ
-
-ить тему" aria-label="Переключить тему">
-        <i class="fas fa-moon"></i>
+    <div class="theme-switcher" title="Переключить тему" aria-label="Переключить тему" tabindex="0" role="button">
+        <i class="fas fa-moon" aria-hidden="true"></i>
     </div>
 
     <!-- Кнопка "Наверх" -->
-    <button id="scrollToTopBtn" aria-label="Наверх">
-        <i class="fas fa-arrow-up"></i>
+    <button id="scrollToTopBtn" aria-label="Наверх" title="Наверх">
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
     </button>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         AOS.init();
 
-        // FAQ toggle
+        // FAQ toggle with ARIA updates
         document.querySelectorAll('.faq-question').forEach(question => {
             question.addEventListener('click', () => {
                 const answer = question.nextElementSibling;
-                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+                const expanded = question.getAttribute('aria-expanded') === 'true';
+                if (expanded) {
+                    answer.hidden = true;
+                    question.setAttribute('aria-expanded', 'false');
+                } else {
+                    answer.hidden = false;
+                    question.setAttribute('aria-expanded', 'true');
+                }
             });
             question.addEventListener('keydown', e => {
                 if (e.key === 'Enter' || e.key === ' ') {
@@ -363,14 +1589,30 @@ ria-label="Подписаться на новости">Подписаться</b
             });
         });
 
-        // Theme switcher
+        // Theme switcher toggle with icon change and focus support
         const themeSwitcher = document.querySelector('.theme-switcher');
-        themeSwitcher.addEventListener('click', () => {
-            document.body.classList.toggle('dark-mode');
-            const icon = themeSwitcher.querySelector('i');
-            icon.classList.toggle('fa-moon');
-            icon.classList.toggle('fa-sun');
+        themeSwitcher.addEventListener('click', toggleTheme);
+        themeSwitcher.addEventListener('keydown', e => {
+            if(e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggleTheme();
+            }
         });
+
+        function toggleTheme() {
+
+document.body.classList.toggle('dark-mode');
+            const icon = themeSwitcher.querySelector('i');
+            if (document.body.classList.contains('dark-mode')) {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+                themeSwitcher.setAttribute('aria-label', 'Переключить светлую тему');
+            } else {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+                themeSwitcher.setAttribute('aria-label', 'Переключить тёмную тему');
+            }
+        }
 
         // Donation calculator
         function calculateDonation() {
@@ -382,9 +1624,9 @@ ria-label="Подписаться на новости">Подписаться</b
             const ivcPrice = 0.05; // 1 IVC = $0.05
             const usdAmount = ivcAmount * ivcPrice;
 
-            const foodPrice = 10; // $10 за упаковку
-            const vaccinePrice = 25; // $25 за вакцину
-            const bedPrice = 50; // $50 за лежанку
+            const foodPrice = 10;
+            const vaccinePrice = 25;
+            const bedPrice = 50;
 
             const foodPacks = Math.floor(usdAmount / foodPrice);
             const vaccines = Math.floor(usdAmount / vaccinePrice);
@@ -402,7 +1644,7 @@ ria-label="Подписаться на новости">Подписаться</b
             document.getElementById('calculator-results').innerHTML = results;
         }
 
-        // Subscribe functionality
+        // Subscribe functionality with confetti animation
         function subscribe() {
             const emailInput = document.getElementById('subscribe-email');
             const email = emailInput.value.trim();
@@ -411,39 +1653,36 @@ ria-label="Подписаться на новости">Подписаться</b
                 return;
             }
             const confirmation = document.getElementById('subscription-confirmation');
+            const confetti = confirmation.querySelector('.confetti');
             confirmation.style.display = 'block';
             confirmation.classList.add('visible');
-
-            // Анимация конфетти
-            const confetti = confirmation.querySelector('.confetti');
             confetti.innerHTML = '';
+
             const colors = ['#f44336', '#e91e63', '#9c27b0', '#673ab7', '#4caf50', '#81c784'];
-            for (let i = 0; i < 10; i++) {
+            for (let i = 0; i < 12; i++) {
                 const span = document.createElement('span');
                 span.style.left = `${Math.random() * 100}%`;
                 span.style.backgroundColor = colors[i % colors.length];
+                span.style.animationDelay = `${(Math.random() * 2).toFixed(2)}s`;
+                span.style.width = span.style.height = `${8 + Math.random() * 6}px`;
                 confetti.appendChild(span);
             }
 
-            // Очистка поля email
             emailInput.value = '';
 
-            // Автоматическое скрытие сообщения через 5 секунд
             setTimeout(() => {
                 confirmation.style.display = 'none';
-                confirmation.classList.remove(
-
-'visible');
-            }, 5000);
+                confirmation.classList.remove('visible');
+                confetti.innerHTML = '';
+            }, 6000);
         }
 
-        // Email validation
         function validateEmail(email) {
             const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             return re.test(String(email).toLowerCase());
         }
 
-        // Кнопка "Наверх"
+        // Scroll to top button show/hide and smooth scroll
         const scrollToTopBtn = document.getElementById("scrollToTopBtn");
         window.addEventListener('scroll', () => {
             scrollToTopBtn.style.display = window.pageYOffset > 300 ? "block" : "none";
@@ -451,7 +1690,8 @@ ria-label="Подписаться на новости">Подписаться</b
 
         scrollToTopBtn.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
+
+});
     </script>
 </body>
-                </html>
+            </html>
