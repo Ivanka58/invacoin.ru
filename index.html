@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -21,24 +20,18 @@
             --primary-color: #4caf50;
             --secondary-color: #81c784;
             --header-bg: linear-gradient(to right, var(--primary-color), var(--secondary-color));
-            --nav-bg: #8cc48a; /* Изменён цвет навигационного меню на более приятный */
+            --nav-bg: #8cc48a; 
             --section-bg: #ffffff;
             --footer-bg: #ffffff;
             --link-color: #2e3a33;
             --link-hover-bg: var(--primary-color);
             --link-hover-color: #fff;
             --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            --border-radius: 20px; /* Увеличен радиус для более мягких углов */
+            --border-radius: 20px; 
             --transition-duration: 0.3s;
             --team-member-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
             --gradient-bg: linear-gradient(135deg, #e6f2e6, #cde9cd);
             --highlight-color: #ffc107;
-            --confetti-color1: #f44336;
-            --confetti-color2: #e91e63;
-            --confetti-color3: #9c27b0;
-            --confetti-color4: #673ab7;
-            --confetti-color5: #4caf50;
-            --confetti-color6: #81c784;
         }
 
         body {
@@ -50,10 +43,6 @@
             line-height: 1.7;
             overflow-x: hidden;
             scroll-behavior: smooth;
-
-            transition: background-color var(--transition-duration),
-                color var(--transition-duration);
-
             box-sizing: border-box;
             position: relative;
         }
@@ -63,17 +52,16 @@
             --bg-color: #121b1a;
             --text-color: #d9e6de;
             --header-bg: linear-gradient(to right, #2e4a3d, #49775a);
-            --nav-bg: #3a5a3f; /* Темный оттенок навигации */
+            --nav-bg: #3a5a3f; 
             --section-bg: #1e2a26;
             --footer-bg: #121b1a;
+
             --link-color: #d9e6de;
             --link-hover-bg: #49775a;
             --link-hover-color: #fff;
             --box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
             --team-member-shadow: 0 2px 5px rgba(255, 255, 255, 0.2);
             --gradient-bg: linear-gradient(135deg, #2e4a3d, #49775a);
-            --faq-bg: #2b3b33;
-            --faq-text: #d9e6de;
         }
 
         /* Шапка */
@@ -87,8 +75,6 @@
             overflow: visible;
             border-bottom-left-radius: 20px;
             border-bottom-right-radius: 20px;
-            transition: padding var(--transition-duration);
-            height: auto;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -97,100 +83,10 @@
             z-index: 10;
         }
 
-        /* Добавлено больше шариков в шапку */
-        header .floating-balls {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            width: calc(100% - 20px);
-            height: 140px;
-            pointer-events: none;
-            overflow: visible;
-            z-index: 0;
-        }
-
-        header .floating-balls span {
-            position: absolute;
-            background-color: rgba(76, 175, 80, 0.5);
-            border-radius: 50%;
-            animation: float 6s ease-in-out infinite;
-            opacity: 0.7;
-            filter: blur(1.2px);
-            box-shadow: 0 0 15px rgba(76, 175, 80, 0.7);
-        }
-
-        header .floating-balls span:nth-child(1) {
-            width: 20px;
-            height: 20px;
-            left: 10%;
-            animation-delay: 0s;
-            top: 15px;
-        }
-
-        header .floating-balls span:nth-child(2) {
-            width: 15px;
-            height: 15px;
-            left: 25%;
-            animation-delay: 1.5s;
-            top: 40px;
-        }
-
-        header .floating-balls span:nth-child(3) {
-            width: 18px;
-            height: 18px;
-            left: 40%;
-            animation-delay: 3s;
-            top: 30px;
-        }
-
-        header .floating-balls span:nth-child(4) {
-            width: 12px;
-            height: 12px;
-            left: 55%;
-            animation-delay: 4.5s;
-            top: 50px;
-        }
-
-        header .floating-balls span:nth-child(5) {
-            width: 22px;
-            height: 22px;
-            left: 70%;
-            animation-delay: 0.7s;
-            top: 20px;
-        }
-
-        header .floating-balls span:nth-child(6) {
-            width: 10px;
-            height: 10px;
-            left: 80%;
-            animation-delay: 2.5s;
-            top: 60px;
-        }
-
-        header .floating-balls span:nth-child(7) {
-            width: 16px;
-            height: 16px;
-            left: 90%;
-            animation-delay: 4.2s;
-            top: 35px;
-        }
-
-        @keyframes float {
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-15px);
-            }
-        }
-
         header h1 {
             font-size: 2.4em;
             margin: 0;
-
-z-index: 1;
+            z-index: 1;
             position: relative;
             text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.35);
         }
@@ -211,11 +107,8 @@ z-index: 1;
             padding: 15px 20px;
             text-align: center;
             box-shadow: var(--box-shadow);
-            position: static;
             width: 100%;
             border-radius: 0 0 var(--border-radius) var(--border-radius);
-            box-sizing: border-box;
-            margin-top: -10px;
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
@@ -232,11 +125,8 @@ z-index: 1;
             text-decoration: none;
             padding: 12px 20px;
             display: inline-block;
-            transition: background-color var(--transition-duration),
-                transform var(--transition-duration),
-                color var(--transition-duration);
             border-radius: var(--border-radius);
-            white-space: nowrap;
+            transition: background-color var(--transition-duration), transform var(--transition-duration), color var(--transition-duration);
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
         }
 
@@ -251,8 +141,6 @@ z-index: 1;
 
         main {
             padding: 40px 25px 50px 25px;
-            animation: fadeIn 1s ease-out;
-            box-sizing: border-box;
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -264,17 +152,7 @@ z-index: 1;
             padding: 35px 40px;
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
-            transition: transform var(--transition-duration),
-                box-shadow var(--transition-duration),
-                background-color var(--transition-duration),
-                color var(--transition-duration);
-            box-sizing: border-box;
-            overflow-wrap: break-word;
-        }
-
-        body.dark-mode section {
-            background-color: var(--section-bg);
-            color: var(--text-color);
+            transition: transform var(--transition-duration), box-shadow var(--transition-duration);
         }
 
         section:hover {
@@ -295,53 +173,15 @@ z-index: 1;
         section p {
             font-size: 1.2em;
             line-height: 1.8;
-            animation: slideInLeft 1s ease-out;
-        }
-
-        /* Анимация появления */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes slideInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: transl
-
-ateX(0);
-            }
-        }
-
-        @keyframes zoomIn {
-            from {
-                opacity: 0;
-                transform: scale(0.8);
-            }
-
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
         }
 
         /* Изображения */
         img {
             max-width: 100%;
             height: auto;
-            border-radius: var(--border-radius);
+            border-radius: var(--bord
+
+er-radius);
             box-shadow: var(--box-shadow);
             transition: transform var(--transition-duration);
         }
@@ -350,203 +190,30 @@ ateX(0);
             transform: scale(1.05);
         }
 
-        /* Списки */
-        ul,
-        ol {
-            padding-left: 36px;
-            box-sizing: border-box;
-        }
-
-        li {
-            margin-bottom: 18px;
-            animation: zoomIn 1s ease-out;
-            font-size: 1.15em;
-        }
-
-        /* Наша команда */
-        .team-members {
-            display: flex;
-            gap: 40px;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .team-member {
-            background-color: var(--section-bg);
-            border-radius: var(--border-radius);
-            box-shadow: var(--team-member-shadow);
-            width: 220px;
-            padding: 25px 20px;
+        /* Кнопка "Скачать Whitepaper" */
+        .whitepaper-link {
+            display: inline-block;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: #fff;
+            font-weight: 700;
+            font-size: 1.1rem;
+            padding: 14px 32px;
+            border-radius: 40px;
             text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: default;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 16px;
-            color: var(--text-color);
-            user-select: none;
-            position: relative;
+            margin: 20px 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 15px rgba(38, 115, 255, 0.3);
         }
 
-        .team-member:hover {
-            transform: translateY(-10px) scale(1.07);
-            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.3);
-        }
-
-        .team-member h3 {
-            font-size: 1.4em;
-            margin: 0;
-            color: var(--primary-color);
-        }
-
-        .team-member img {
-            width: 130px;
-            height: 130px;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 4px solid var(--primary-color);
-            margin: 0 auto;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-            transition: transform 0.3s ease;
-        }
-
-        .team-member img:hover {
-            transform: scale(1.1);
-        }
-
-        /* Соцсети кружки */
-        .social-widgets {
-            margin-top: 20px;
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-        }
-
-        .social-widget a {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            background-color: var(--primary-color);
-            color: #fff;
-            font-size: 1.8em;
-            box-shadow: 0 6px 14px rgba(76, 175, 80, 0.6);
-            transition: background-color 0.3s ease, transform 0.3s ease;
-            text-decoration: none;
-        }
-
-        .social-widget a:hover,
-        .social-widget a:focus {
-            background-color: var(--secondary-color);
-            transform: scale(1.15);
-            outline: none;
-        }
-
-        /* FAQ */
-        .faq-section .faq-question {
-            cursor: pointer;
-            padding: 15px 18px;
-            background-color: #e7f0e7;
-            border-radius: var(--border-radius);
-            margin-bottom: 12px;
-            font-weight: 600;
-            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
-            transition: background-color 0.3s ease, color 0.3s ease;
-            user-select: none;
-        }
-
-        .faq-section .faq-question:hover,
-        .faq-section .faq-question:focus {
-            background-color: var(--primary-color);
-            color: #fff;
-            outline: none;
-        }
-
-        .
-
-faq-section .faq-answer {
-            display: none;
-            padding: 18px 24px;
-            background-color: #f5f9f5;
-            border-left: 5px solid var(--primary-color);
-            margin-bottom: 28px;
-            border-radius: var(--border-radius);
-            font-size: 1.1em;
-            color: var(--text-color);
-            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.07);
-            transition: background-color 0.3s ease, color 0.3s ease;
-            user-select: text;
-        }
-
-        body.dark-mode .faq-section .faq-answer {
-            background-color: var(--faq-bg, #2b3b33);
-            color: #d9e6de;
-        }
-
-        /* Кнопка переключения темы */
-        .theme-switcher {
-            position: fixed;
-            right: 15px; /* Смещено немного влево */
-            bottom: 20px;
-            background-color: var(--primary-color);
-            border-radius: 50%;
-            width: 52px;
-            height: 52px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
-            cursor: pointer;
-            color: #fff;
-            font-size: 1.6em;
-            z-index: 1100;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-            user-select: none;
-        }
-
-        .theme-switcher:hover,
-        .theme-switcher:focus {
-            background-color: var(--secondary-color);
-            outline: none;
-            transform: scale(1.1);
-        }
-
-        /* Кнопка "Наверх" */
-        #scrollToTopBtn {
-            display: none;
-            position: fixed;
-            left: 20px;
-            bottom: 80px;
-            z-index: 1000;
-            background-color: var(--primary-color);
-            border: none;
-            border-radius: 50%;
-            width: 44px;
-            height: 44px;
-            cursor: pointer;
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
-            color: white;
-            font-size: 1.3em;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-            user-select: none;
-        }
-
-        #scrollToTopBtn:hover,
-        #scrollToTopBtn:focus {
-            background-color: var(--secondary-color);
-            outline: none;
-            transform: scale(1.1);
+        .whitepaper-link:hover {
+            box-shadow: 0 12px 20px rgba(38, 115, 255, 0.5);
+            transform: translateY(-3px);
         }
 
         /* Футер */
         footer {
             background-color: var(--footer-bg);
             padding: 25px 25px;
-            box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.06);
             color: var(--text-color);
             text-align: center;
             font-size: 1.05em;
@@ -557,235 +224,11 @@ faq-section .faq-answer {
             border-radius: 0 0 var(--border-radius) var(--border-radius);
             user-select: none;
         }
-
-        /* Изменения в разделе "сколько уже подержано" */
-        #donations {
-            background: #e7f0e7; /* Убран градиент, оставлен светлый фон */
-            border-radius: var(--border-radius);
-            padding: 25px 20px; /* Уменьшено значение для уменьшения размера */
-            box-shadow: 0 4px 10px rgba(76, 175, 80, 0.3);
-            text-align: center;
-            color: #27632a;
-            font-weight: 700;
-            font-size: 1.5em; /* Уменьшен размер текста */
-            user-select: none;
-            max-width: 300px; /* Уменьшена ширина */
-            margin: 0 auto 50px auto;
-            border: 2px solid #4caf50;
-            transition: box-shadow 0.3s ease;
-        }
-
-        #donations:hover {
-            box-shadow: 0 8px 20px rgba(76, 175, 80, 0.5);
-        }
-
-        #donation-counter {
-            margin-top: 12px;
-            font-size: 2em;
-            color: var(--primary-color);
-            font-weight: 900;
-            user-select: text;
-        }
-
-        /* Подписка: конфетт
-
-и */
-        .confetti {
-            position: relative;
-            height: 40px;
-            margin-top: 8px;
-            overflow: visible;
-        }
-
-        .confetti span {
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            animation: confetti-fall 2.2s linear forwards;
-            opacity: 0.9;
-            box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
-        }
-
-        @keyframes confetti-fall {
-            0% {
-                transform: translateY(0) rotate(0deg);
-                opacity: 1;
-            }
-
-            100% {
-                transform: translateY(130px) rotate(360deg);
-                opacity: 0;
-            }
-        }
-
-        /* Анимация плавного появления для текста подтверждения */
-        #subscription-confirmation {
-            font-weight: 600;
-            font-size: 1.15em;
-            color: var(--primary-color);
-            opacity: 0;
-            transition: opacity 0.8s ease;
-            user-select: none;
-            margin-top: 12px;
-        }
-
-        #subscription-confirmation.visible {
-            opacity: 1;
-        }
-
-        /* Секция подписки */
-        .subscribe-section {
-            max-width: 480px;
-            margin: 0 auto 60px auto;
-            background-color: var(--section-bg);
-            padding: 40px 35px;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-            text-align: center;
-            transition: background-color var(--transition-duration),
-                color var(--transition-duration);
-            position: relative;
-        }
-
-        .subscribe-section input[type="email"] {
-            width: 80%;
-            padding: 14px 16px;
-            font-size: 1.1em;
-            border-radius: var(--border-radius);
-            border: 2px solid var(--primary-color);
-            outline: none;
-            transition: border-color 0.3s ease;
-            box-sizing: border-box;
-            margin-bottom: 20px;
-            color: var(--text-color);
-            background-color: transparent;
-        }
-
-        .subscribe-section input[type="email"]:focus {
-            border-color: var(--secondary-color);
-        }
-
-        .subscribe-section button {
-            background-color: var(--primary-color);
-            color: #fff;
-            border: none;
-            padding: 14px 30px;
-            font-size: 1.15em;
-            border-radius: var(--border-radius);
-            cursor: pointer;
-            box-shadow: 0 6px 18px rgba(76, 175, 80, 0.6);
-            transition: background-color 0.3s ease, transform 0.3s ease;
-            user-select: none;
-        }
-
-        .subscribe-section button:hover,
-        .subscribe-section button:focus {
-            background-color: var(--secondary-color);
-            outline: none;
-            transform: scale(1.05);
-        }
-
-        /* Адаптив */
-        @media (max-width: 768px) {
-            header {
-                padding: 18px 15px;
-            }
-
-            header h1 {
-                font-size: 1.8em;
-            }
-
-            header p {
-                font-size: 1em;
-            }
-
-            nav {
-                gap: 8px;
-                font-size: 1em;
-                padding: 12px 15px;
-            }
-
-            nav a {
-                padding: 10px 14px;
-            }
-
-            main {
-                padding: 25px 20px 40px 20px;
-            }
-
-            section {
-                padding: 25px 20px;
-            }
-
-            section h2 {
-                font-size: 2.2em;
-            }
-
-            section p {
-                font-size: 1.1em;
-            }
-
-            .team-members {
-                gap: 25px;
-                flex-direction: column;
-            }
-
-            .team-member {
-                width: 180px;
-                padding: 18px 15px;
-
-}
-
-            .team-member img {
-                width: 100px;
-                height: 100px;
-            }
-
-            .team-member h3 {
-                font-size: 1.1em;
-            }
-
-            .faq-section .faq-question {
-                font-size: 1.1em;
-                padding: 12px 15px;
-            }
-
-            .faq-section .faq-answer {
-                font-size: 1em;
-            }
-
-            .subscribe-section {
-                max-width: 90%;
-                padding: 30px 20px;
-            }
-
-            #calculator input[type="number"] {
-                width: 100%;
-                margin-bottom: 12px;
-                margin-right: 0;
-            }
-
-            #calculator button {
-                width: 100%;
-            }
-        }
     </style>
 </head>
-
 <body>
     <header data-aos="fade-down" data-aos-duration="1000">
-        <div class="floating-balls" aria-hidden="true">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <img src="https://i.postimg.cc/9MSyzmf7/IMG-20250412-114846-882.png" alt="Логотип InvaCoin" class="logo"
-            style="max-width: 120px; margin-bottom: 6px;" />
+        <img src="https://i.postimg.cc/9MSyzmf7/IMG-20250412-114846-882.png" alt="Логотип InvaCoin" class="logo" style="max-width: 120px; margin-bottom: 6px;" />
         <h1>InvaCoin: Криптовалюта для спасения животных</h1>
         <p>Поддержите важные проекты по защите животных с помощью децентрализованных технологий.</p>
     </header>
@@ -804,8 +247,6 @@ faq-section .faq-answer {
     </nav>
 
     <main>
-        <!-- Секции без изменений -->
-
         <section id="support" data-aos="fade-right" data-aos-duration="1000">
             <h2>Поддержать проект</h2>
             <p>Вместе мы можем сделать мир лучше для животных! Поддержите InvaCoin и внесите свой вклад в благородное дело:</p>
@@ -814,26 +255,10 @@ faq-section .faq-answer {
                 <li>Пожертвуйте InvaCoin напрямую проверенным благотворительным организациям (адреса кошельков: <strong>(скоро)</strong>).</li>
                 <li>Расскажите о InvaCoin своим друзьям и знакомым, чтобы привлечь больше внимания к нашей миссии.</li>
             </ul>
-
-            <div class="social-widgets" aria-label="Социальные сети">
-                <div class="social-widget">
-                    <a href="https://t.me/InvaCoin_official" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
-                </div>
-                <div class="social-widget">
-                    <a href="https://vk.com/id846788176" aria-label="VK"><i class="fab fa-vk"></i></a>
-                </div>
-                <div class="social-widget">
-                    <a href="mailto:invacoin0official@gmail.com" aria-label="Email"><i class="far fa-envelope"></i></a>
-                </div>
-            </div>
-
             <p style="margin-top: 30px;"><b>Отсканируйте QR-код для пожертвования:</b></p>
             <img src="https://via.placeholder.com/150" alt="QR-код для пожертвования" style="max-width: 150px; margin-top: 10px;">
-            <img src="https://i.postimg.cc/XNddWWkh/Take-photos-of-cute-and-touching-animals-f19811fe-b4df-4921-afe6-3.png"
-                alt="InvaCoin помогает всем животным!" style="max-width: 200px; margin-top: 10px;">
-        \
-
-</section>
+            <img src="https://i.postimg.cc/XNddWWkh/Take-photos-of-cute-and-touching-animals-f19811fe-b4df-4921-afe6-3.png" alt="InvaCoin помогает всем животным!" style="max-width: 200px; margin-top: 10px;">
+        </section>
 
         <a href="#" class="whitepaper-link">Скачать Whitepaper (скоро)</a>
 
@@ -841,7 +266,9 @@ faq-section .faq-answer {
             <h2>Подпишитесь на наши новости</h2>
             <p>Будьте в курсе последних новостей и обновлений InvaCoin.</p>
             <input type="email" placeholder="Ваш email" id="subscribe-email" aria-label="Email для подписки">
-            <button onclick="subscribe()" aria-label="Подписаться на новости">Подписаться</button>
+            <button onclick="subscribe()" a
+
+ria-label="Подписаться на новости">Подписаться</button>
             <div id="subscription-confirmation" style="display:none;">
                 Спасибо за подписку!
                 <div class="confetti" aria-hidden="true">
@@ -890,19 +317,13 @@ faq-section .faq-answer {
             <h2>Часто задаваемые вопросы</h2>
             <div class="faq-question" tabindex="0">Что такое InvaCoin?</div>
             <div class="faq-answer">InvaCoin - это криптовалюта, созданная для поддержки благотворительных организаций и проектов, занимающихся защитой животных.</div>
-
             <div class="faq-question" tabindex="0">Как InvaCoin помогает животным?</div>
             <div class="faq-answer">Часть каждой транзакции направляется в благотворительный фонд, который финансирует различные проекты помощи животным.</div>
-
             <div class="faq-question" tabindex="0">Как я могу купить InvaCoin?</div>
             <div class="faq-answer">InvaCoin можно приобрести на децентрализованной бирже Uniswap. Подробная инструкция доступна в разделе "Как купить".</div>
-
             <div class="faq-question" tabindex="0">Как я могу поддержать проект?</div>
             <div class="faq-answer">Вы можете купить InvaCoin, сделать пожертвование напрямую благотворительным организациям или рассказать о проекте своим друзьям и знакомым.</div>
-
-            <div class="faq-question" tabind
-
-ex="0">Как обеспечивается прозрачность транзакций?</div>
+            <div class="faq-question" tabindex="0">Как обеспечивается прозрачность транзакций?</div>
             <div class="faq-answer">Все транзакции записываются в блокчейн Ethereum, что гарантирует полную прозрачность и невозможность подделки.</div>
         </section>
     </main>
@@ -913,7 +334,9 @@ ex="0">Как обеспечивается прозрачность транза
     </footer>
 
     <!-- Кнопка переключения темы -->
-    <div class="theme-switcher" title="Переключить тему" aria-label="Переключить тему">
+    <div class="theme-switcher" title="Переключ
+
+ить тему" aria-label="Переключить тему">
         <i class="fas fa-moon"></i>
     </div>
 
@@ -930,11 +353,7 @@ ex="0">Как обеспечивается прозрачность транза
         document.querySelectorAll('.faq-question').forEach(question => {
             question.addEventListener('click', () => {
                 const answer = question.nextElementSibling;
-                if (answer.style.display === 'block') {
-                    answer.style.display = 'none';
-                } else {
-                    answer.style.display = 'block';
-                }
+                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
             });
             question.addEventListener('keydown', e => {
                 if (e.key === 'Enter' || e.key === ' ') {
@@ -949,13 +368,8 @@ ex="0">Как обеспечивается прозрачность транза
         themeSwitcher.addEventListener('click', () => {
             document.body.classList.toggle('dark-mode');
             const icon = themeSwitcher.querySelector('i');
-            if (document.body.classList.contains('dark-mode')) {
-                icon.classList.remove('fa-moon');
-                icon.classList.add('fa-sun');
-            } else {
-                icon.classList.remove('fa-sun');
-                icon.classList.add('fa-moon');
-            }
+            icon.classList.toggle('fa-moon');
+            icon.classList.toggle('fa-sun');
         });
 
         // Donation calculator
@@ -1000,9 +414,7 @@ ex="0">Как обеспечивается прозрачность транза
             confirmation.style.display = 'block';
             confirmation.classList.add('visible');
 
-            //
-
-Анимация конфетти
+            // Анимация конфетти
             const confetti = confirmation.querySelector('.confetti');
             confetti.innerHTML = '';
             const colors = ['#f44336', '#e91e63', '#9c27b0', '#673ab7', '#4caf50', '#81c784'];
@@ -1019,20 +431,10 @@ ex="0">Как обеспечивается прозрачность транза
             // Автоматическое скрытие сообщения через 5 секунд
             setTimeout(() => {
                 confirmation.style.display = 'none';
-                confirmation.classList.remove('visible');
-            }, 5000);
+                confirmation.classList.remove(
 
-            // Здесь можно добавить отправку email на сервер
-            /*
-            fetch('/subscribe', {
-                method: 'POST',
-                body: JSON.stringify({ email: email }),
-                headers: { 'Content-Type': 'application/json' }
-            })
-            .then(response => response.json())
-            .then(data => console.log('Success:', data))
-            .catch(error => console.error('Error:', error));
-            */
+'visible');
+            }, 5000);
         }
 
         // Email validation
@@ -1044,11 +446,7 @@ ex="0">Как обеспечивается прозрачность транза
         // Кнопка "Наверх"
         const scrollToTopBtn = document.getElementById("scrollToTopBtn");
         window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                scrollToTopBtn.style.display = "block";
-            } else {
-                scrollToTopBtn.style.display = "none";
-            }
+            scrollToTopBtn.style.display = window.pageYOffset > 300 ? "block" : "none";
         });
 
         scrollToTopBtn.addEventListener('click', () => {
@@ -1056,5 +454,4 @@ ex="0">Как обеспечивается прозрачность транза
         });
     </script>
 </body>
-
-    </html>
+                </html>
