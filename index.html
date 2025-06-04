@@ -49,21 +49,6 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
-  body.dark-mode {
-    --bg-color: #121b1a;
-    --text-color: #d9e6de;
-    --header-bg: linear-gradient(135deg, #2e4a3d, #49775a);
-    --nav-bg: #3a5a3f;
-    --section-bg: #1e2a26;
-    --footer-bg: #121b1a;
-    --link-color: #d9e6de;
-    --link-hover-bg: #49775a;
-    --link-hover-color: #fff;
-    --box-shadow: 0 6px 18px rgba(255, 255, 255, 0.15);
-    --team-member-shadow: 0 3px 10px rgba(255, 255, 255, 0.2);
-    --gradient-bg: linear-gradient(135deg, #2e4a3d, #49775a);
-  }
-
   header {
     position: relative;
     background: var(--header-bg);
@@ -82,6 +67,7 @@
     max-width: 100px;
     margin-bottom: 20px;
     border-radius: 16px;
+
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
     transition: transform 0.4s ease;
   }
@@ -110,7 +96,6 @@
     user-select: none;
   }
 
-  /* Зеленые карточки под шапкой */
   .header-cards {
     max-width: 1200px;
     margin: 40px auto 0 auto;
@@ -136,13 +121,6 @@
     transition: box-shadow 0.3s ease, transform 0.3s ease;
   }
 
-  .header-card:hover,
-  .header-card:focus {
-    box-shadow: 0 0 30px rgba(76, 175, 80, 1);
-    transform: translateY(-6px) scale(1.05);
-    outline: none;
-  }
-
   nav {
     background-color: var(--nav-bg);
     color: var(--link-color);
@@ -162,26 +140,6 @@
     overflow: hidden;
   }
 
-  nav a {
-    color: var(--link-color);
-    text-decoration: none;
-    padding: 8px 18px;
-    border-radius: var(--border-radius);
-    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
-    transition: background-color var(--transition-duration), transform var(--transition-duration), color var(--transition-duration), box-shadow var(--transition-duration);
-    white-space: nowrap;
-    font-weight: 600;
-  }
-
-  nav a:hover,
-  nav a:focus {
-    background-color: var(--link-hover-bg);
-    color: var(--link-hover-color);
-    transform: scale(1.1);
-    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
-    outline: none;
-  }
-
   main {
     max-width: 1200px;
     margin: 0 auto 80px auto;
@@ -196,11 +154,6 @@
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
     transition: box-shadow 0.4s ease, transform 0.4s ease;
     overflow-wrap: break-word;
-  }
-
-  section:hover {
-    box-shadow: 0 14px 48px rgba(0, 0, 0, 0.15);
-    transform: translateY(-8px);
   }
 
   section h2 {
@@ -221,232 +174,20 @@
     user-select: text;
   }
 
-  ul,
-  ol {
-    pad
-
-ding-left: 40px;
-    margin-top: 16px;
-    margin-bottom: 16px;
-  }
-
-  li {
-    margin-bottom: 16px;
-    font-size: 1.18rem;
-    line-height: 1.6;
-    color: var(--text-color);
-  }
-
-  /* Изображения с мягкими тенями и скруглениями */
-  img {
-    max-width: 100%;
-    border-radius: var(--border-radius);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-    transition: transform 0.35s ease;
-    user-select: none;
-  }
-
-  img:hover {
-    transform: scale(1.06);
-  }
-
-  /* Команда */
-  .team-members {
-    display: flex;
-    gap: 40px;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .team-member {
-    background-color: var(--section-bg);
-    border-radius: var(--border-radius);
-    box-shadow: var(--team-member-shadow);
-    width: 180px;
-    padding: 25px 20px;
-    text-align: center;
-    transition: transform 0.35s ease, box-shadow 0.35s ease;
-    cursor: default;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    color: var(--text-color);
-    user-select: none;
-    position: relative;
-  }
-
-  .team-member:hover,
-  .team-member:focus {
-    transform: translateY(-10px) scale(1.07);
-    box-shadow: 0 20px 48px rgba(0, 0, 0, 0.32);
-    outline: none;
-  }
-
-  .team-member h3 {
-    font-size: 1.3rem;
-    margin: 0;
-    color: var(--primary-color);
-    user-select: none;
-  }
-
-  .team-member img {
-    width: 140px;
-    height: 140px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 4px solid var(--primary-color);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
-    transition: transform 0.35s ease;
-    user-select: none;
-  }
-
-  .team-member img:hover {
-    transform: scale(1.12);
-  }
-
-  /* Секция "Всего пожертвовано" с анимированным градиентом */
-  #donations {
-    max-width: 360px;
-    margin: 0 auto 60px auto;
-    padding: 35px 30px;
-    border-radius: var(--border-radius);
-    background: linear-gradient(270deg, #4caf50, #81c784, #4caf50);
-    background-size: 600% 600%;
-    animation: gradientShift 12s ease infinite;
-    box-shadow: 0 12px 35px rgba(76, 175, 80, 0.7);
-    color: #fff;
-    text-align: center;
-    user-select: none;
-    transition: box-shadow 0.4s ease;
-  }
-
-  #donations:hover {
-    box-shadow: 0 18px 50px rgba(76, 175, 80, 0.9);
-  }
-
-  #donations h2 {
-    font-size: 2.5rem;
-    margin-bottom: 18px;
-    border-bottom: none;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
-  }
-
-  #donation-counter {
-    font-size: 2.8rem;
-    font-weight: 900;
-    letter-spacing: 0.06em;
-    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.25);
-    user-select: text;
-  }
-
-  @keyframes gradientShift {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
-
-  /* Кнопка "Скачать Whitepaper" */
-  .whitepaper-link {
-    display: inline-block;
-    background: linear-gradient(135deg, #6a11cb, #2575fc);
-    color: #fff;
-    font-weight: 700;
-    font-size: 1.3rem;
-    padding: 18px 42px;
-    border-radius: 40px;
-    box-shadow: 0 12px 35px rgba(38, 115, 255, 0.6);
-    text-align: center;
-    margin: 20px auto 50px auto;
-    transition: box-shadow 0.4s ease, transform 0.4s ease;
-    cursor: pointer;
-    user-select: none;
-    text-decoration: none;
-    display: block;
-    max-width: 280px;
-    animation: pulseGlow 2.5s infinite ease-in-out;
-  }
-
-  .whitepaper-link:hover {
-    box-shadow: 0 20px 50px rgba(38, 115, 255, 0.9);
-    transform: translateY(-5px) scale(1.07);
-    text-decoration: none;
-  }
-
-  @keyframes pulseGlow {
-    0%,
-    100% {
-      box-shadow: 0 12px 35px rgba(38, 115, 255, 0.6);
-    }
-    50% {
-      box-shadow: 0 20px 50px rgba(38, 115, 255, 0.9);
-    }
-  }
-
-  /* Калькулятор с мягким дизайном */
-  #calculator {
+  .subscribe-section {
     background-color: var(--section-bg);
     padding: 35px 40px;
-    bo
-
-rder-radius: var(--border-radius);
+    border-radius: var(--border-radius);
     box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
     transition: box-shadow 0.4s ease, transform 0.4s ease;
+    margin-top: 20px;
   }
 
-  #calculator:hover {
+  .subscribe-section:hover {
     box-shadow: 0 18px 50px rgba(0, 0, 0, 0.12);
     transform: translateY(-6px);
   }
 
-  #calculator input[type='number'] {
-    width: 100%;
-    padding: 14px 18px;
-    font-size: 1.2rem;
-    border-radius: var(--border-radius);
-    border: 2px solid var(--primary-color);
-    outline: none;
-    box-sizing: border-box;
-    margin-bottom: 22px;
-    color: var(--text-color);
-    background-color: transparent;
-    transition: border-color 0.3s ease;
-  }
-
-  #calculator input[type='number']:focus {
-    border-color: var(--secondary-color);
-    box-shadow: 0 0 10px var(--secondary-color);
-  }
-
-  #calculator button {
-    background-color: var(--primary-color);
-    color: #fff;
-    border: none;
-    padding: 16px 38px;
-    font-size: 1.25rem;
-    border-radius: var(--border-radius);
-    cursor: pointer;
-    box-shadow: 0 12px 35px rgba(76, 175, 80, 0.8);
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    user-select: none;
-  }
-
-  #calculator button:hover,
-  #calculator button:focus {
-    background-color: var(--secondary-color);
-    outline: none;
-    transform: scale(1.07);
-    box-shadow: 0 18px 50px rgba(129, 199, 132, 0.95);
-  }
-
-  /* Конфетти - эффект хлопушек */
   .confetti {
     position: fixed;
     width: 100%;
@@ -483,7 +224,6 @@ rder-radius: var(--border-radius);
     }
   }
 
-  /* Надпись "С любовью к животным" в белом прямоугольнике по центру */
   footer {
     background-color: var(--footer-bg);
     padding: 20px 0;
@@ -501,13 +241,14 @@ rder-radius: var(--border-radius);
     color: var(--primary-color);
     font-weight: 700;
     font-size: 1.25rem;
-    padding: 12px 28px;
+    paddin
+
+g: 12px 28px;
     border-radius: 30px;
     box-shadow: 0 6px 20px rgba(76, 175, 80, 0.3);
     user-select: none;
   }
 
-  /* Кнопка переключения темы в левом верхнем углу */
   .theme-switcher {
     position: fixed;
     top: 20px;
@@ -529,14 +270,6 @@ rder-radius: var(--border-radius);
     animation: floatButton 3.5s ease-in-out infinite;
   }
 
-  .theme-switcher:hover,
-  .theme-switcher:focus {
-    background-color: var(--secondary-color);
-    outline: none;
-    transform: scale(1.15);
-    box-shadow: 0 12px 30px rgba(129, 199, 132, 0.9);
-  }
-
   @keyframes floatButton {
     0%,
     100% {
@@ -547,7 +280,6 @@ rder-radius: var(--border-radius);
     }
   }
 
-  /* Адаптив */
   @media (max-width: 768px) {
     header {
       padding: 30px 15px 50px 15px;
@@ -565,23 +297,10 @@ rder-radius: var(--border-radius);
       gap: 20px;
     }
 
-    .header-card {
-      max-width: 90%;
-      fon
-
-t-size: 1.1rem;
-      padding: 20px 25px;
-    }
-
     nav {
       gap: 8px;
       font-size: 0.9rem;
       padding: 10px 10px;
-    }
-
-    nav a {
-      padding: 8px 14px;
-      white-space: normal;
     }
 
     main {
@@ -598,54 +317,13 @@ t-size: 1.1rem;
       margin-bottom: 20px;
     }
 
-    section p,
-    li {
+    section p {
       font-size: 1.1rem;
-    }
-
-    .team-members {
-      flex-direction: column;
-      gap: 30px;
-    }
-
-    .team-member {
-      width: 220px;
-      padding: 25px 20px;
-    }
-
-    .team-member img {
-      width: 120px;
-      height: 120px;
-    }
-
-    .team-member h3 {
-      font-size: 1.3rem;
     }
 
     .subscribe-section {
       max-width: 90%;
       padding: 30px 20px;
-    }
-
-    #calculator input[type='number'] {
-      width: 100%;
-      margin-bottom: 14px;
-    }
-
-    #calculator button {
-      width: 100%;
-    }
-
-    #donations {
-      max-width: 90%;
-      padding: 25px 20px;
-      font-size: 1.3rem;
-    }
-
-    .whitepaper-link {
-      max-width: 90%;
-      padding: 14px 28px;
-      font-size: 1.1rem;
     }
   }
 </style>
@@ -661,6 +339,7 @@ t-size: 1.1rem;
       <div class="header-card" tabindex="0">Прозрачные пожертвования</div>
       <div class="header-card" tabindex="0">Поддержка приютов</div>
       <div class="header-card" tabindex="0">Децентрализованное сообщество</div>
+      <div class="header-card" tabindex="0">Отзывы</div>
     </div>
   </header>
 
@@ -692,13 +371,16 @@ t-size: 1.1rem;
         alt="InvaCoin помогает всем животным!" style="max-width: 200px; margin-top: 10px;" />
     </section>
 
-    <a href="#" class="whitepaper-link" aria-label="Скачать Whitepaper">Скачать Whitepaper (скоро)</a>
+<a href="#" class="whitepaper-link" aria-label="Скачать Whitepaper">Скачать Whitepaper (скоро)</a>
+
+    <section id="donations" data-aos="zoom-in" data-aos-duration="1000" aria-live="polite" aria-label="Всего пожертвовано">
+      <h2>Всего пожертвовано</h2>
+      <div id="donation-counter">0 IVC</div>
+    </section>
 
     <section class="subscribe-section" data-aos="zoom-in" data-aos-duration="1000" aria-label="Подписка на новости">
       <h2>Подпишитесь на наши новости</h2>
-      <p>Будьте в курсе последних новостей и обновлени
-
-й InvaCoin.</p>
+      <p>Будьте в курсе последних новостей и обновлений InvaCoin.</p>
       <input type="email" placeholder="Ваш email" id="subscribe-email" aria-label="Email для подписки" autocomplete="email" />
       <button onclick="subscribe()" aria-label="Подписаться на новости">Подписаться</button>
       <div id="subscription-confirmation" aria-live="polite" role="alert" style="display:none;">
@@ -745,12 +427,9 @@ t-size: 1.1rem;
         или рассказать о проекте своим друзьям и знакомым.</div>
       <div class="faq-question" tabindex="0" role="button" aria-expanded="false">Как обеспечивается прозрачность транзакций?</div>
       <div class="faq-answer" hidden>Все транзакции записываются в блокчейн Ethereum, что гарантирует полную прозрачность и
-        невозможность подделки.</div>
-    </section>
+        невозможность по
 
-    <section id="donations" data-aos="zoom-in" data-aos-duration="1000" aria-live="polite" aria-label="Всего пожертвовано">
-      <h2>Всего пожертвовано</h2>
-      <div id="donation-counter">0 IVC</div>
+дделки.</div>
     </section>
   </main>
 
@@ -759,10 +438,7 @@ t-size: 1.1rem;
     <p class="footer-love">Сделано с любовью к животным ❤️</p>
   </footer>
 
-  <!-- Кнопка переключения темы -->
-  <div class="theme-switcher" title="Переключить тему" aria-label="Переключить тему" tabind
-
-ex="0" role="button">
+  <div class="theme-switcher" title="Переключить тему" aria-label="Переключить тему" tabindex="0" role="button">
     <i class="fas fa-moon" aria-hidden="true"></i>
   </div>
 
@@ -770,52 +446,46 @@ ex="0" role="button">
   <script>
     AOS.init();
 
-    // FAQ toggle with ARIA updates
-    document.querySelectorAll('.faq-question').forEach(question => {
-      question.addEventListener('click', () => {
-        const answer = question.nextElementSibling;
-        const expanded = question.getAttribute('aria-expanded') === 'true';
-        if (expanded) {
-          answer.hidden = true;
-          question.setAttribute('aria-expanded', 'false');
-        } else {
-          answer.hidden = false;
-          question.setAttribute('aria-expanded', 'true');
-        }
-      });
-      question.addEventListener('keydown', e => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          question.click();
-        }
-      });
-    });
-
-    // Theme switcher toggle with icon change and focus support
-    const themeSwitcher = document.querySelector('.theme-switcher');
-    themeSwitcher.addEventListener('click', toggleTheme);
-    themeSwitcher.addEventListener('keydown', e => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        toggleTheme();
+    // Subscribe functionality with improved confetti animation
+    function subscribe() {
+      const emailInput = document.getElementById('subscribe-email');
+      const email = emailInput.value.trim();
+      if (!validateEmail(email)) {
+        alert('Пожалуйста, введите корректный email адрес.');
+        return;
       }
-    });
+      const confirmation = document.getElementById('subscription-confirmation');
+      const confettiContainer = confirmation.querySelector('.confetti');
+      confirmation.style.display = 'block';
+      confettiContainer.innerHTML = '';
 
-    function toggleTheme() {
-      document.body.classList.toggle('dark-mode');
-      const icon = themeSwitcher.querySelector('i');
-      if (document.body.classList.contains('dark-mode')) {
-        icon.classList.remove('fa-moon');
-        icon.classList.add('fa-sun');
-        themeSwitcher.setAttribute('aria-label', 'Переключить светлую тему');
-      } else {
-        icon.classList.remove('fa-sun');
-        icon.classList.add('fa-moon');
-        themeSwitcher.setAttribute('aria-label', 'Переключить тёмную тему');
+      const colors = ['#f44336', '#e91e63', '#9c27b0', '#673ab7', '#4caf50', '#81c784'];
+
+      // Создаем конфетти с эффектом "выстрела"
+      for (let i = 0; i < 100; i++) {
+        const confetti = document.createElement('span');
+        confetti.style.backgroundColor = colors[i % colors.length];
+        confetti.style.width = confetti.style.height = `${6 + Math.random() * 8}px`;
+        confetti.style.left = '50%';
+        confetti.style.top = '100%';
+        confetti.style.setProperty('--x', (Math.random() - 0.5) * 300 + 'px');
+        confetti.style.animation = `confetti-shoot ${2 + Math.random()}s forwards`;
+        confettiContainer.appendChild(confetti);
       }
+
+      emailInput.value = '';
+
+      setTimeout(() => {
+        confirmation.style.display = 'none';
+        confettiContainer.innerHTML = '';
+      }, 4000);
     }
 
-    // Donation calculator
+    function validateEmail(email) {
+      const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return re.test(String(email).toLowerCase());
+    }
+
     function calculateDonation() {
       const ivcAmount = Number(document.getElementById('ivc-amount').value);
       if (isNaN(ivcAmount) || ivcAmount <= 0) {
@@ -843,50 +513,6 @@ ex="0" role="button">
             `;
 
       document.getElementById('calculator-results').innerHTML = results;
-    }
-
-    // Subscribe functionality with improved confetti animation
-    function subscribe() {
-      const emailInput = document.getElementById('subscribe-email');
-      const email = emailInput.value.trim();
-      if (!validateEmail(email)) {
-        alert('Пожалуйста, введите корректный email адрес.');
-        return;
-      }
-      const confirmation = document.getElementById('subscription-confirmation');
-      const confettiContainer = confirmation.querySelector('.confetti');
-      confirmation.style.display = 'block';
-      confirmation.classList.add('visible');
-      confettiContainer.innerHTML = '';
-
-      const colors = ['#f44336', '#e91e63', '#9c27b0', '#673ab7', '#4caf50', '#81c784'];
-
-      // Создаем конфетти с эффектом "выстрела"
-      for (let i = 0; i < 60; i++) {
-        const confetti = document.createElement('span');
-        confetti.style.backgroundColor = colors[i % colors.length];
-        confetti.style.
-
-width = confetti.style.height = `${6 + Math.random() * 8}px`;
-        confetti.style.left = '50%';
-        confetti.style.top = '50%';
-        confetti.style.setProperty('--x', (Math.random() - 0.5) * 300 + 'px');
-        confetti.style.animation = `confetti-shoot ${2 + Math.random()}s forwards`;
-        confettiContainer.appendChild(confetti);
-      }
-
-      emailInput.value = '';
-
-      setTimeout(() => {
-        confirmation.style.display = 'none';
-        confirmation.classList.remove('visible');
-        confettiContainer.innerHTML = '';
-      }, 4000);
-    }
-
-    function validateEmail(email) {
-      const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      return re.test(String(email).toLowerCase());
     }
   </script>
 </body>
