@@ -515,7 +515,7 @@ px;
     .theme-switcher {
       position: fixed;
       top: 20px;
-      right: 20px;
+      left: 20px;
       background-color: var(--primary-color);
       border-radius: 50%;
       width: 56px;
@@ -534,11 +534,13 @@ px;
     }
 
     .theme-switcher:hover,
-    .theme-switcher {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  /* Остальные стили */
+    .theme
+
+-switcher:focus {
+      background-color: var(--secondary-color);
+      outline: none;
+      transform: scale(1.15);
+      box-shadow: 0 12px 30px rgba(129, 199, 132, 0.9);
     }
 
     @keyframes floatButton {
@@ -778,17 +780,16 @@ margin-bottom: 40px;
         для наших пушистых друзей!</p>
     </section>
 
-    <section id="testimonials" data-aos="fade-up" data-aos\
+    <section id="testimonials" data-aos="fade-up" data-aos-
 
- 
--duration="1000" aria-label="Отзывы">
+duration="1000" aria
+
+aria-label="Отзывы">
       <h2>Отзывы</h2>
       <p>Узнайте, что говорят о InvaCoin наши пользователи и партнеры:</p>
       <ul>
         <li>"InvaCoin - это отличная возможность поддержать животных и внести свой вклад в благородное дело. Я рад быть
-          частью этого сообщества!" - Иван, пользователь
-
-InvaCoin</li>
+          частью этого сообщества!" - Иван, пользователь InvaCoin</li>
         <li>"Мы очень благодарны InvaCoin за поддержку нашего приюта. Благодаря им мы смогли спасти и вылечить больше
           животных." - Анна, представитель приюта "Друзья животных"</li>
       </ul>
@@ -831,7 +832,6 @@ InvaCoin</li>
     <section id="calculator" data-aos="fade-up" data-aos-duration="1000" aria-label="Калькулятор пожертвований">
       <h2>Калькулятор пожертвований</h2>
       <p>Узнайте, сколько добра вы можете сделать, пожертвовав InvaCoin!</p>
-
       <input type="number" id="ivc-amount" placeholder="Введите количество IVC" aria-label="Количество IVC" min="1" />
       <button onclick="calculateDonation()" aria-label="Рассчитать пожертвование">Рассчитать</button>
       <div id="calculator-results" aria-live="polite" role="region" style="margin-top: 15px;"></div>
@@ -875,12 +875,13 @@ InvaCoin</li>
         Все транзакции записываются в блокчейн Ethereum, что гарантирует полную прозрачность и невозможность
         подделки.
       </div>
-        </section>
+    </section>
 
     <a href="#" class="whitepaper-link" aria-label="Скачать Whitepaper">
       Скачать Whitepaper (скоро)
     </a>
   </main>
+
   <section class="subscribe-section" id="subscribe" data-aos="zoom-in" data-aos-duration="1000" aria-label="Подписка на новости">
     <h2>Подпишитесь на наши новости</h2>
     <p>Будьте в курсе последних новостей и обновлений InvaCoin.</p>
@@ -892,6 +893,7 @@ InvaCoin</li>
       <div class="confetti" aria-hidden="true"></div>
     </div>
   </section>
+
   <footer>
     <p>&copy; 2025 InvaCoin. Все права защищены.</p>
     <p class="footer-love">Сделано с любовью к животным ❤️</p>
@@ -912,13 +914,12 @@ InvaCoin</li>
     // FAQ toggle with ARIA updates
     document.querySelectorAll('.faq-question').forEach(question => {
       question.addEventListener('click', () => {
-        const answer = question.nextElementSibling;
+
+const answer = question.nextElementSibling;
         const expanded = question.getAttribute('aria-expanded') === 'true';
         if (expanded) {
           answer.hidden = true;
-          question.setAttribute('aria-expanded', '
-
-false');
+          question.setAttribute('aria-expanded', 'false');
         } else {
           answer.hidden = false;
           question.setAttribute('aria-expanded', 'true');
@@ -1012,12 +1013,12 @@ false');
         const confetti = document.createElement('span');
         confetti.style.backgroundColor = colors[i % colors.length];
         confetti.style.width = confetti.style.height = `${6 + Math.random() * 8}px`;
-        confetti.style.left = `${Math.random() * 100}vw`; // Разброс по ширине
+        confetti.style.left = `${Math.rand
+
+om() * 100}vw`; // Разброс по ширине
         confetti.style.bottom = '0'; // Вылет снизу
         confetti.style.setProperty('--x', (Math.random() - 0.5) * 300 + 'px');
-        confetti.style.animation = `confetti-shoot ${2
-
-+ Math.random()}s forwards`;
+        confetti.style.animation = `confetti-shoot ${2 + Math.random()}s forwards`;
         confettiContainer.appendChild(confetti);
       }
 
@@ -1054,4 +1055,4 @@ false');
   </script>
 </body>
 
-</html>
+            </html>
