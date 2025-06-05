@@ -133,7 +133,7 @@
       font-weight: 600;
       font-size: 1.2rem;
       text-align: center;
-      cursor: default;
+      cursor: pointer;
       user-select: none;
       transition: box-shadow 0.3s ease, transform 0.3s ease;
     }
@@ -151,7 +151,7 @@
       padding: 10px 10px;
       box-shadow: var(--box-shadow);
       border-radius: 0 0 var(--border-radius) var(--border-radius);
-      max-width: 1200px;
+      max-width: 1180px;
       margin: 50px auto 50px auto;
       display: flex;
       justify-content: center;
@@ -515,7 +515,7 @@ px;
     .theme-switcher {
       position: fixed;
       top: 20px;
-      left: 20px;
+      right: 20px;
       background-color: var(--primary-color);
       border-radius: 50%;
       width: 56px;
@@ -534,9 +534,9 @@ px;
     }
 
     .theme-switcher:hover,
-    .theme
+    .them
 
--switcher:focus {
+e-switcher:focus {
       background-color: var(--secondary-color);
       outline: none;
       transform: scale(1.15);
@@ -640,6 +640,34 @@ px;
       box-shadow: 0 18px 50px rgba(129, 199, 132, 0.95);
     }
 
+    /* Плавное появление секций */
+    section {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    section.fade-in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Дополнительные анимации */
+    .header-card {
+      animation: pulseShadow 3s infinite alternate;
+    }
+
+    @keyframes pulseShadow {
+      0% {
+        box-shadow: 0 0 15px rgba(76, 175, 80, 0.8);
+      }
+
+      100% {
+        box-shadow: 0 0 30px rgba(76, 175, 80, 1);
+      }
+    }
+
+    /* Поддержка адаптивности */
     @media (max-width: 768px) {
       header {
         padding: 30px 15px 50px 15px;
@@ -661,6 +689,7 @@ px;
         gap: 8px;
         font-size: 0.9rem;
         padding: 10px 10px;
+        max-width: 100%;
       }
 
       main {
@@ -669,7 +698,8 @@ px;
 
       section {
         padding: 30px 25px;
-        margin-bottom: 40px;
+
+margin-bottom: 40px;
       }
 
       section h2 {
@@ -690,19 +720,22 @@ px;
 </head>
 
 <body>
+  <!-- Кнопка переключения темы -->
+  <div class="theme-switcher" title="Переключить тему" aria-label="Переключить тему" tabindex="0" role="button">
+    <i class="fas fa-moon" aria-hidden="true"></i>
+  </div>
+
   <header data-aos="fade-down" data-aos-duration="1000" aria-label="Заголовок сайта">
     <img src="https://i.postimg.cc/9MSyzmf7/IMG-20250412-114846-882.png" alt="Логотип InvaCoin" class="logo" />
     <h1>InvaCoin: Криптовалюта для спасения животных</h1>
-    <p>Поддержите важные проекты по защ
-
-ите животных с помощью децентрализованных технологий.</p>
+    <p>Поддержите важные проекты по защите животных с помощью децентрализованных технологий.</p>
 
     <div class="header-cards" aria-label="Основные преимущества">
-      <div class="header-card" tabindex="0">Безопасность блокчейна</div>
-      <div class="header-card" tabindex="0">Прозрачные пожертвования</div>
-      <div class="header-card" tabindex="0">Поддержка приютов</div>
-      <div class="header-card" tabindex="0">Децентрализованное сообщество</div>
-      <div class="header-card" tabindex="0">Отзывы</div>
+      <div class="header-card" tabindex="0" onclick="scrollToSection('security')">Безопасность блокчейна</div>
+      <div class="header-card" tabindex="0" onclick="scrollToSection('transparency')">Прозрачные пожертвования</div>
+      <div class="header-card" tabindex="0" onclick="scrollToSection('shelters')">Поддержка приютов</div>
+      <div class="header-card" tabindex="0" onclick="scrollToSection('community')">Децентрализованное сообщество</div>
+      <div class="header-card" tabindex="0" onclick="scrollToSection('testimonials')">Отзывы</div>
     </div>
   </header>
 
@@ -723,8 +756,7 @@ px;
     <section id="security" data-aos="fade-right" data-aos-duration="1000" aria-label="Безопасность блокчейна">
       <h2>Безопасность блокчейна</h2>
       <p>InvaCoin использует передовые технологии блокчейна для обеспечения безопасности и надежности транзакций.
-        Каждая транзакция записывается в блокчейн Ethereum, что гарантирует прозрачность и невозможность подделки.
-      </p>
+        Каждая транзакция записывается в блокчейн Ethereum, что гарантирует прозрачность и невозможность подделки.</p>
     </section>
 
     <section id="transparency" data-aos="fade-left" data-aos-duration="1000" aria-label="Прозрачные пожертвования">
@@ -748,12 +780,17 @@ px;
         для наших пушистых друзей!</p>
     </section>
 
-    <section id="testimonials" data-aos="fade-up" data-aos-duration="1000" aria-label="Отзывы">
+    <section id="testimonials" data-aos="fade-up" data-aos\
+
+ 
+-duration="1000" aria-label="Отзывы">
       <h2>Отзывы</h2>
       <p>Узнайте, что говорят о InvaCoin наши пользователи и партнеры:</p>
       <ul>
         <li>"InvaCoin - это отличная возможность поддержать животных и внести свой вклад в благородное дело. Я рад быть
-          частью этого сообщества!" - Иван, пользователь InvaCoin</li>
+          частью этого сообщества!" - Иван, пользователь
+
+InvaCoin</li>
         <li>"Мы очень благодарны InvaCoin за поддержку нашего приюта. Благодаря им мы смогли спасти и вылечить больше
           животных." - Анна, представитель приюта "Друзья животных"</li>
       </ul>
@@ -765,33 +802,18 @@ px;
       <ul>
         <li>Купите InvaCoin и станьте частью нашего сообщества.</li>
         <li>Пожертвуйте InvaCoin напрямую проверенным благотворительным организациям (адреса кошельков:
-          <st
-
-rong>(скоро)</strong>).</li>
+          <strong>(скоро)</strong>).</li>
         <li>Расскажите о InvaCoin своим друзьям и знакомым, чтобы привлечь больше внимания к нашей миссии.</li>
       </ul>
       <p style="margin-top: 30px;"><b>Отсканируйте QR-код для пожертвования:</b></p>
-      <img src="https://via.placeholder.com/150" alt="QR-код для пожертвования" style="max-width: 150px; margin-
-
-  <img src="https://i.postimg.cc/XNddWWkh/Take-photos-of-cute-and-touching-animals-f19811fe-b4df-4921-afe6-3.png"
+      <img src="https://via.placeholder.com/150" alt="QR-код для пожертвования" style="max-width: 150px; margin-top: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" />
+      <img src="https://i.postimg.cc/XNddWWkh/Take-photos-of-cute-and-touching-animals-f19811fe-b4df-4921-afe6-3.png"
         alt="InvaCoin помогает всем животным!" style="max-width: 200px; margin-top: 10px;" />
     </section>
 
     <section id="donations" data-aos="zoom-in" data-aos-duration="1000" aria-live="polite" aria-label="Всего пожертвовано">
       <h2>Всего пожертвовано</h2>
       <div id="donation-counter">0 IVC</div>
-    </section>
-
-    <section class="subscribe-section" data-aos="zoom-in" data-aos-duration="1000" aria-label="Подписка на новости">
-      <h2>Подпишитесь на наши новости</h2>
-      <p>Будьте в курсе последних новостей и обновлений InvaCoin.</p>
-      <input type="email" placeholder="Ваш email" id="subscribe-email" aria-label="Email для подписки"
-        autocomplete="email" />
-      <button onclick="subscribe()" aria-label="Подписаться на новости">Подписаться</button>
-      <div id="subscription-confirmation" aria-live="polite" role="alert" style="display:none;">
-        Спасибо за подписку!
-        <div class="confetti" aria-hidden="true"></div>
-      </div>
     </section>
 
     <section id="team" data-aos="fade-up" data-aos-duration="1000" aria-label="Наша команда">
@@ -811,6 +833,7 @@ rong>(скоро)</strong>).</li>
     <section id="calculator" data-aos="fade-up" data-aos-duration="1000" aria-label="Калькулятор пожертвований">
       <h2>Калькулятор пожертвований</h2>
       <p>Узнайте, сколько добра вы можете сделать, пожертвовав InvaCoin!</p>
+
       <input type="number" id="ivc-amount" placeholder="Введите количество IVC" aria-label="Количество IVC" min="1" />
       <button onclick="calculateDonation()" aria-label="Рассчитать пожертвование">Рассчитать</button>
       <div id="calculator-results" aria-live="polite" role="region" style="margin-top: 15px;"></div>
@@ -861,21 +884,34 @@ rong>(скоро)</strong>).</li>
     </a>
   </main>
 
+  <section class="subscribe-section" id="subscribe" data-aos="zoom-in" data-aos-duration="1000" aria-label="Подписка на новости">
+    <h2>Подпишитесь на наши новости</h2>
+    <p>Будьте в курсе последних новостей и обновлений InvaCoin.</p>
+    <input type="email" placeholder="Ваш email" id="subscribe-email" aria-label="Email для подписки"
+      autocomplete="email" />
+    <button onclick="subscribe()" aria-label="Подписаться на новости">Подписаться</button>
+    <div id="subscription-confirmation" aria-live="polite" role="alert" style="display:none;">
+      Спасибо за подписку!
+      <div class="confetti" aria-hidden="true"></div>
+    </div>
+  </section>
+
   <footer>
     <p>&copy; 2025 InvaCoin. Все права защищены.</p>
     <p class="footer-love">Сделано с любовью к животным ❤️</p>
   </footer>
 
-  <!-- Кнопка переключения темы -->
-  <div class="theme-switcher" title="Переключить тему" aria-label="Переключить тему" tabindex="0" role="button">
-    <i class="fas fa-moon" aria-hidden="true"></i>
-  </div>
-
-  <div class="confetti" aria-hidden="true"></div>
-
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
     AOS.init();
+
+    // Функция для плавной прокрутки к секциям
+    function scrollToSection(sectionId) {
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
 
     // FAQ toggle with ARIA updates
     document.querySelectorAll('.faq-question').forEach(question => {
@@ -884,7 +920,9 @@ rong>(скоро)</strong>).</li>
         const expanded = question.getAttribute('aria-expanded') === 'true';
         if (expanded) {
           answer.hidden = true;
-          question.setAttribute('aria-expanded', 'false');
+          question.setAttribute('aria-expanded', '
+
+false');
         } else {
           answer.hidden = false;
           question.setAttribute('aria-expanded', 'true');
@@ -917,9 +955,7 @@ rong>(скоро)</strong>).</li>
         themeSwitcher.setAttribute('aria-label', 'Переключить светлую тему');
       } else {
         icon.classList.remove('fa-sun');
-        icon.classList.ad
-
-d('fa-moon');
+        icon.classList.add('fa-moon');
         themeSwitcher.setAttribute('aria-label', 'Переключить тёмную тему');
       }
     }
@@ -943,13 +979,13 @@ d('fa-moon');
       const beds = Math.floor(usdAmount / bedPrice);
 
       let results = `
-                <p>На ваше пожертвование вы можете купить:</p>
-                <ul>
-                    <li>${foodPacks} пачек корма для кошек</li>
-                    <li>${vaccines} вакцин для собак</li>
-                    <li>${beds} новых лежанок для приюта</li>
-                </ul>
-            `;
+        <p>На ваше пожертвование вы можете купить:</p>
+        <ul>
+          <li>${foodPacks} пачек корма для кошек</li>
+          <li>${vaccines} вакцин для собак</li>
+          <li>${beds} новых лежанок для приюта</li>
+        </ul>
+      `;
 
       document.getElementById('calculator-results').innerHTML = results;
       // Добавляем анимацию появления результатов
@@ -983,7 +1019,9 @@ d('fa-moon');
         confetti.style.left = `${Math.random() * 100}vw`; // Разброс по ширине
         confetti.style.bottom = '0'; // Вылет снизу
         confetti.style.setProperty('--x', (Math.random() - 0.5) * 300 + 'px');
-        confetti.style.animation = `confetti-shoot ${2 + Math.random()}s forwards`;
+        confetti.style.animation = `confetti-shoot ${2
+
++ Math.random()}s forwards`;
         confettiContainer.appendChild(confetti);
       }
 
@@ -999,7 +1037,25 @@ d('fa-moon');
       const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       return re.test(String(email).toLowerCase());
     }
+
+    // Function to handle the fade-in effect for sections
+    const sections = document.querySelectorAll('section');
+
+    function checkSections() {
+      sections.forEach(section => {
+        const sectionTop = section.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        if (sectionTop < windowHeight * 0.75) {
+          section.classList.add('fade-in');
+        }
+      });
+    }
+
+    // Event listener to trigger the fade-in effect on scroll
+    window.addEventListener('scroll', checkSections);
+    window.addEventListener('load', checkSections); // Also run on page load
+
   </script>
 </body>
 
-        </html>
+</html>
